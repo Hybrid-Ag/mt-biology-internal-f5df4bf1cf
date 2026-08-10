@@ -54,7 +54,15 @@ a{color:var(--teal)}
 .wrap{max-width:var(--measure); margin:0 auto; padding:0 26px}
 
 /* ── masthead ─────────────────────────────────────────────── */
-.mast{background:var(--cream); border-bottom:1px solid var(--stroke); padding:22px 0 20px; margin-top:5px}
+.mast{position:relative; background:var(--cream); border-bottom:1px solid var(--stroke);
+  padding:22px 0 20px; margin-top:5px; overflow:hidden}
+/* cover watermark — faded hard so the copy stays the thing you read */
+.mast::before{content:""; position:absolute; inset:0;
+  background:url(assets/cover-field.webp) center 88% / cover no-repeat;
+  opacity:.34; filter:saturate(.85)}
+.mast::after{content:""; position:absolute; inset:0;
+  background:linear-gradient(90deg, rgba(234,229,223,.90) 0%, rgba(234,229,223,.70) 46%, rgba(234,229,223,.44) 100%)}
+.mast > .wrap{position:relative; z-index:2}
 .mast-row{display:flex; gap:26px; align-items:center; justify-content:space-between; flex-wrap:wrap}
 .lockup{width:158px; flex:0 0 auto}
 .mast-id{font-size:11.5px; color:var(--grey); text-align:right; line-height:1.5}
@@ -64,6 +72,8 @@ a{color:var(--teal)}
 .mast h1{font-family:var(--display); font-weight:500; font-size:clamp(23px,3vw,31px);
   line-height:1.1; margin:14px 0 5px; letter-spacing:-.2px}
 .mast .sub{font-size:14.5px; color:var(--grey); margin:0; max-width:70ch}
+.mast .govern{font-size:12px; color:var(--grey); margin:9px 0 0; max-width:80ch;
+  padding-left:11px; border-left:2px solid var(--stroke)}
 details.brief{margin:14px 0 0; max-width:88ch}
 details.brief summary{font-size:13px; color:var(--berry-d); cursor:pointer; font-weight:500;
   list-style:none; display:inline-flex; align-items:center; gap:6px}
@@ -90,6 +100,30 @@ details.brief p{font-size:13.5px; color:var(--ink); margin:10px 0 0; padding-lef
 .tabs button[aria-selected="true"] .dot{opacity:1}
 .tabs button .badge{font-size:10px; background:var(--berry); color:#fff; border-radius:9px;
   padding:1px 6px; letter-spacing:.4px}
+.tabs button .badge.alt{background:var(--teal)}
+
+/* ── document cards ───────────────────────────────────────── */
+.docset{margin:0 0 26px}
+.docset > h3{font-family:var(--oswald); font-weight:700; font-size:15px; letter-spacing:.6px;
+  margin:0 0 3px; color:var(--a)}
+.docset > p{margin:0 0 12px; font-size:13.5px; color:var(--grey)}
+a.doc{display:flex; align-items:center; gap:13px; text-decoration:none; color:inherit;
+  background:#fff; border:1px solid var(--stroke); border-radius:var(--r);
+  padding:13px 15px; box-shadow:var(--shadow); position:relative; overflow:hidden}
+a.doc::before{content:""; position:absolute; left:0; top:0; bottom:0; width:4px; background:var(--a)}
+a.doc:hover{border-color:var(--a)}
+a.doc .ic{flex:0 0 auto; width:32px; height:40px; border:1px solid var(--stroke); border-radius:3px;
+  background:var(--paper); position:relative}
+a.doc .ic::after{content:"PDF"; position:absolute; left:0; right:0; bottom:4px; text-align:center;
+  font-family:var(--oswald); font-weight:700; font-size:7.5px; letter-spacing:.6px; color:var(--grey);
+  font-style:normal}
+a.doc .t{display:block; font-family:var(--oswald); font-weight:700; font-size:12.5px; letter-spacing:.9px;
+  text-transform:uppercase; margin:0 0 2px; font-style:normal}
+a.doc .m{display:block; font-size:12px; color:var(--grey); margin:0}
+a.doc .pill{margin-left:auto; flex:0 0 auto; font-family:var(--oswald); font-weight:700; font-size:9px;
+  letter-spacing:1.1px; text-transform:uppercase; color:#fff; background:var(--orange);
+  border-radius:3px; padding:3px 7px; font-style:normal}
+a.doc .pill.live{background:var(--teal)}
 
 /* ── panel + header ───────────────────────────────────────── */
 [role="tabpanel"]{display:none; animation:fade .18s ease-out}
@@ -140,8 +174,9 @@ h3.sub::after{content:""; flex:1; height:1px; background:var(--stroke)}
 .g2{grid-template-columns:repeat(2,1fr)}
 .g3{grid-template-columns:repeat(3,1fr)}
 .g4{grid-template-columns:repeat(4,1fr)}
-.g5{grid-template-columns:repeat(5,1fr)}
-@media(max-width:980px){.g5{grid-template-columns:repeat(3,1fr)}}
+/* five-step rail — flex-grow means the last row fills the width, never a ragged gap */
+.rail{display:flex; flex-wrap:wrap; gap:13px; margin:0 0 14px}
+.rail > .card{flex:1 1 168px; min-width:0}
 @media(max-width:860px){.g3,.g4{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.grid{grid-template-columns:1fr!important}}
 
@@ -189,6 +224,8 @@ ul.chev.tight li{margin-bottom:6px}
 .panel h4{font-family:var(--oswald); font-weight:700; font-size:12.5px; letter-spacing:1.2px;
   text-transform:uppercase; margin:0 0 8px; color:var(--ink)}
 .panel h4.big{font-size:17px; letter-spacing:.2px; text-transform:none; font-weight:700}
+.panel h3.panel-h{font-family:var(--oswald); font-weight:700; font-size:17px; letter-spacing:.2px;
+  margin:0 0 8px; color:var(--ink); text-transform:none}
 .panel p{margin:0 0 8px; font-size:13.8px}
 .panel p:last-child{margin-bottom:0}
 .strip{background:var(--a); color:#fff; border-radius:var(--r); padding:10px 15px; margin:0 0 14px;
@@ -255,14 +292,20 @@ ul.chev.tight li{margin-bottom:6px}
 .proof{display:grid; grid-template-columns:210px 1fr; gap:18px; align-items:start}
 @media(max-width:720px){.proof{grid-template-columns:1fr}}
 .proof > img{border-radius:var(--r); border:1px solid var(--stroke)}
-.proof-head{display:flex; gap:20px; align-items:flex-start; justify-content:space-between; margin-bottom:10px}
-.qr{width:96px; height:96px; flex:0 0 auto; border:1px solid var(--stroke);
-  border-radius:4px; background:#fff; padding:4px; margin:0}
+.proof-title{font-family:var(--oswald); font-weight:700; font-size:16px; margin:0 0 4px; letter-spacing:.2px}
+.proof-meta{color:var(--teal); font-weight:600; font-size:13px; margin:0 0 8px}
+.proof-stat{font-family:var(--oswald); font-weight:700; font-size:27px; line-height:1.05;
+  margin:0 0 9px; display:flex; align-items:baseline; gap:12px; flex-wrap:wrap}
+.proof-stat span{font-size:17px; color:var(--orange)}
+.proof-link{margin:11px 0 0; font-size:13px}
+.proof-link a{color:var(--teal); font-weight:600; text-decoration:none;
+  border-bottom:1px solid var(--stroke); padding-bottom:1px}
+.proof-link a:hover{border-bottom-color:var(--teal)}
 
 /* ── footer ───────────────────────────────────────────────── */
 footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cream)}
 .foot-rule{height:3px; background:linear-gradient(90deg,var(--teal) 0%,var(--orange) 50%,#7c4a7a 100%)}
-.stamp{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; padding:18px 0 12px}
+.stamp{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; padding:18px 0 22px}
 .stamp .c{font-family:var(--oswald); font-weight:500; font-size:11.5px; letter-spacing:1.5px;
   text-transform:uppercase; margin:0 0 2px}
 .stamp .c1{color:var(--teal)} .stamp .c2{color:var(--orange)} .stamp .c3{color:var(--berry)}
@@ -270,8 +313,6 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
 .stamp div:nth-child(2){text-align:center} .stamp div:nth-child(3){text-align:right}
 @media(max-width:640px){.stamp{grid-template-columns:1fr; text-align:center}
   .stamp div:nth-child(2),.stamp div:nth-child(3){text-align:center}}
-.colophon{padding:0 0 28px; font-size:11.5px; color:var(--grey)}
-.colophon p{margin:0 0 5px; max-width:84ch}
 
 /* ── small screens ────────────────────────────────────────── */
 /* Safe-area insets so the notch/curved edges never clip copy in landscape */
@@ -301,8 +342,7 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
   .blk{padding-top:20px}
   .specbar .v strong{font-size:15px}
   .proof{gap:14px}
-  .proof-head{gap:12px}
-  .qr{width:76px; height:76px}
+  .proof-stat{font-size:23px}
   .grid{gap:11px}
   .card{padding:13px 14px 14px}
   .card img{margin:-9px -14px 11px; width:calc(100% + 28px)}
@@ -343,6 +383,8 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
     <span class="banner" style="margin-top:14px">Confidential — GSB / Hybrid Ag review draft</span>
     <h1>Mycro-Tec® Biology Battlecard</h1>
     <p class="sub">Three products, three distinct jobs, one diagnosed sequence — with the claim boundary drawn on every tab.</p>
+    <p class="govern">Rendered from the 11-page master for review · not for grower distribution ·
+    final label and SDS govern every rate, route, count, storage condition and claim.</p>
     <details class="brief">
       <summary>Grant — read this first</summary>
       <p><strong>This is a review draft, not a released document.</strong> It is our internal sales battlecard,
@@ -362,6 +404,7 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
       <button role="tab" id="t-lockout"   aria-controls="p-lockout"   aria-selected="false" style="--tc:var(--berry-d)"><span class="dot"></span>Lockout</button>
       <button role="tab" id="t-compare"   aria-controls="p-compare"   aria-selected="false" style="--tc:var(--teal)"><span class="dot"></span>Compare &amp; verify</button>
       <button role="tab" id="t-measure"   aria-controls="p-measure"   aria-selected="false" style="--tc:var(--orange)"><span class="dot"></span>Measure &amp; sample</button>
+      <button role="tab" id="t-drafts"    aria-controls="p-drafts"    aria-selected="false" style="--tc:var(--teal)"><span class="dot"></span>Drafts<span class="badge alt">9</span></button>
       <button role="tab" id="t-open"      aria-controls="p-open"      aria-selected="false" style="--tc:var(--berry)"><span class="dot"></span>Open with GSB<span class="badge">16</span></button>
     </div>
   </div>
@@ -407,7 +450,7 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
       </div>
 
       <div class="panel tint">
-        <h4 class="big">Digester works on residue. SP supports fixed-P access. Lockout establishes ahead of risk.</h4>
+        <h3 class="panel-h">Digester works on residue. SP supports fixed-P access. Lockout establishes ahead of risk.</h4>
         <p class="muted">Use the right tool at the right point — only where the diagnosis supports it.</p>
         <p class="muted"><strong>Internal formulation bridge ·</strong> SP and Digester share a three-fungus base;
         the fourth organism supports a different product job. Final labels govern.</p>
@@ -552,20 +595,16 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
       <div class="proof">
         <img src="assets/60d35a50d587.webp" alt="Gerogery canola trial">
         <div>
-          <div class="proof-head">
-            <div>
-              <h4 style="font-family:var(--oswald); font-weight:700; font-size:16px; margin:0 0 5px">Gerogery canola field proof</h4>
-              <p style="color:var(--teal); font-weight:600; margin:0; font-size:13px">52.7 ha · granular · at sowing · 20 kg/ha · Nov 2025</p>
-            </div>
-            <img class="qr" src="assets/34bdd6122f76.webp" alt="QR code to the full GSB trial write-up">
-          </div>
-          <p style="font-family:var(--oswald); font-weight:700; font-size:27px; margin:0 0 1px; line-height:1.05">3.40 → 3.98 t/ha</p>
-          <p style="font-family:var(--oswald); font-weight:700; font-size:17px; color:var(--orange); margin:0 0 10px">+17% · +0.58 t/ha</p>
+          <h4 class="proof-title">Gerogery canola field proof</h4>
+          <p class="proof-meta">52.7 ha · granular · at sowing · 20 kg/ha · Nov 2025</p>
+          <p class="proof-stat">3.40 → 3.98 t/ha <span>+17% · +0.58 t/ha</span></p>
           <p style="color:var(--berry-d); font-weight:600; font-size:12.5px; margin:0 0 8px">Colwell P 42→57 · +35.7%&nbsp;&nbsp;&nbsp;NO₃ 26→38 · +46%</p>
           <p class="muted" style="font-size:12.8px; margin:0">Also observed: NH₄-N 1→2 mg/kg; Colwell K 184→217
           (+17.9%). Applied at 20 kg/ha through the fertiliser box at sowing. Pre-harvest soil tests confirmed the
           biology was working through movement in Colwell P. Granular field case — not liquid-rate proof or a
           guaranteed response.</p>
+          <p class="proof-link"><a href="https://greatsouthernbiology.com.au/archives/case-study/2195"
+            target="_blank" rel="noopener">Read the full trial write-up from Great Southern Biology →</a></p>
         </div>
       </div>
       <div class="flag" style="margin-top:14px">
@@ -1033,7 +1072,7 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
 
     <div class="blk" id="ms-call">
       <h3 class="sub">The call · five steps</h3>
-      <div class="grid g5 rot5">
+      <div class="rail rot5">
         <div class="card"><p class="n">01</p><h4 class="acc">Diagnose</h4><p class="muted">Define the job before the product.</p></div>
         <div class="card"><p class="n">02</p><h4 class="acc">Baseline</h4><p class="muted">Choose a baseline matched to the job.</p></div>
         <div class="card"><p class="n">03</p><h4 class="acc">Interpret</h4><p class="muted">Read it with crop, soil and history.</p></div>
@@ -1151,6 +1190,100 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
   </div>
 </div>
 
+<!-- ══════════════════ DRAFTS ══════════════════ -->
+<div role="tabpanel" id="p-drafts" aria-labelledby="t-drafts">
+  <div class="phead">
+    <div class="wrap"><div class="inner">
+      <p class="eyebrow">Supporting documents</p>
+      <h2>Labels, brochures &amp; SDSs</h2>
+      <p class="lede">The full pack for the three Mycro-Tec products — everything behind the battlecard, in one place.</p>
+    </div></div>
+    <div class="tri"><i></i><i></i><i></i></div>
+  </div>
+  <div class="wrap">
+    <div class="blk" style="padding-top:20px">
+      <p class="intro"><strong>Exported from the live Figma master on 10 August 2026.</strong> These supersede the
+      pack emailed on 8 August — if you have those files open, work from these instead. Brochures are
+      customer-facing and current. Labels and SDSs are drafts: the SDSs stay marked DRAFT until the label and
+      composition items in <em>Open with GSB</em> are closed, and that gate is deliberate.</p>
+
+    <div class="docset" style="--a:var(--teal)">
+      <h3>Mycro-Tec® SP</h3>
+      <p>Nutrient-solubilising biology · at establishment</p>
+      <div class="grid g3">
+        <a class="doc" href="docs/sp-label.pdf" target="_blank" rel="noopener">
+          <span class="ic"></span>
+          <span><span class="t">Label</span><span class="m">1 page · 1000 L artwork</span></span>
+          <span class="pill ">Draft</span>
+        </a>
+        <a class="doc" href="docs/sp-brochure.pdf" target="_blank" rel="noopener">
+          <span class="ic"></span>
+          <span><span class="t">Brochure</span><span class="m">6 pages · customer-facing</span></span>
+          <span class="pill live">Live</span>
+        </a>
+        <a class="doc" href="docs/sp-sds-draft.pdf" target="_blank" rel="noopener">
+          <span class="ic"></span>
+          <span><span class="t">Safety data sheet</span><span class="m">5 pages · GHS 7</span></span>
+          <span class="pill ">Draft</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="docset" style="--a:var(--orange)">
+      <h3>Mycro-Tec® Digester</h3>
+      <p>Selected decomposer biology · post-harvest</p>
+      <div class="grid g3">
+        <a class="doc" href="docs/digester-label.pdf" target="_blank" rel="noopener">
+          <span class="ic"></span>
+          <span><span class="t">Label</span><span class="m">1 page · 1000 L artwork</span></span>
+          <span class="pill ">Draft</span>
+        </a>
+        <a class="doc" href="docs/digester-brochure.pdf" target="_blank" rel="noopener">
+          <span class="ic"></span>
+          <span><span class="t">Brochure</span><span class="m">6 pages · customer-facing</span></span>
+          <span class="pill live">Live</span>
+        </a>
+        <a class="doc" href="docs/digester-sds-draft.pdf" target="_blank" rel="noopener">
+          <span class="ic"></span>
+          <span><span class="t">Safety data sheet</span><span class="m">5 pages · GHS 7</span></span>
+          <span class="pill ">Draft</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="docset" style="--a:var(--berry-d)">
+      <h3>Mycro-Tec® Lockout</h3>
+      <p>Proactive microbiome management · ahead of risk</p>
+      <div class="grid g3">
+        <a class="doc" href="docs/lockout-label.pdf" target="_blank" rel="noopener">
+          <span class="ic"></span>
+          <span><span class="t">Label</span><span class="m">1 page · 1000 L artwork</span></span>
+          <span class="pill ">Draft</span>
+        </a>
+        <a class="doc" href="docs/lockout-brochure.pdf" target="_blank" rel="noopener">
+          <span class="ic"></span>
+          <span><span class="t">Brochure</span><span class="m">6 pages · customer-facing</span></span>
+          <span class="pill live">Live</span>
+        </a>
+        <a class="doc" href="docs/lockout-sds-draft.pdf" target="_blank" rel="noopener">
+          <span class="ic"></span>
+          <span><span class="t">Safety data sheet</span><span class="m">5 pages · GHS 7</span></span>
+          <span class="pill ">Draft</span>
+        </a>
+      </div>
+    </div>
+
+      <div class="flag">
+        <span class="tag">Open with GSB · what we need reviewed here</span>
+        <p>The label and SDS items in the register all live in these files: the Lockout CFU set and certificate,
+        the storage temperature, the approved route set per product, the SP seed-coating rate, and the two SDS
+        defects (diatomaceous earth CAS, and Section 9 being identical across all three).</p>
+        <p class="ask">Mark up the PDFs directly if that is easier than working through the register.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- ══════════════════ OPEN WITH GSB ══════════════════ -->
 <div role="tabpanel" id="p-open" aria-labelledby="t-open" style="--a:var(--berry)">
   <div class="phead">
@@ -1167,6 +1300,7 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
       labels, SDSs and fifteen live brochure pages, and a card-versus-live-brochure diff. Nothing in this pack
       goes to a grower until the label and SDS items are closed.</p>
 
+      <h3 class="sub">The register</h3>
       <div class="reg">
         <div class="item"><div class="n">01</div><div>
           <h4>Which CFU set governs Lockout?</h4>
@@ -1308,12 +1442,6 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
       <div><p class="c c1">Precision Nutrition</p><p>Physical · Mineral · Biological</p></div>
       <div><p class="c c2">Optimising Inputs</p><p>Addressed · Optimised · Enabled</p></div>
       <div><p class="c c3">Maximising Outcomes</p><p>Measured · Proven · Delivered</p></div>
-    </div>
-    <div class="colophon">
-      <p><strong>Confidential — GSB / Hybrid Ag review draft.</strong> Mycro-Tec® Biology Battlecard, August 2026.
-      Rendered from the 11-page master for review. Not for grower distribution. Final label and SDS govern every
-      rate, route, count, storage condition and claim.</p>
-      <p>Hybrid-Ag Pty Ltd · (03) 5722 7555 · support@hybridag.com.au · Manufactured by Great Southern Biology.</p>
     </div>
   </div>
 </footer>
