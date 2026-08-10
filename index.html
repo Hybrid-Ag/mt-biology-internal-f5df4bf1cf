@@ -131,23 +131,29 @@ details.brief p{font-size:13.5px; color:var(--ink); margin:10px 0 0; padding-lef
 .docset > h3{font-family:var(--oswald); font-weight:700; font-size:15px; letter-spacing:.6px;
   margin:0 0 3px; color:var(--a)}
 .docset > p{margin:0 0 12px; font-size:13.5px; color:var(--grey)}
-a.doc{display:flex; align-items:center; gap:13px; text-decoration:none; color:inherit;
-  background:#fff; border:1px solid var(--stroke); border-radius:var(--r);
-  padding:13px 15px; box-shadow:var(--shadow); position:relative; overflow:hidden}
-a.doc::before{content:""; position:absolute; left:0; top:0; bottom:0; width:4px; background:var(--a)}
-a.doc:hover{border-color:var(--a)}
-a.doc .ic{flex:0 0 auto; width:32px; height:40px; border:1px solid var(--stroke); border-radius:3px;
-  background:var(--paper); position:relative}
-a.doc .ic::after{content:"PDF"; position:absolute; left:0; right:0; bottom:4px; text-align:center;
-  font-family:var(--oswald); font-weight:700; font-size:7.5px; letter-spacing:.6px; color:var(--grey);
+details.sheet{background:#fff; border:1px solid var(--stroke); border-radius:var(--r);
+  box-shadow:var(--shadow); margin:0 0 10px; overflow:hidden}
+details.sheet summary{list-style:none; cursor:pointer; display:flex; align-items:center; gap:12px;
+  padding:13px 15px; position:relative}
+details.sheet summary::-webkit-details-marker{display:none}
+details.sheet summary::before{content:""; position:absolute; left:0; top:0; bottom:0; width:4px; background:var(--a)}
+details.sheet summary::after{content:"+"; margin-left:4px; font-family:var(--oswald); font-size:17px;
+  color:var(--a); font-style:normal}
+details.sheet[open] summary::after{content:"–"}
+details.sheet summary:hover .s-t{color:var(--a)}
+.s-t{font-family:var(--oswald); font-weight:700; font-size:12.5px; letter-spacing:.9px;
+  text-transform:uppercase; font-style:normal}
+.s-m{font-size:12px; color:var(--grey)}
+.pill{margin-left:auto; font-family:var(--oswald); font-weight:700; font-size:9px; letter-spacing:1.1px;
+  text-transform:uppercase; color:#fff; background:var(--orange); border-radius:3px; padding:3px 7px;
   font-style:normal}
-a.doc .t{display:block; font-family:var(--oswald); font-weight:700; font-size:12.5px; letter-spacing:.9px;
-  text-transform:uppercase; margin:0 0 2px; font-style:normal}
-a.doc .m{display:block; font-size:12px; color:var(--grey); margin:0}
-a.doc .pill{margin-left:auto; flex:0 0 auto; font-family:var(--oswald); font-weight:700; font-size:9px;
-  letter-spacing:1.1px; text-transform:uppercase; color:#fff; background:var(--orange);
-  border-radius:3px; padding:3px 7px; font-style:normal}
-a.doc .pill.live{background:var(--teal)}
+.s-body{border-top:1px solid var(--stroke); padding:14px 15px 15px; background:var(--paper)}
+.s-pages{display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:12px}
+.s-pages img{width:100%; height:auto; border:1px solid var(--stroke); border-radius:4px; background:#fff}
+.s-dl{margin:13px 0 0; font-size:13px}
+.s-dl a{color:var(--teal); font-weight:600; text-decoration:none;
+  border-bottom:1px solid var(--stroke); padding-bottom:1px}
+.s-dl a:hover{border-bottom-color:var(--teal)}
 
 /* ── panel + header ───────────────────────────────────────── */
 [role="tabpanel"]{display:none; animation:fade .18s ease-out}
@@ -1242,76 +1248,9 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
   </div>
   <div class="wrap">
     <div class="blk" style="padding-top:20px">
-      <p class="intro"><strong>Exported from the live Figma master on 10 August 2026.</strong> These supersede the
-      pack emailed on 8 August — if you have those files open, work from these instead. Brochures are
-      customer-facing and current. Labels and SDSs are drafts: the SDSs stay marked DRAFT until the label and
-      composition items in <em>Open with GSB</em> are closed, and that gate is deliberate.</p>
-
-    <div class="docset" style="--a:var(--teal)">
-      <h3>Mycro-Tec® SP</h3>
-      <p>Nutrient-solubilising biology · at establishment</p>
-      <div class="grid g3">
-        <a class="doc" href="docs/sp-label.pdf" target="_blank" rel="noopener">
-          <span class="ic"></span>
-          <span><span class="t">Label</span><span class="m">1 page · all pack sizes</span></span>
-          <span class="pill ">Draft</span>
-        </a>
-        <a class="doc" href="docs/sp-brochure.pdf" target="_blank" rel="noopener">
-          <span class="ic"></span>
-          <span><span class="t">Brochure</span><span class="m">6 pages · customer-facing</span></span>
-          <span class="pill live">Live</span>
-        </a>
-        <a class="doc" href="docs/sp-sds-draft.pdf" target="_blank" rel="noopener">
-          <span class="ic"></span>
-          <span><span class="t">Safety data sheet</span><span class="m">5 pages · GHS 7</span></span>
-          <span class="pill ">Draft</span>
-        </a>
-      </div>
-    </div>
-
-    <div class="docset" style="--a:var(--orange)">
-      <h3>Mycro-Tec® Digester</h3>
-      <p>Selected decomposer biology · post-harvest</p>
-      <div class="grid g3">
-        <a class="doc" href="docs/digester-label.pdf" target="_blank" rel="noopener">
-          <span class="ic"></span>
-          <span><span class="t">Label</span><span class="m">1 page · all pack sizes</span></span>
-          <span class="pill ">Draft</span>
-        </a>
-        <a class="doc" href="docs/digester-brochure.pdf" target="_blank" rel="noopener">
-          <span class="ic"></span>
-          <span><span class="t">Brochure</span><span class="m">6 pages · customer-facing</span></span>
-          <span class="pill live">Live</span>
-        </a>
-        <a class="doc" href="docs/digester-sds-draft.pdf" target="_blank" rel="noopener">
-          <span class="ic"></span>
-          <span><span class="t">Safety data sheet</span><span class="m">5 pages · GHS 7</span></span>
-          <span class="pill ">Draft</span>
-        </a>
-      </div>
-    </div>
-
-    <div class="docset" style="--a:var(--berry-d)">
-      <h3>Mycro-Tec® Lockout</h3>
-      <p>Proactive microbiome management · ahead of risk</p>
-      <div class="grid g3">
-        <a class="doc" href="docs/lockout-label.pdf" target="_blank" rel="noopener">
-          <span class="ic"></span>
-          <span><span class="t">Label</span><span class="m">1 page · all pack sizes</span></span>
-          <span class="pill ">Draft</span>
-        </a>
-        <a class="doc" href="docs/lockout-brochure.pdf" target="_blank" rel="noopener">
-          <span class="ic"></span>
-          <span><span class="t">Brochure</span><span class="m">6 pages · customer-facing</span></span>
-          <span class="pill live">Live</span>
-        </a>
-        <a class="doc" href="docs/lockout-sds-draft.pdf" target="_blank" rel="noopener">
-          <span class="ic"></span>
-          <span><span class="t">Safety data sheet</span><span class="m">5 pages · GHS 7</span></span>
-          <span class="pill ">Draft</span>
-        </a>
-      </div>
-    </div>
+      <p class="intro">Brochures, labels and SDSs are all drafts until the items in <em>Open with GSB</em> are
+      closed and the final changes are made. Exported from the live master on 10 August 2026 — these supersede
+      the pack emailed on 8 August.</p>
 
       <div class="askbox">
         <h4>Your read on the labels, brochures and SDSs</h4>
@@ -1330,6 +1269,138 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
         defects (diatomaceous earth CAS, and Section 9 being identical across all three).</p>
         <p class="ask">Mark up the PDFs directly if that is easier than working through the register.</p>
       </div>
+
+    <div class="docset" style="--a:var(--teal)">
+      <h3>Mycro-Tec® SP</h3>
+      <p>Nutrient-solubilising biology · at establishment</p>
+      <details class="sheet">
+        <summary><span class="s-t">Label</span><span class="s-m">1 page</span>
+          <span class="pill ">Draft</span></summary>
+        <div class="s-body">
+          <div class="s-pages">
+          <img loading="lazy" src="pages/sp-label-01.webp" alt="Label page 1">
+          </div>
+          <p class="s-dl"><a href="docs/sp-label.pdf" target="_blank" rel="noopener">Download the PDF (0.7 MB) →</a></p>
+        </div>
+      </details>
+      <details class="sheet">
+        <summary><span class="s-t">Brochure</span><span class="s-m">6 pages</span>
+          <span class="pill ">Draft</span></summary>
+        <div class="s-body">
+          <div class="s-pages">
+          <img loading="lazy" src="pages/sp-brochure-01.webp" alt="Brochure page 1">
+          <img loading="lazy" src="pages/sp-brochure-02.webp" alt="Brochure page 2">
+          <img loading="lazy" src="pages/sp-brochure-03.webp" alt="Brochure page 3">
+          <img loading="lazy" src="pages/sp-brochure-04.webp" alt="Brochure page 4">
+          <img loading="lazy" src="pages/sp-brochure-05.webp" alt="Brochure page 5">
+          <img loading="lazy" src="pages/sp-brochure-06.webp" alt="Brochure page 6">
+          </div>
+          <p class="s-dl"><a href="docs/sp-brochure.pdf" target="_blank" rel="noopener">Download the PDF (17.0 MB) →</a></p>
+        </div>
+      </details>
+      <details class="sheet">
+        <summary><span class="s-t">Safety data sheet</span><span class="s-m">5 pages</span>
+          <span class="pill ">Draft</span></summary>
+        <div class="s-body">
+          <div class="s-pages">
+          <img loading="lazy" src="pages/sp-sds-draft-01.webp" alt="Safety data sheet page 1">
+          <img loading="lazy" src="pages/sp-sds-draft-02.webp" alt="Safety data sheet page 2">
+          <img loading="lazy" src="pages/sp-sds-draft-03.webp" alt="Safety data sheet page 3">
+          <img loading="lazy" src="pages/sp-sds-draft-04.webp" alt="Safety data sheet page 4">
+          <img loading="lazy" src="pages/sp-sds-draft-05.webp" alt="Safety data sheet page 5">
+          </div>
+          <p class="s-dl"><a href="docs/sp-sds-draft.pdf" target="_blank" rel="noopener">Download the PDF (5.4 MB) →</a></p>
+        </div>
+      </details>
+    </div>
+
+    <div class="docset" style="--a:var(--orange)">
+      <h3>Mycro-Tec® Digester</h3>
+      <p>Selected decomposer biology · post-harvest</p>
+      <details class="sheet">
+        <summary><span class="s-t">Label</span><span class="s-m">1 page</span>
+          <span class="pill ">Draft</span></summary>
+        <div class="s-body">
+          <div class="s-pages">
+          <img loading="lazy" src="pages/digester-label-01.webp" alt="Label page 1">
+          </div>
+          <p class="s-dl"><a href="docs/digester-label.pdf" target="_blank" rel="noopener">Download the PDF (0.7 MB) →</a></p>
+        </div>
+      </details>
+      <details class="sheet">
+        <summary><span class="s-t">Brochure</span><span class="s-m">6 pages</span>
+          <span class="pill ">Draft</span></summary>
+        <div class="s-body">
+          <div class="s-pages">
+          <img loading="lazy" src="pages/digester-brochure-01.webp" alt="Brochure page 1">
+          <img loading="lazy" src="pages/digester-brochure-02.webp" alt="Brochure page 2">
+          <img loading="lazy" src="pages/digester-brochure-03.webp" alt="Brochure page 3">
+          <img loading="lazy" src="pages/digester-brochure-04.webp" alt="Brochure page 4">
+          <img loading="lazy" src="pages/digester-brochure-05.webp" alt="Brochure page 5">
+          <img loading="lazy" src="pages/digester-brochure-06.webp" alt="Brochure page 6">
+          </div>
+          <p class="s-dl"><a href="docs/digester-brochure.pdf" target="_blank" rel="noopener">Download the PDF (19.6 MB) →</a></p>
+        </div>
+      </details>
+      <details class="sheet">
+        <summary><span class="s-t">Safety data sheet</span><span class="s-m">5 pages</span>
+          <span class="pill ">Draft</span></summary>
+        <div class="s-body">
+          <div class="s-pages">
+          <img loading="lazy" src="pages/digester-sds-draft-01.webp" alt="Safety data sheet page 1">
+          <img loading="lazy" src="pages/digester-sds-draft-02.webp" alt="Safety data sheet page 2">
+          <img loading="lazy" src="pages/digester-sds-draft-03.webp" alt="Safety data sheet page 3">
+          <img loading="lazy" src="pages/digester-sds-draft-04.webp" alt="Safety data sheet page 4">
+          <img loading="lazy" src="pages/digester-sds-draft-05.webp" alt="Safety data sheet page 5">
+          </div>
+          <p class="s-dl"><a href="docs/digester-sds-draft.pdf" target="_blank" rel="noopener">Download the PDF (5.5 MB) →</a></p>
+        </div>
+      </details>
+    </div>
+
+    <div class="docset" style="--a:var(--berry-d)">
+      <h3>Mycro-Tec® Lockout</h3>
+      <p>Proactive microbiome management · ahead of risk</p>
+      <details class="sheet">
+        <summary><span class="s-t">Label</span><span class="s-m">1 page</span>
+          <span class="pill ">Draft</span></summary>
+        <div class="s-body">
+          <div class="s-pages">
+          <img loading="lazy" src="pages/lockout-label-01.webp" alt="Label page 1">
+          </div>
+          <p class="s-dl"><a href="docs/lockout-label.pdf" target="_blank" rel="noopener">Download the PDF (0.9 MB) →</a></p>
+        </div>
+      </details>
+      <details class="sheet">
+        <summary><span class="s-t">Brochure</span><span class="s-m">6 pages</span>
+          <span class="pill ">Draft</span></summary>
+        <div class="s-body">
+          <div class="s-pages">
+          <img loading="lazy" src="pages/lockout-brochure-01.webp" alt="Brochure page 1">
+          <img loading="lazy" src="pages/lockout-brochure-02.webp" alt="Brochure page 2">
+          <img loading="lazy" src="pages/lockout-brochure-03.webp" alt="Brochure page 3">
+          <img loading="lazy" src="pages/lockout-brochure-04.webp" alt="Brochure page 4">
+          <img loading="lazy" src="pages/lockout-brochure-05.webp" alt="Brochure page 5">
+          <img loading="lazy" src="pages/lockout-brochure-06.webp" alt="Brochure page 6">
+          </div>
+          <p class="s-dl"><a href="docs/lockout-brochure.pdf" target="_blank" rel="noopener">Download the PDF (26.1 MB) →</a></p>
+        </div>
+      </details>
+      <details class="sheet">
+        <summary><span class="s-t">Safety data sheet</span><span class="s-m">5 pages</span>
+          <span class="pill ">Draft</span></summary>
+        <div class="s-body">
+          <div class="s-pages">
+          <img loading="lazy" src="pages/lockout-sds-draft-01.webp" alt="Safety data sheet page 1">
+          <img loading="lazy" src="pages/lockout-sds-draft-02.webp" alt="Safety data sheet page 2">
+          <img loading="lazy" src="pages/lockout-sds-draft-03.webp" alt="Safety data sheet page 3">
+          <img loading="lazy" src="pages/lockout-sds-draft-04.webp" alt="Safety data sheet page 4">
+          <img loading="lazy" src="pages/lockout-sds-draft-05.webp" alt="Safety data sheet page 5">
+          </div>
+          <p class="s-dl"><a href="docs/lockout-sds-draft.pdf" target="_blank" rel="noopener">Download the PDF (5.4 MB) →</a></p>
+        </div>
+      </details>
+    </div>
     </div>
   </div>
 </div>
