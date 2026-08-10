@@ -50,11 +50,12 @@ a{color:var(--teal)}
 .tri i:nth-child(1){background:var(--teal)}
 .tri i:nth-child(2){background:var(--orange)}
 .tri i:nth-child(3){background:var(--berry)}
+.tri-top{position:fixed; top:0; left:0; right:0; z-index:80; height:5px}
 .wrap{max-width:var(--measure); margin:0 auto; padding:0 26px}
 
 /* ── masthead ─────────────────────────────────────────────── */
 .mast{position:relative; background:var(--cream); border-bottom:1px solid var(--stroke);
-  padding:22px 0 20px; overflow:hidden}
+  padding:22px 0 20px; margin-top:5px; overflow:hidden}
 /* cover watermark — faded hard so the copy stays the thing you read */
 .mast::before{content:""; position:absolute; inset:0;
   background:url(assets/cover-field.webp) center 88% / cover no-repeat;
@@ -81,7 +82,7 @@ details.brief p{font-size:13.5px; color:var(--ink); margin:10px 0 0; padding-lef
   border-left:2px solid var(--berry)}
 
 /* ── tab bar ──────────────────────────────────────────────── */
-.tabbar{position:sticky; top:0; z-index:70; background:rgba(244,241,234,.96);
+.tabbar{position:sticky; top:5px; z-index:70; background:rgba(244,241,234,.96);
   backdrop-filter:saturate(1.5) blur(10px); border-bottom:1px solid var(--stroke)}
 .tabs{display:flex; gap:2px; overflow-x:auto; scrollbar-width:none}
 .tabs::-webkit-scrollbar{display:none}
@@ -356,7 +357,7 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
 .specbar .v, ul.chev li{overflow-wrap:break-word}
 
 @media print{
-  .tabbar,.jump{display:none}
+  .tabbar,.jump,.tri-top{display:none}
   [role="tabpanel"]{display:block!important; break-before:page}
   .faq details{open:true}
   .faq .ans{display:block!important}
@@ -366,6 +367,8 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
 </style>
 </head>
 <body>
+
+<div class="tri tri-top"><i></i><i></i><i></i></div>
 
 <header class="mast">
   <div class="wrap">
@@ -391,7 +394,6 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
 
 <div class="tabbar">
   <div class="wrap">
-    <div class="tri"><i></i><i></i><i></i></div>
     <div class="tabs" role="tablist" aria-label="Battlecard sections">
       <button role="tab" id="t-overview"  aria-controls="p-overview"  aria-selected="true"  style="--tc:var(--teal)"><span class="dot"></span>Overview</button>
       <button role="tab" id="t-sp"        aria-controls="p-sp"        aria-selected="false" style="--tc:var(--teal)"><span class="dot"></span>SP</button>
