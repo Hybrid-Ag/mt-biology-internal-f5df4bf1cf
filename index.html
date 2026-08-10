@@ -100,6 +100,32 @@ details.brief p{font-size:13.5px; color:var(--ink); margin:10px 0 0; padding-lef
   padding:1px 6px; letter-spacing:.4px}
 .tabs button .badge.alt{background:var(--teal)}
 
+/* ── meeting embeds ───────────────────────────────────────── */
+.mtg{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:0 0 14px}
+@media(max-width:760px){.mtg{grid-template-columns:1fr}}
+.mtg figure{margin:0; background:#fff; border:1px solid var(--stroke); border-radius:var(--r);
+  overflow:hidden; box-shadow:var(--shadow)}
+.mtg .frame{position:relative; aspect-ratio:16/9; background:var(--ink)}
+.mtg iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
+.mtg figcaption{padding:12px 15px 14px}
+.mtg .n{font-family:var(--oswald); font-weight:700; font-size:10px; letter-spacing:1.2px;
+  text-transform:uppercase; color:var(--a); margin:0 0 3px; font-style:normal}
+.mtg .ttl{font-family:var(--oswald); font-weight:700; font-size:14.5px; margin:0 0 3px;
+  letter-spacing:.3px; font-style:normal}
+.mtg .who{font-size:12.5px; color:var(--grey); margin:0}
+.ts{display:inline-block; font-family:var(--oswald); font-weight:700; font-size:10px;
+  letter-spacing:.9px; color:var(--teal); background:var(--cream); border:1px solid var(--stroke);
+  border-radius:3px; padding:2px 6px; text-decoration:none; font-style:normal; margin-left:6px;
+  white-space:nowrap}
+.ts:hover{border-color:var(--teal)}
+.askbox{background:#fbf7fb; border:1px solid #e4d3e4; border-left:4px solid var(--berry);
+  border-radius:var(--r); padding:15px 18px; margin:0 0 16px}
+.askbox h4{font-family:var(--oswald); font-weight:700; font-size:12px; letter-spacing:1.3px;
+  text-transform:uppercase; color:var(--berry-d); margin:0 0 9px; font-style:normal}
+.askbox ol{margin:0; padding-left:19px}
+.askbox li{font-size:13.8px; margin:0 0 7px; color:var(--berry-d); font-style:italic}
+.askbox li:last-child{margin-bottom:0}
+
 /* ── document cards ───────────────────────────────────────── */
 .docset{margin:0 0 26px}
 .docset > h3{font-family:var(--oswald); font-weight:700; font-size:15px; letter-spacing:.6px;
@@ -443,6 +469,35 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
           <p class="k">Role</p><p>Establish beneficial biology before an adverse population dominates.</p>
           <p class="k">Payoff</p><p class="pay">Support occupation, competition and microbiome balance.</p>
         </div>
+      </div>
+
+      <h3 class="sub">Two meetings behind this</h3>
+      <p class="intro">We have already sat down with you twice to unpack these products. Both recordings are
+      here so nothing in this pack has to be taken on trust — and where a question below traces back to something
+      said on a call, it carries a timestamp straight to that moment.</p>
+      <div class="mtg">
+        <figure>
+          <div class="frame"><iframe loading="lazy" title="Meeting 1 — Intro and planning, 6 July 2026"
+            src="https://www.youtube-nocookie.com/embed/qiz-pr-owko" allowfullscreen
+            referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+          <figcaption>
+            <p class="n">Meeting 1 · 6 July 2026 · 66 min</p>
+            <p class="ttl">Intro &amp; planning</p>
+            <p class="who">Grant Kelson with Nathan Katseli and Jamie Granger. Microbiome testing, the Gerogery
+            canola case, shelf life and formulation.</p>
+          </figcaption>
+        </figure>
+        <figure>
+          <div class="frame"><iframe loading="lazy" title="Meeting 2 — Technical session, 31 July 2026"
+            src="https://www.youtube-nocookie.com/embed/Of7aL89pZwI" allowfullscreen
+            referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+          <figcaption>
+            <p class="n">Meeting 2 · 31 July 2026 · 85 min</p>
+            <p class="ttl">Technical session</p>
+            <p class="who">Grant Kelson and Mostofa Kamal with the Hybrid Ag team, chaired by Jamie. Product
+            roles, residue breakdown, placement and the evidence behind each.</p>
+          </figcaption>
+        </figure>
       </div>
 
       <div class="panel tint">
@@ -1258,6 +1313,16 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
       </div>
     </div>
 
+      <div class="askbox">
+        <h4>Your read on the labels, brochures and SDSs</h4>
+        <ol>
+          <li>Is anything on these labels, brochures or SDSs factually wrong or out of date?</li>
+          <li>Is anything claimed that the evidence does not support, or worded in a way you would not use?</li>
+          <li>Is anything missing that should be on a label or SDS before it goes to print?</li>
+          <li>Are the organism names, counts and rates the set you want us printing?</li>
+        </ol>
+      </div>
+
       <div class="flag">
         <span class="tag">Open with GSB · what we need reviewed here</span>
         <p>The label and SDS items in the register all live in these files: the Lockout CFU set and certificate,
@@ -1284,6 +1349,16 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
       labels, SDSs and fifteen live brochure pages, and a card-versus-live-brochure diff. Nothing in this pack
       goes to a grower until the label and SDS items are closed.</p>
 
+      <div class="askbox">
+        <h4>First — your read on this battlecard</h4>
+        <ol>
+          <li>Is anything in here wrong, or put more strongly than the evidence actually supports?</li>
+          <li>Is there anything missing that the team would benefit from knowing before they sell it?</li>
+          <li>Is there anything here you would not want said to a grower at all?</li>
+          <li>Does the way we have split the three jobs — residue, fixed-P access, establishing ahead of risk —
+              match how you would describe them?</li>
+        </ol>
+      </div>
       <h3 class="sub">The register</h3>
       <div class="reg">
         <div class="item"><div class="n">01</div><div>
@@ -1302,7 +1377,7 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
           <p class="src"><button data-go="compare">Compare &amp; verify tab</button></p></div></div>
 
         <div class="item"><div class="n">03</div><div>
-          <h4>What is the real shelf life?</h4>
+          <h4>What is the real shelf life?<a class="ts" href="https://www.youtube.com/watch?v=qiz-pr-owko&t=2353s" target="_blank" rel="noopener">▶ M1 39:13</a></h4>
           <p class="ctx">Every document says 12 months. A shorter figure was given verbally.</p>
           <p class="ask">Confirm shelf life by format so label, SDS, brochure and battlecard can be aligned.</p>
           <p class="src"><button data-go="compare">Compare &amp; verify tab</button></p></div></div>
@@ -1332,7 +1407,7 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
           <p class="src"><button data-go="lockout">Lockout tab</button></p></div></div>
 
         <div class="item"><div class="n">07</div><div>
-          <h4>Can 2 L/t seed coating go on the SP label?</h4>
+          <h4>Can 2 L/t seed coating go on the SP label?<a class="ts" href="https://www.youtube.com/watch?v=Of7aL89pZwI&t=2908s" target="_blank" rel="noopener">▶ M2 48:28</a></h4>
           <p class="ctx">The SP brochure cover advertises a broadacre coating rate of 2 L/t. The label gives
           5–10 L, 1–2 L, 1:100 and 60–100 L/ha water, and nothing for seed. Final label governs every rate, so
           this is a live contradiction in customer-facing material.</p>
@@ -1340,7 +1415,7 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
           <p class="src"><button data-go="sp">SP tab</button></p></div></div>
 
         <div class="item"><div class="n">08</div><div>
-          <h4>Is the published Digester mix order approved?</h4>
+          <h4>Is the published Digester mix order approved?<a class="ts" href="https://www.youtube.com/watch?v=Of7aL89pZwI&t=457s" target="_blank" rel="noopener">▶ M2 07:37</a></h4>
           <p class="ctx">The card says the protocol is pending and reps must not assume an order. The live Digester
           composition page already publishes one: ammonium sulphate first, then Digester, into 100 L/ha cool
           non-chlorinated water.</p>
@@ -1363,7 +1438,7 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
           <p class="src"><button data-go="digester">Digester tab</button></p></div></div>
 
         <div class="item"><div class="n">11</div><div>
-          <h4>Does the SP bacterium stall below 15 °C?</h4>
+          <h4>Does the SP bacterium stall below 15 °C?<a class="ts" href="https://www.youtube.com/watch?v=Of7aL89pZwI&t=2113s" target="_blank" rel="noopener">▶ M2 35:13</a></h4>
           <p class="ctx">The cold-furrow guidance on the card is our inference, not a GSB figure. It tells reps the
           pass runs mostly on the three fungi in cold soil.</p>
           <p class="ask">Confirm, correct or remove the 15 °C threshold.</p>
@@ -1376,14 +1451,14 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
           <p class="src"><button data-go="lockout">Lockout tab</button></p></div></div>
 
         <div class="item"><div class="n">13</div><div>
-          <h4>Can we cite the Gerogery nitrate movement?</h4>
+          <h4>Can we cite the Gerogery nitrate movement?<a class="ts" href="https://www.youtube.com/watch?v=qiz-pr-owko&t=838s" target="_blank" rel="noopener">▶ M1 13:58</a></h4>
           <p class="ctx">NO₃ 26 → 38 mg/kg is on our Results page attributed to GSB case study 2195. We have not
           verified it against the published study ourselves.</p>
           <p class="ask">Confirm the figure as published, or tell us to drop it.</p>
           <p class="src"><button data-go="sp">SP tab</button></p></div></div>
 
         <div class="item"><div class="n">14</div><div>
-          <h4>Release the three Lockout evidence sets</h4>
+          <h4>Release the three Lockout evidence sets<a class="ts" href="https://www.youtube.com/watch?v=Of7aL89pZwI&t=223s" target="_blank" rel="noopener">▶ M2 03:43</a></h4>
           <p class="ctx">Queensland soil work, cotton work and orchard work are all referenced but unreleased.
           Until they arrive, none of it is disease-efficacy proof and all of it stays internal.</p>
           <p class="ask">Send treatment, comparator, baseline, endpoint and timing for each.</p>
@@ -1398,7 +1473,7 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
           <p class="src">Pack audit · 2026-08-04</p></div></div>
 
         <div class="item"><div class="n">16</div><div>
-          <h4>Written support for any feeding rule</h4>
+          <h4>Written support for any feeding rule<a class="ts" href="https://www.youtube.com/watch?v=qiz-pr-owko&t=2948s" target="_blank" rel="noopener">▶ M1 49:08</a></h4>
           <p class="ctx">No standard food-source recommendation is approved for Lockout, and the card blocks
           publishing soil-carbon, humic/fulvic, sugar, fish or seaweed feeding rules.</p>
           <p class="ask">Supply written, formulation-specific feeding guidance, or confirm there is none.</p>
