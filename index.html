@@ -124,7 +124,7 @@ details.brief p{font-size:13.5px; color:var(--ink); margin:10px 0 0; padding-lef
 .ts:hover{border-color:var(--teal)}
 .askbox{background:#fbf7fb; border:1px solid #e4d3e4; border-left:4px solid var(--berry);
   border-radius:var(--r); padding:15px 18px; margin:0 0 16px}
-.askbox h4{font-family:var(--oswald); font-weight:700; font-size:12px; letter-spacing:1.3px;
+.askbox h3{font-family:var(--oswald); font-weight:700; font-size:12px; letter-spacing:1.3px;
   text-transform:uppercase; color:var(--berry-d); margin:0 0 9px; font-style:normal}
 .askbox ol{margin:0; padding-left:19px}
 .askbox li{font-size:13.8px; margin:0 0 7px; color:var(--berry-d); font-style:italic}
@@ -308,6 +308,11 @@ ul.chev.tight li{margin-bottom:6px}
 .flag p{margin:0 0 7px; font-size:13.5px}
 .flag p:last-child{margin:0}
 .flag .ask{font-style:italic; color:var(--berry-d)}
+.qjump{appearance:none; background:none; border:0; padding:0; font:inherit; font-style:normal;
+  font-family:var(--oswald); font-weight:700; font-size:10.5px; letter-spacing:.9px;
+  text-transform:uppercase; color:var(--berry-d); cursor:pointer; text-decoration:underline;
+  text-underline-offset:3px; white-space:nowrap}
+.reg .item:target{background:#fbf7fb; box-shadow:0 0 0 10px #fbf7fb}
 
 /* ── register ─────────────────────────────────────────────── */
 .reg .item{display:grid; grid-template-columns:40px 1fr; gap:13px; padding:15px 0;
@@ -579,7 +584,6 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
     <div class="blk" id="sp-role">
       <h3 class="sub">The role</h3>
       <div class="panel">
-        <h4 class="big">A mineral-access layer — phosphorus leads, the wider nutrient bank follows.</h4>
         <p>Three beneficial fungi and one bacterium — <em>E. cloacae</em>, <em>T. harzianum</em>,
         <em>A. niger</em> and <em>P. radicum</em> — selected for nutrient metabolism and organic-acid production.
         Final label and SDS govern identity and count.</p>
@@ -602,7 +606,7 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
     <div class="blk" id="sp-fit">
       <h3 class="sub">When SP is worth it</h3>
       <div class="grid g3 rot">
-        <div class="card"><h4 class="acc">High fixation</h4><p>High PBI, or known calcium fixation at higher pH and iron–aluminium fixation at lower pH. Only 20–30% of applied P is taken up; the rest is the target.</p></div>
+        <div class="card"><h4 class="acc">High fixation</h4><p>High PBI, or known calcium fixation at higher pH and iron–aluminium fixation at lower pH.</p></div>
         <div class="card"><h4 class="acc">Reserve present</h4><p>Strong fertiliser history but weak measured availability. There has to be a bank to release — establish a Colwell P baseline first.</p></div>
         <div class="card"><h4 class="acc">Placement possible</h4><p>Biology can be put where roots meet fixed reserves: in-furrow, fertigation or coating. Without placement there is no case.</p></div>
       </div>
@@ -614,8 +618,7 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
       </div>
       <div class="flag">
         <span class="tag">Open with GSB · cold-furrow inference</span>
-        <p>The 15 °C bacterium-stall threshold is <strong>our inference</strong>, not a GSB-supplied figure. It is currently on the card as guidance to reps.</p>
-        <p class="ask">Can you confirm, correct or remove the 15 °C threshold and tell us what the pass actually runs on below it?</p>
+        <p>The 15 °C bacterium-stall threshold is <strong>our inference</strong>, not a GSB figure. <button class="qjump" data-go="open" data-q="q11">Question 11 →</button></p>
       </div>
     </div>
 
@@ -637,16 +640,12 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
           <p><strong>Seed coating</strong> — 2 L/t on label; <span class="muted">figure is ours</span></p>
           <p><strong>Coated granule</strong> — Gerogery proof; <span class="muted">not liquid proof</span></p>
           <p><strong>Fertigation</strong> — brochure route (hort + viti) · compatibility governs</p>
-          <p class="caption" style="margin-bottom:0">Clean non-chlorinated water · 1:100 · 60–100 L/ha · 5–30 °C · apply promptly · compatibility governs.</p>
+          <p class="caption" style="margin-bottom:0">Apply promptly · compatibility governs.</p>
         </div>
       </div>
       <div class="flag">
         <span class="tag">Open with GSB · seed-coating rate</span>
-        <p>The SP brochure cover advertises a broadacre coating rate of <strong>2 L/t</strong>. That figure is not
-        on the SP label — the label gives 5–10 L, 1–2 L, 1:100 and 60–100 L/ha water, and nothing for seed. Our
-        standing rule is that the final label governs every rate, so this is a live contradiction in
-        customer-facing material.</p>
-        <p class="ask">Can 2 L/t seed coating go on the label? If not, we pull the figure from the brochure.</p>
+        <p>The brochure advertises <strong>2 L/t</strong> seed coating. That figure is not on the label. <button class="qjump" data-go="open" data-q="q07">Question 07 →</button></p>
       </div>
     </div>
 
@@ -669,8 +668,7 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
       </div>
       <div class="flag" style="margin-top:14px">
         <span class="tag">Open with GSB · nitrate figure</span>
-        <p>NO₃ 26 → 38 mg/kg appears on our Results page attributed to GSB case study 2195. We have not verified it against the published study ourselves.</p>
-        <p class="ask">Can you confirm the nitrate movement as published, so we can either cite it or drop it?</p>
+        <p>The NO₃ movement is attributed to GSB case study 2195, <strong>unverified against the published study</strong>. <button class="qjump" data-go="open" data-q="q13">Question 13 →</button></p>
       </div>
     </div>
 
@@ -726,7 +724,7 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
   <div class="wrap">
     <div class="specbar">
       <div><p class="k">When</p><p class="v"><strong>Post-harvest</strong>Close to forecast moisture</p></div>
-      <div><p class="k">Standard rate</p><p class="v"><strong>1–2 L/ha</strong>in 100 L/ha water</p></div>
+      <div><p class="k">Standard rate</p><p class="v"><strong>1–2 L/ha</strong>After harvest</p></div>
       <div><p class="k">Heavy residue</p><p class="v"><strong>3 L/ha max</strong>Extra-heavy — open</p></div>
       <div><p class="k">AMS starter</p><p class="v"><strong>8 kg/ha</strong>Fixed · every pass</p></div>
       <div><p class="k">Limits</p><p class="v">5–40 °C · 1:50<br><span class="muted">Not on nut trees</span></p></div>
@@ -740,7 +738,6 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
     <div class="blk" id="dg-role">
       <h3 class="sub">The role</h3>
       <div class="panel">
-        <h4 class="big">Selected decomposer biology for post-harvest residue and stubble.</h4>
         <p>A deliberate biological starting point for structural breakdown — distinct from nutrition inputs or
         enzymes that may serve different jobs.</p>
       </div>
@@ -779,8 +776,8 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
       <h3 class="sub">What blunts it</h3>
       <div class="grid g3 rot">
         <div class="card"><h4 class="acc">Prolonged heat and dryness</h4><p>Confidence falls through hot, dry spells. Align application with a viable moisture window.</p></div>
-        <div class="card"><h4 class="acc">Overnight in the tank</h4><p>In nutrient it grows more mycelia and blocks nozzles. Strain as you pour; keep nozzles and filters at 150 µm or larger.</p></div>
-        <div class="card"><h4 class="acc">Off-recipe mixes</h4><p>Alternative recipes are not final. Use only the approved recipe; do not raise the starter with stubble load.</p></div>
+        <div class="card"><h4 class="acc">Overnight in the tank</h4><p>Left in nutrient overnight it grows mycelia and blocks nozzles. Handling detail in the questions below.</p></div>
+        <div class="card"><h4 class="acc">Off-recipe mixes</h4><p>Nothing outside the approved directions, the starter included. Substitutions are in the questions below.</p></div>
       </div>
       <p class="caption">Label 1–2 L/ha in 100 L/ha water; TDS 1–1.5, up to 3 L/ha extra-heavy — open. Do not raise
       the starter with stubble load · 5–40 °C · not on nut trees · final label governs.</p>
@@ -822,12 +819,7 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
       </div>
       <div class="flag">
         <span class="tag">Open with GSB · internal evidence + release gate</span>
-        <p>Digestubble trial data arrived Jul 2026: nine treatments, stubble carbon and mass to 120 days, with
-        untreated and nitrogen-alone controls. <strong>Product identity against Digester is unconfirmed — nothing
-        quotable yet.</strong> Still open: name confirmation, count basis, rate ladder, storage, starter,
-        compatibility; align label, SDS, brochure and battlecard.</p>
-        <p>Mid-crop use was asked twice on 31 July and never answered; no in-crop use is endorsed.</p>
-        <p class="ask">Is Digestubble the same product as Digester? And can we have a position on mid-crop use?</p>
+        <p>Digestubble trial data arrived Jul 2026, but <strong>product identity against Digester is unconfirmed</strong> — none of it is quotable, and mid-crop use is still unanswered. <button class="qjump" data-go="open" data-q="q09">Question 09 →</button></p>
       </div>
     </div>
   </div>
@@ -859,17 +851,13 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
     <div class="blk" id="lo-role">
       <h3 class="sub">The role</h3>
       <div class="panel">
-        <h4 class="big">Proactive microbiome-management biology for the root zone and plant surface.</h4>
         <p>Establish beneficial organisms ahead of a known risk window — before an adverse population dominates
         the living zone.</p>
       </div>
       <div class="strip">Purpose-selected biology · No storage temperature exists · Final label / SDS govern</div>
       <div class="flag">
         <span class="tag">Open with GSB · organic certification</span>
-        <p>The organic mark on the Lockout label is a <strong>placeholder</strong>. We understand the product is
-        likely NOP organic, but it does not fall under any certification we currently hold, and none of the three
-        SDSs references a scheme.</p>
-        <p class="ask">Can you supply the current certificate for Lockout, with the exact approved wording and scope?</p>
+        <p>The organic mark on the Lockout label is a <strong>placeholder</strong>. <button class="qjump" data-go="open" data-q="q04">Question 04 →</button></p>
       </div>
     </div>
 
@@ -946,12 +934,7 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
       </div>
       <div class="flag">
         <span class="tag">Open with GSB · card contradicts the live brochure</span>
-        <p>This card puts foliar on hold as “not established in the draft label”, but the <strong>live Lockout
-        brochure publishes “application: foliar, fertigation, drench” to customers</strong>. Fertigation is absent
-        from this card for both SP and Lockout, yet the SP cover advertises fertigation 5–10 L/ha for horticulture
-        and viticulture, and every Lockout cover rate card reads “soil or fertigation”. The Lockout brochure also
-        contradicts itself: cover says soil or fertigation, page 2 says foliar, fertigation, drench and omits soil.</p>
-        <p class="ask">Which routes are approved, per product? All three SDSs read wider than the brochures.</p>
+        <p>This card holds foliar, but the live Lockout brochure already publishes <strong>foliar, fertigation, drench</strong> to customers. <button class="qjump" data-go="open" data-q="q06">Question 06 →</button></p>
       </div>
     </div>
 
@@ -1092,11 +1075,7 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
       </div>
       <div class="flag">
         <span class="tag">Open with GSB · three unresolved across the range</span>
-        <p><strong>Lockout composition</strong>, the <strong>range-wide CFU-at-use-by basis</strong> and
-        <strong>shelf life</strong> all remain unresolved — every document says 12 months, a shorter figure was
-        given verbally. None is quoted as settled anywhere in this draft.</p>
-        <p class="ask">Is the CFU guarantee at production or at use-by, per format? And what is the real shelf life
-        — 12 months, or the shorter figure?</p>
+        <p>Lockout composition, the CFU-at-use-by basis and shelf life are all <strong>unresolved</strong>, so none is quoted as settled here. <button class="qjump" data-go="open" data-q="q02">Question 02 →</button></p>
       </div>
       <div class="gate"><strong>The comparison standard</strong>
         Start with the job. Compare formulation, route, quality controls, evidence and value. Apply the same
@@ -1165,11 +1144,7 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
       </div>
       <div class="flag">
         <span class="tag">Open with GSB · mix order already published</span>
-        <p>This card says the protocol is pending and reps should not assume an order — but the <strong>live
-        Digester composition page already publishes one</strong>: ammonium sulphate first, then Digester, into
-        100 L/ha cool non-chlorinated water.</p>
-        <p class="ask">Is the published order correct and approved? If so the card should adopt it; if not, the
-        brochure needs to change.</p>
+        <p>This card says the mix order is pending, but the live Digester composition page <strong>already publishes one</strong>. <button class="qjump" data-go="open" data-q="q08">Question 08 →</button></p>
       </div>
       <div class="panel">
         <h4 style="color:var(--teal)">Feeding · formulation-specific only</h4>
@@ -1235,8 +1210,7 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
           requirements are a different test and a different conversation.</p></div>
       </div>
       <div class="gate" style="--a:var(--orange)"><strong>What the result can say</strong>
-        It describes community composition. It does not prove viability, activity or product response — pair it
-        with the baseline-and-repeat discipline above.</div>
+        Community composition, and only that. Pair it with the baseline-and-repeat discipline above.</div>
     </div>
   </div>
 </div>
@@ -1257,7 +1231,7 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
       more ability to layer information.</p>
 
       <div class="askbox">
-        <h4>Your read on the labels, brochures and SDSs</h4>
+        <h3>Your read on the labels, brochures and SDSs</h3>
         <ol>
           <li>Is anything on these labels, brochures or SDSs factually wrong or out of date?</li>
           <li>Is anything claimed that the evidence does not support, or worded in a way you would not use?</li>
@@ -1425,7 +1399,7 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
       goes to a grower until the label and SDS items are closed.</p>
 
       <div class="askbox">
-        <h4>First — your read on this battlecard</h4>
+        <h3>First — your read on this battlecard</h3>
         <ol>
           <li>Is anything in here wrong, or put more strongly than the evidence actually supports?</li>
           <li>Is there anything missing that the team would benefit from knowing before they sell it?</li>
@@ -1436,7 +1410,7 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
       </div>
       <h3 class="sub">The register</h3>
       <div class="reg">
-        <div class="item"><div class="n">01</div><div>
+        <div class="item" id="q01"><div class="n">01</div><div>
           <h4>Which CFU set governs Lockout?</h4>
           <p class="ctx">The Lockout label names three genera with one average of 10⁹ CFU/mL at production. The SDS
           names three species with individual counts — B. amyloliquefaciens &gt;1×10⁹, T. endophyticum &gt;2×10⁸,
@@ -1444,20 +1418,20 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
           <p class="ask">Which set is correct, and which document do we align to?</p>
           <p class="src"><button data-go="lockout">Lockout tab</button></p></div></div>
 
-        <div class="item"><div class="n">02</div><div>
+        <div class="item" id="q02"><div class="n">02</div><div>
           <h4>Is the CFU guarantee at production or at use-by?</h4>
           <p class="ctx">The range-wide guarantee basis is unresolved. It changes what a rep can say when a grower
           compares our drum against an imported powder.</p>
           <p class="ask">Confirm the guarantee basis per format, and who verifies the count — maker QA or independent.</p>
           <p class="src"><button data-go="compare">Compare &amp; verify tab</button></p></div></div>
 
-        <div class="item"><div class="n">03</div><div>
+        <div class="item" id="q03"><div class="n">03</div><div>
           <h4>What is the real shelf life?<a class="ts" href="https://www.youtube.com/watch?v=qiz-pr-owko&t=2353s" target="_blank" rel="noopener">▶ M1 39:13</a></h4>
           <p class="ctx">Every document says 12 months. A shorter figure was given verbally.</p>
           <p class="ask">Confirm shelf life by format so label, SDS, brochure and battlecard can be aligned.</p>
           <p class="src"><button data-go="compare">Compare &amp; verify tab</button></p></div></div>
 
-        <div class="item"><div class="n">04</div><div>
+        <div class="item" id="q04"><div class="n">04</div><div>
           <h4>Whose organic certification covers Lockout?</h4>
           <p class="ctx">The mark on the label is a placeholder. We understand the product is likely NOP organic,
           but it does not fall under any certification we currently hold, and none of the three SDSs references a
@@ -1465,14 +1439,14 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
           <p class="ask">Supply the current certificate, with the exact approved wording and scope.</p>
           <p class="src"><button data-go="lockout">Lockout tab</button></p></div></div>
 
-        <div class="item"><div class="n">05</div><div>
+        <div class="item" id="q05"><div class="n">05</div><div>
           <h4>What is the approved storage temperature for Lockout?</h4>
           <p class="ctx">SP is 5–30 °C and Digester is 5–40 °C. Lockout has no storage temperature anywhere — not
           on the label, not in the SDS, not in the brochure.</p>
           <p class="ask">Give us the storage range so it can go on the label.</p>
           <p class="src"><button data-go="lockout">Lockout tab</button></p></div></div>
 
-        <div class="item"><div class="n">06</div><div>
+        <div class="item" id="q06"><div class="n">06</div><div>
           <h4>Approve application routes, by product</h4>
           <p class="ctx">All three SDSs read wider than the brochures. The card holds foliar for Lockout while the
           live Lockout brochure publishes “foliar, fertigation, drench”. Fertigation is missing from the card for
@@ -1481,7 +1455,7 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
           <p class="ask">Confirm the approved route set per product so the card and the brochures can be reconciled.</p>
           <p class="src"><button data-go="lockout">Lockout tab</button></p></div></div>
 
-        <div class="item"><div class="n">07</div><div>
+        <div class="item" id="q07"><div class="n">07</div><div>
           <h4>Can 2 L/t seed coating go on the SP label?<a class="ts" href="https://www.youtube.com/watch?v=Of7aL89pZwI&t=2908s" target="_blank" rel="noopener">▶ M2 48:28</a></h4>
           <p class="ctx">The SP brochure cover advertises a broadacre coating rate of 2 L/t. The label gives
           5–10 L, 1–2 L, 1:100 and 60–100 L/ha water, and nothing for seed. Final label governs every rate, so
@@ -1489,7 +1463,7 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
           <p class="ask">Put it on the label, or we pull the figure from the brochure.</p>
           <p class="src"><button data-go="sp">SP tab</button></p></div></div>
 
-        <div class="item"><div class="n">08</div><div>
+        <div class="item" id="q08"><div class="n">08</div><div>
           <h4>Is the published Digester mix order approved?<a class="ts" href="https://www.youtube.com/watch?v=Of7aL89pZwI&t=457s" target="_blank" rel="noopener">▶ M2 07:37</a></h4>
           <p class="ctx">The card says the protocol is pending and reps must not assume an order. The live Digester
           composition page already publishes one: ammonium sulphate first, then Digester, into 100 L/ha cool
@@ -1497,7 +1471,7 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
           <p class="ask">Confirm the order, or tell us the brochure is wrong.</p>
           <p class="src"><button data-go="measure">Measure &amp; sample tab</button></p></div></div>
 
-        <div class="item"><div class="n">09</div><div>
+        <div class="item" id="q09"><div class="n">09</div><div>
           <h4>Is Digestubble the same product as Digester?</h4>
           <p class="ctx">Digestubble trial data arrived Jul 2026 — nine treatments, stubble carbon and mass to
           120 days, with untreated and nitrogen-alone controls. Product identity against Digester is unconfirmed,
@@ -1505,41 +1479,41 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
           <p class="ask">Confirm the product name against the trial so we know whether this evidence is ours to use.</p>
           <p class="src"><button data-go="digester">Digester tab</button></p></div></div>
 
-        <div class="item"><div class="n">10</div><div>
+        <div class="item" id="q10"><div class="n">10</div><div>
           <h4>What is the position on mid-crop Digester use?</h4>
           <p class="ctx">Asked twice on 31 July, never answered. The current default on the card is post-harvest
           residue only — no in-crop use endorsed.</p>
           <p class="ask">Confirm or correct the post-harvest-only default.</p>
           <p class="src"><button data-go="digester">Digester tab</button></p></div></div>
 
-        <div class="item"><div class="n">11</div><div>
+        <div class="item" id="q11"><div class="n">11</div><div>
           <h4>Does the SP bacterium stall below 15 °C?<a class="ts" href="https://www.youtube.com/watch?v=Of7aL89pZwI&t=2113s" target="_blank" rel="noopener">▶ M2 35:13</a></h4>
           <p class="ctx">The cold-furrow guidance on the card is our inference, not a GSB figure. It tells reps the
           pass runs mostly on the three fungi in cold soil.</p>
           <p class="ask">Confirm, correct or remove the 15 °C threshold.</p>
           <p class="src"><button data-go="sp">SP tab</button></p></div></div>
 
-        <div class="item"><div class="n">12</div><div>
+        <div class="item" id="q12"><div class="n">12</div><div>
           <h4>Confirm the Lockout draft rate ladder</h4>
           <p class="ctx">Preventative 5 L/ha, Light 10 L/ha, Heavy 20 L/ha, dilution 1:20 — carried as draft only.</p>
           <p class="ask">Confirm final terminology, route and conditions.</p>
           <p class="src"><button data-go="lockout">Lockout tab</button></p></div></div>
 
-        <div class="item"><div class="n">13</div><div>
+        <div class="item" id="q13"><div class="n">13</div><div>
           <h4>Can we cite the Gerogery nitrate movement?<a class="ts" href="https://www.youtube.com/watch?v=qiz-pr-owko&t=838s" target="_blank" rel="noopener">▶ M1 13:58</a></h4>
           <p class="ctx">NO₃ 26 → 38 mg/kg is on our Results page attributed to GSB case study 2195. We have not
           verified it against the published study ourselves.</p>
           <p class="ask">Confirm the figure as published, or tell us to drop it.</p>
           <p class="src"><button data-go="sp">SP tab</button></p></div></div>
 
-        <div class="item"><div class="n">14</div><div>
+        <div class="item" id="q14"><div class="n">14</div><div>
           <h4>Release the three Lockout evidence sets<a class="ts" href="https://www.youtube.com/watch?v=Of7aL89pZwI&t=223s" target="_blank" rel="noopener">▶ M2 03:43</a></h4>
           <p class="ctx">Queensland soil work, cotton work and orchard work are all referenced but unreleased.
           Until they arrive, none of it is disease-efficacy proof and all of it stays internal.</p>
           <p class="ask">Send treatment, comparator, baseline, endpoint and timing for each.</p>
           <p class="src"><button data-go="lockout">Lockout tab</button></p></div></div>
 
-        <div class="item"><div class="n">15</div><div>
+        <div class="item" id="q15"><div class="n">15</div><div>
           <h4>Two SDS defects to correct</h4>
           <p class="ctx">The Digester SDS declares diatomaceous earth 1% w/w with CAS “Not allocated” —
           diatomaceous earth has real CAS numbers. Section 9 is identical across all three SDSs (SG 1.01, pH 6–7,
@@ -1547,7 +1521,7 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
           <p class="ask">Correct the CAS entry and give us product-specific Section 9 data.</p>
           <p class="src">Pack audit · 2026-08-04</p></div></div>
 
-        <div class="item"><div class="n">16</div><div>
+        <div class="item" id="q16"><div class="n">16</div><div>
           <h4>Written support for any feeding rule<a class="ts" href="https://www.youtube.com/watch?v=qiz-pr-owko&t=2948s" target="_blank" rel="noopener">▶ M1 49:08</a></h4>
           <p class="ctx">No standard food-source recommendation is approved for Lockout, and the card blocks
           publishing soil-carbon, humic/fulvic, sugar, fish or seaweed feeding rules.</p>
@@ -1615,9 +1589,21 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
     });
   });
 
-  // register → tab jumps
+  // cross-tab jumps; data-q optionally scrolls to a register item
   document.querySelectorAll('[data-go]').forEach(function(b){
-    b.addEventListener('click', function(){ select(b.getAttribute('data-go'), true); });
+    b.addEventListener('click', function(){
+      select(b.getAttribute('data-go'), true);
+      var q = b.getAttribute('data-q');
+      if (!q) return;
+      var el = document.getElementById(q);
+      if (!el) return;
+      requestAnimationFrame(function(){
+        window.scrollTo({top: el.getBoundingClientRect().top + window.scrollY - 118, behavior:'smooth'});
+        el.style.transition = 'background .4s';
+        el.style.background = '#f6ecf6';
+        setTimeout(function(){ el.style.background = ''; }, 1600);
+      });
+    });
   });
 
   // in-tab anchors keep the sticky bar clear without fighting the tab router
