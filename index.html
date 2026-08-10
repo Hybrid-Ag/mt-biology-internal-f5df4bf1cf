@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="referrer" content="no-referrer">
+<title>Mycro-Tec® Biology Battlecard — GSB review draft</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#1b9690; --orange:#d9742b; --berry:#8c4f8e; --berry-d:#7c4a7a;
+  --grey:#6b665e; --ink:#1a1714; --stroke:#d6d0c7; --paper:#f4f1ea; --cream:#eae5df;
+  --a:var(--teal);
+  --measure:1120px;
+  --r:8px;
+  --shadow:0 4px 4px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:118px}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:15px; line-height:1.55; -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%; display:block}
+
+/* ── tricolour band ─────────────────────────────────────────── */
+.tri{display:flex; height:6px; width:100%}
+.tri i{flex:1 1 33.4%}
+.tri i:nth-child(1){background:var(--teal)}
+.tri i:nth-child(2){background:var(--orange)}
+.tri i:nth-child(3){background:var(--berry)}
+.tri-top{position:fixed; top:0; left:0; right:0; z-index:60}
+
+/* ── masthead ───────────────────────────────────────────────── */
+.mast{background:var(--cream); border-bottom:1px solid var(--stroke); padding:34px 0 26px; margin-top:6px}
+.wrap{max-width:var(--measure); margin:0 auto; padding:0 24px}
+.mast-top{display:flex; gap:24px; align-items:flex-start; justify-content:space-between; flex-wrap:wrap}
+.lockup{width:190px; flex:0 0 auto}
+.mast-meta{text-align:right; font-size:12px; color:var(--grey)}
+.banner{
+  display:inline-block; font-family:Oswald,sans-serif; font-weight:700; font-size:12px;
+  letter-spacing:1.2px; text-transform:uppercase; color:#fff; background:var(--berry);
+  padding:5px 11px; border-radius:3px; margin-bottom:8px;
+}
+h1{
+  font-family:Oswald,sans-serif; font-weight:500; letter-spacing:-.2px;
+  font-size:clamp(30px,4.6vw,46px); line-height:1.06; margin:22px 0 10px; max-width:20ch;
+}
+.mast .lede{font-size:clamp(15px,1.6vw,18px); color:var(--ink); max-width:62ch; margin:0}
+.mast .note{margin:20px 0 0; font-size:13px; color:var(--grey); max-width:78ch; border-left:2px solid var(--berry); padding-left:14px}
+
+/* ── nav ────────────────────────────────────────────────────── */
+nav{
+  position:sticky; top:6px; z-index:50; background:rgba(244,241,234,.94);
+  backdrop-filter:saturate(1.4) blur(8px); border-bottom:1px solid var(--stroke);
+}
+.nav-scroll{display:flex; gap:4px; overflow-x:auto; padding:9px 0; scrollbar-width:thin}
+.nav-scroll a{
+  flex:0 0 auto; font-family:Oswald,sans-serif; font-weight:500; font-size:11px;
+  letter-spacing:.9px; text-transform:uppercase; color:var(--grey); text-decoration:none;
+  padding:6px 10px; border-radius:4px; white-space:nowrap; border:1px solid transparent;
+}
+.nav-scroll a:hover{color:var(--ink); background:#fff; border-color:var(--stroke)}
+.nav-scroll a.on{color:#fff; background:var(--ink)}
+.nav-scroll a.q{color:var(--berry-d)}
+.nav-scroll a.q.on{background:var(--berry); color:#fff}
+
+/* ── sections ───────────────────────────────────────────────── */
+section{padding:0 0 12px; scroll-margin-top:118px}
+.sec-hero{position:relative; height:clamp(120px,17vw,190px); overflow:hidden; background:var(--cream)}
+.sec-hero img{width:100%; height:100%; object-fit:cover}
+.sec-hero::after{
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(90deg, rgba(244,241,234,.97) 0%, rgba(244,241,234,.86) 34%, rgba(244,241,234,.30) 72%, rgba(244,241,234,.12) 100%);
+}
+.sec-hero .tri{position:absolute; bottom:0; left:0; right:0; height:5px; z-index:2}
+.sec-hero .wrap{position:absolute; z-index:3; left:0; right:0; bottom:16px}
+.sec-hero .cap{
+  font-family:Oswald,sans-serif; font-weight:700; font-size:11px; letter-spacing:1.4px;
+  text-transform:uppercase; color:var(--teal);
+}
+.sec-head{padding:26px 0 4px}
+.eyebrow{
+  font-family:Oswald,sans-serif; font-weight:700; font-size:12px; letter-spacing:1.3px;
+  text-transform:uppercase; color:var(--teal); margin:0 0 8px;
+}
+.pgno{color:var(--grey); font-weight:500}
+h2{font-family:Oswald,sans-serif; font-weight:400; font-size:clamp(26px,3.6vw,38px); line-height:1.1; margin:0 0 8px; letter-spacing:-.2px}
+.lede{font-size:clamp(15px,1.5vw,17px); color:var(--ink); margin:0 0 4px; max-width:64ch}
+.intro{color:var(--ink); max-width:78ch; margin:16px 0 0; font-size:14.5px}
+
+h3.sub{
+  font-family:Oswald,sans-serif; font-weight:500; font-size:13px; letter-spacing:2px;
+  text-transform:uppercase; color:var(--grey); margin:38px 0 14px;
+  padding-bottom:8px; border-bottom:1px solid var(--stroke);
+}
+
+/* ── grids + cards ──────────────────────────────────────────── */
+.grid{display:grid; gap:14px; margin:14px 0}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+.g5{grid-template-columns:repeat(5,1fr)}
+@media(max-width:980px){.g5{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:860px){.g3,.g4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.grid{grid-template-columns:1fr!important}}
+
+.card{
+  background:#fff; border:1px solid var(--stroke); border-radius:var(--r);
+  padding:16px 17px 17px; position:relative; overflow:hidden; box-shadow:var(--shadow);
+}
+.card::before{content:""; position:absolute; top:0; left:0; right:0; height:5px; background:var(--a)}
+.grid.rot > .card:nth-child(3n+1){--a:var(--teal)}
+.grid.rot > .card:nth-child(3n+2){--a:var(--orange)}
+.grid.rot > .card:nth-child(3n+3){--a:var(--berry-d)}
+.grid.rot4 > .card:nth-child(4n+1){--a:var(--teal)}
+.grid.rot4 > .card:nth-child(4n+2){--a:var(--orange)}
+.grid.rot4 > .card:nth-child(4n+3){--a:var(--berry-d)}
+.grid.rot4 > .card:nth-child(4n+4){--a:var(--grey)}
+.card img{border-radius:4px; margin:-4px 0 12px; height:112px; width:100%; object-fit:cover}
+.card .role{font-family:Oswald,sans-serif; font-weight:700; font-size:20px; letter-spacing:.4px; color:var(--a); margin:2px 0 2px}
+.card .when{font-family:Oswald,sans-serif; font-weight:700; font-size:10px; letter-spacing:1.1px; text-transform:uppercase; color:var(--a); margin:0 0 12px}
+.card h4{
+  font-family:Oswald,sans-serif; font-weight:700; font-size:12.5px; letter-spacing:1.1px;
+  text-transform:uppercase; color:var(--ink); margin:0 0 7px;
+}
+.card h4.acc{color:var(--a)}
+.card p{margin:0 0 10px; font-size:13.5px}
+.card p:last-child{margin-bottom:0}
+.card .k{
+  font-family:Oswald,sans-serif; font-weight:700; font-size:10px; letter-spacing:1.1px;
+  text-transform:uppercase; color:var(--grey); margin:12px 0 3px;
+}
+.card .k:first-child{margin-top:0}
+.card .pay{color:var(--a); font-weight:500}
+.num{font-family:Oswald,sans-serif; font-weight:700; font-size:28px; line-height:1; color:var(--a); margin:0 0 6px}
+.stat{font-family:Oswald,sans-serif; font-weight:700; font-size:26px; line-height:1.05; color:var(--a); margin:0 0 2px}
+.statsub{font-size:12px; color:var(--grey); margin:0}
+
+/* ── chevron lists ──────────────────────────────────────────── */
+ul.chev{list-style:none; margin:12px 0; padding:0}
+ul.chev li{position:relative; padding:0 0 0 22px; margin:0 0 9px; font-size:14px}
+ul.chev li::before{
+  content:"›"; position:absolute; left:4px; top:-2px; font-family:Oswald,sans-serif;
+  font-weight:700; font-size:17px; color:var(--teal); line-height:1.3;
+}
+ul.chev.berry li::before{color:var(--berry-d)}
+ul.chev.orange li::before{color:var(--orange)}
+
+/* ── panels ─────────────────────────────────────────────────── */
+.panel{background:#fff; border:1px solid var(--stroke); border-radius:var(--r); padding:18px 20px; margin:14px 0; box-shadow:var(--shadow)}
+.panel.tint{background:var(--cream); box-shadow:none}
+.panel h4{font-family:Oswald,sans-serif; font-weight:700; font-size:13px; letter-spacing:1.2px; text-transform:uppercase; margin:0 0 8px; color:var(--ink)}
+.panel p{margin:0 0 9px; font-size:13.5px}
+.panel p:last-child{margin-bottom:0}
+.strip{
+  background:var(--ink); color:#fff; border-radius:var(--r); padding:11px 16px; margin:14px 0;
+  font-family:Oswald,sans-serif; font-weight:500; font-size:11px; letter-spacing:1.1px; text-transform:uppercase;
+}
+.strip.teal{background:var(--teal)} .strip.orange{background:#c95d11} .strip.berry{background:var(--berry-d)}
+.pull{
+  font-size:clamp(15px,1.9vw,19px); line-height:1.45; color:var(--teal); font-style:italic;
+  border-left:3px solid var(--teal); padding:2px 0 2px 18px; margin:24px 0; max-width:72ch;
+}
+.pull.orange{color:var(--orange); border-color:var(--orange)}
+.pull.berry{color:var(--berry-d); border-color:var(--berry-d)}
+.gate{border-left:3px solid var(--teal); padding:2px 0 2px 16px; margin:20px 0; font-size:13.5px; color:var(--ink); max-width:80ch}
+.gate strong{font-family:Oswald,sans-serif; font-weight:700; letter-spacing:.8px; text-transform:uppercase; font-size:12.5px; display:block; margin-bottom:4px; color:var(--teal)}
+.caption{font-size:12px; color:var(--grey); margin:8px 0 0}
+
+/* ── say / do not say ───────────────────────────────────────── */
+.claim{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:14px 0}
+@media(max-width:640px){.claim{grid-template-columns:1fr}}
+.claim > div{background:#fff; border:1px solid var(--stroke); border-radius:var(--r); padding:15px 17px; box-shadow:var(--shadow)}
+.claim h4{font-family:Oswald,sans-serif; font-weight:700; font-size:11px; letter-spacing:1.3px; text-transform:uppercase; margin:0 0 10px}
+.claim .say h4{color:var(--teal)} .claim .not h4{color:var(--orange)}
+.claim .not ul.chev li::before{color:var(--orange)}
+.claim ul.chev{margin:0}
+.claim ul.chev li{margin-bottom:7px; font-size:13.5px}
+.claim ul.chev li:last-child{margin-bottom:0}
+
+/* ── Q&A ────────────────────────────────────────────────────── */
+.qa{display:grid; grid-template-columns:1fr 1fr; gap:14px 26px; margin:14px 0}
+@media(max-width:720px){.qa{grid-template-columns:1fr}}
+.qa .q{font-family:Oswald,sans-serif; font-weight:500; font-size:15px; color:var(--teal); margin:0 0 5px; letter-spacing:.2px}
+.qa div:nth-child(even) .q{color:var(--orange)}
+.qa p{margin:0; font-size:13.5px}
+
+/* ── grant flags ────────────────────────────────────────────── */
+.flag{
+  background:#fbf7fb; border:1px solid #e2cfe2; border-left:4px solid var(--berry);
+  border-radius:var(--r); padding:14px 17px; margin:14px 0;
+}
+.flag .tag{
+  font-family:Oswald,sans-serif; font-weight:700; font-size:10px; letter-spacing:1.4px;
+  text-transform:uppercase; color:var(--berry-d); display:block; margin-bottom:6px;
+}
+.flag p{margin:0 0 8px; font-size:13.5px}
+.flag p:last-child{margin:0}
+.flag .ask{font-style:italic; color:var(--berry-d)}
+
+/* ── open-questions register ────────────────────────────────── */
+.reg{counter-reset:q; margin:18px 0}
+.reg .item{
+  display:grid; grid-template-columns:44px 1fr; gap:14px; padding:16px 0;
+  border-top:1px solid var(--stroke);
+}
+.reg .item:last-child{border-bottom:1px solid var(--stroke)}
+.reg .n{font-family:Oswald,sans-serif; font-weight:700; font-size:15px; color:var(--grey); padding-top:1px}
+.reg h4{font-family:Oswald,sans-serif; font-weight:700; font-size:14px; letter-spacing:.6px; margin:0 0 5px; color:var(--ink)}
+.reg .ctx{font-size:13px; color:var(--grey); margin:0 0 6px}
+.reg .ask{font-size:13.5px; font-style:italic; color:var(--berry-d); margin:0}
+.reg .src{font-size:11.5px; color:var(--grey); margin:6px 0 0; font-family:Oswald,sans-serif; letter-spacing:.7px; text-transform:uppercase}
+.reg .src a{color:var(--teal); text-decoration:none; border-bottom:1px solid var(--stroke)}
+
+/* ── figure ─────────────────────────────────────────────────── */
+figure{margin:16px 0}
+figure img{border-radius:var(--r); border:1px solid var(--stroke); width:100%; object-fit:cover; max-height:280px}
+.proof{display:grid; grid-template-columns:230px 1fr; gap:20px; align-items:start}
+@media(max-width:720px){.proof{grid-template-columns:1fr}}
+.proof img{border-radius:var(--r); border:1px solid var(--stroke)}
+.qr{width:78px; height:78px; border:1px solid var(--stroke); border-radius:4px; background:#fff; padding:3px}
+
+/* ── footer ─────────────────────────────────────────────────── */
+footer{margin-top:56px; border-top:1px solid var(--stroke); background:var(--cream)}
+.foot-rule{height:3px; background:linear-gradient(90deg, var(--teal) 0%, var(--orange) 50%, #7c4a7a 100%)}
+.stamp{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; padding:22px 0 14px}
+@media(max-width:640px){.stamp{grid-template-columns:1fr; text-align:center}}
+.stamp .c{font-family:Oswald,sans-serif; font-weight:500; font-size:12px; letter-spacing:1.6px; text-transform:uppercase; margin:0 0 3px}
+.stamp .c1{color:var(--teal)} .stamp .c2{color:var(--orange); text-align:center} .stamp .c3{color:var(--berry); text-align:right}
+@media(max-width:640px){.stamp .c2,.stamp .c3,.stamp div:nth-child(2) p,.stamp div:nth-child(3) p{text-align:center}}
+.stamp p{margin:0; font-size:12px; color:var(--grey)}
+.stamp div:nth-child(2) p{text-align:center} .stamp div:nth-child(3) p{text-align:right}
+.colophon{padding:0 0 34px; font-size:12px; color:var(--grey)}
+.colophon p{margin:0 0 6px; max-width:80ch}
+
+@media print{
+  nav,.tri-top{display:none}
+  body{background:#fff}
+  section{break-inside:avoid}
+  .card,.panel{box-shadow:none}
+}
+</style>
+</head>
+<body>
+
+<div class="tri tri-top"><i></i><i></i><i></i></div>
+
+<header class="mast">
+  <div class="wrap">
+    <div class="mast-top">
+      <img class="lockup" src="assets/b4984e47f45c.webp" alt="Hybrid Ag">
+      <div class="mast-meta">
+        Mycro-Tec® Biology · Battlecard<br>
+        Aug 2026 · 11 sections<br>
+        Hybrid-Ag Pty Ltd × Great Southern Biology
+      </div>
+    </div>
+    <span class="banner">Confidential — GSB / Hybrid Ag review draft</span>
+    <h1>Mycro-Tec® Biology Battlecard</h1>
+    <p class="lede">Three products, three distinct jobs, one diagnosed sequence — with the claim boundary drawn on every page.</p>
+    <p class="note"><strong>Grant — this is a review draft, not a released document.</strong> It is the internal
+    sales battlecard rendered as a single scrolling page so you can read it end to end. Nothing here goes to a
+    grower until the label and SDS items are closed. Items we need you to settle are marked
+    <em>Open with GSB</em> throughout and collected in the
+    <a href="#open" style="color:var(--berry-d)">register at the end</a>.</p>
+  </div>
+</header>
+
+<nav>
+  <div class="wrap nav-scroll" id="nav">
+    <a href="#s1">01 Range</a>
+    <a href="#s2">02 SP play</a>
+    <a href="#s3">03 SP field</a>
+    <a href="#s4">04 Digester play</a>
+    <a href="#s5">05 Digester field</a>
+    <a href="#s6">06 Lockout play</a>
+    <a href="#s7">07 Lockout field</a>
+    <a href="#s8">08 Competitive</a>
+    <a href="#s9">09 Evidence</a>
+    <a href="#s10">10 Measure</a>
+    <a href="#s11">11 Sampling</a>
+    <a href="#open" class="q">Open with GSB</a>
+  </div>
+</nav>
+
+<main>
+
+<!-- ═══════════ 01 ═══════════ -->
+<section id="s1">
+  <div class="sec-hero">
+    <img src="assets/33539d051982.webp" alt="">
+    <div class="tri"><i></i><i></i><i></i></div>
+    <div class="wrap"><div class="cap">Range · Overview</div></div>
+  </div>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Range · Overview <span class="pgno">· 01 of 11</span></p>
+      <h2>One range. Three distinct jobs.</h2>
+      <p class="lede">Three targeted tools. One diagnosed sequence.</p>
+      <p class="intro">Selected biological products for Australian cropping systems. Three distinct jobs, timed
+      around the crop cycle — each with its own evidence standard and claim boundary. Recommend only what the
+      diagnosis supports; this is not a compulsory bundle or a proven synergy claim.</p>
+    </div>
+
+    <h3 class="sub">Three jobs · one diagnosed sequence</h3>
+    <div class="grid g3 rot">
+      <div class="card">
+        <img src="assets/abbebe296323.webp" alt="">
+        <p class="role">DIGESTER</p>
+        <p class="when">After harvest</p>
+        <p class="k">Role</p>
+        <p>Introduce selected decomposers and begin working through structural residue.</p>
+        <p class="k">Payoff</p>
+        <p class="pay">Advance residue turnover ahead of the next crop.</p>
+      </div>
+      <div class="card">
+        <img src="assets/e9f3b5d32d6b.webp" alt="">
+        <p class="role">SP</p>
+        <p class="when">At establishment</p>
+        <p class="k">Role</p>
+        <p>Place nutrient-solubilising biology where roots meet fixed phosphorus.</p>
+        <p class="k">Payoff</p>
+        <p class="pay">Support access to fixed phosphorus already present.</p>
+      </div>
+      <div class="card">
+        <img src="assets/f10171747793.webp" alt="">
+        <p class="role">LOCKOUT</p>
+        <p class="when">Ahead of risk</p>
+        <p class="k">Role</p>
+        <p>Establish beneficial biology before an adverse population dominates.</p>
+        <p class="k">Payoff</p>
+        <p class="pay">Support occupation, competition and microbiome balance.</p>
+      </div>
+    </div>
+
+    <div class="panel tint">
+      <h4 style="font-size:15px; letter-spacing:.4px">Digester works on residue. SP supports fixed-P access. Lockout establishes ahead of risk.</h4>
+      <p style="color:var(--grey)">Use the right tool at the right point — only where the diagnosis supports it.</p>
+      <p style="color:var(--grey)"><strong>Internal formulation bridge ·</strong> SP and Digester share a
+      three-fungus base; the fourth organism supports a different product job. Final labels govern.</p>
+    </div>
+
+    <h3 class="sub">Start with three questions</h3>
+    <div class="grid g2">
+      <div class="card" style="--a:var(--orange)"><h4 class="acc">1 · Is residue turnover the job?</h4>
+        <p><strong>Lead Digester</strong> · residue structure, moisture window, treatment record.</p></div>
+      <div class="card" style="--a:var(--teal)"><h4 class="acc">2 · Is P present but constrained?</h4>
+        <p><strong>Lead SP</strong> · soil P baseline, placement, matched crop-stage measure.</p></div>
+      <div class="card" style="--a:var(--berry-d)"><h4 class="acc">3 · Is a risk window approaching?</h4>
+        <p><strong>Lead Lockout</strong> · pressure window, establishment plan, label-approved route.</p></div>
+      <div class="card" style="--a:var(--grey)"><h4>4 · Review · next decision</h4>
+        <p>Repeat the same measure where it changes the plan.</p></div>
+    </div>
+
+    <h3 class="sub">Operating principles</h3>
+    <div class="grid g2" style="align-items:start">
+      <div>
+        <ul class="chev">
+          <li>Start with the immediate job: residue, fixed-P access or an approaching biological risk window.</li>
+          <li>Use final approved rate, route and compatibility guidance for the product selected.</li>
+          <li>Placement, food, moisture and establishment determine biological performance.</li>
+          <li>Define the baseline and success measure before application; involve GSB in interpretation.</li>
+          <li>Protect live inputs from incompatible chemistry and unnecessary hold time.</li>
+          <li>Keep internal observations separate from external claims.</li>
+          <li>Review at the relevant crop stage; repeat the same method where direction matters.</li>
+        </ul>
+      </div>
+      <div class="card" style="--a:var(--orange)">
+        <h4 class="acc" style="font-size:15px">Claim boundary</h4>
+        <p>No controlled three-product synergy trial was presented.</p>
+        <p style="color:var(--grey)">No guaranteed synergy, yield, disease control, fertiliser replacement or
+        identical response across soils and seasons.</p>
+        <p style="color:var(--orange); font-family:Oswald,sans-serif; font-weight:700; font-size:11.5px; letter-spacing:.9px; text-transform:uppercase">
+        Three distinct jobs · recommend only what the diagnosis supports</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 02 ═══════════ -->
+<section id="s2">
+  <div class="sec-hero">
+    <img src="assets/e83d460e52b6.webp" alt="">
+    <div class="tri"><i></i><i></i><i></i></div>
+    <div class="wrap"><div class="cap">SP · Product play</div></div>
+  </div>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">SP · Product play <span class="pgno">· 02 of 11</span></p>
+      <h2>Mycro-Tec® SP</h2>
+      <p class="lede">Support access to the mineral bank already in the soil — phosphorus first.</p>
+    </div>
+
+    <div class="panel">
+      <p class="eyebrow" style="font-size:11px">The role</p>
+      <h4 style="font-family:Oswald,sans-serif; font-weight:700; font-size:19px; letter-spacing:.2px; margin:0 0 12px; text-transform:none">
+        A mineral-access layer — phosphorus leads, the wider nutrient bank follows.</h4>
+      <p>Three beneficial fungi and one bacterium — <em>E. cloacae</em>, <em>T. harzianum</em>, <em>A. niger</em>
+      and <em>P. radicum</em> — selected for nutrient metabolism and organic-acid production. Final label and SDS
+      govern identity and count.</p>
+    </div>
+    <div class="strip teal">Label guarantee at production · E. cloacae &gt;2×10⁹ · T. harzianum &gt;2×10⁸ · A. niger &gt;2×10⁷ · P. radicum &gt;1×10⁷ · SDS agrees</div>
+
+    <h3 class="sub">How it works · from fixation to biological access</h3>
+    <div class="grid g3 rot">
+      <div class="card">
+        <img src="assets/064fc8b18753.webp" alt="">
+        <p class="num">01</p><h4>Fixed</h4>
+        <p>Only 20–30% of applied P is taken up. The rest fixes — with calcium in higher-pH soils; with iron and
+        aluminium in lower-pH.</p>
+      </div>
+      <div class="card">
+        <img src="assets/6eeec21bb9d8.webp" alt="">
+        <p class="num">02</p><h4>Organic acids</h4>
+        <p>SP organisms produce organic acids — gluconic, oxalic and citric — around the root zone.</p>
+      </div>
+      <div class="card">
+        <img src="assets/1d6d992777b0.webp" alt="">
+        <p class="num">03</p><h4>Separate</h4>
+        <p>Those acids help separate phosphorus from the bonds. Activity continues only while viable biology
+        establishes and remains active.</p>
+      </div>
+    </div>
+
+    <h3 class="sub">When SP is worth it</h3>
+    <div class="grid g3 rot">
+      <div class="card"><h4 class="acc">High fixation</h4>
+        <p>High PBI, or known calcium fixation at higher pH and iron–aluminium fixation at lower pH. Only 20–30%
+        of applied P is taken up; the rest is the target.</p></div>
+      <div class="card"><h4 class="acc">Reserve present</h4>
+        <p>Strong fertiliser history but weak measured availability. There has to be a bank to release —
+        establish a Colwell P baseline first.</p></div>
+      <div class="card"><h4 class="acc">Placement possible</h4>
+        <p>Biology can be put where roots meet fixed reserves: in-furrow, fertigation or coating. Without
+        placement there is no case.</p></div>
+    </div>
+
+    <h3 class="sub">What blunts it</h3>
+    <div class="grid g3 rot">
+      <div class="card"><h4 class="acc">Calcium on the same pass</h4>
+        <p>Can re-fix phosphorus the biology has just released. Keep calcium off the SP pass.</p></div>
+      <div class="card"><h4 class="acc">Cold furrow</h4>
+        <p>Below 15 °C the bacterium stalls, so the pass runs mostly on the three fungi — our inference, for GSB
+        to confirm.</p></div>
+      <div class="card"><h4 class="acc">Tank chemistry + hold time</h4>
+        <p>Fungicide, liquid zinc and seed treatments compromise viability. Clean non-chlorinated water; apply
+        promptly.</p></div>
+    </div>
+
+    <div class="flag">
+      <span class="tag">Open with GSB · cold-furrow inference</span>
+      <p>The 15 °C bacterium-stall threshold is <strong>our inference</strong>, not a GSB-supplied figure. It is
+      currently on the card as guidance to reps.</p>
+      <p class="ask">Can you confirm, correct or remove the 15 °C threshold and tell us what the pass actually
+      runs on below it?</p>
+    </div>
+
+    <p class="pull">“Before adding more, establish what is already present but constrained. SP positions selected
+    biology close to the root zone to support mineral solubilisation — phosphorus first.”</p>
+
+    <h3 class="sub">Claim lane</h3>
+    <div class="claim">
+      <div class="say"><h4>Say</h4>
+        <ul class="chev">
+          <li>Supports mineral and nutrient solubilisation.</li>
+          <li>Supports access to fixed phosphorus.</li>
+          <li>Adds selected nutrient-solubilising biology.</li>
+          <li>Supports the existing fertiliser strategy.</li>
+        </ul></div>
+      <div class="not"><h4>Do not say</h4>
+        <ul class="chev">
+          <li>Replaces phosphorus fertiliser.</li>
+          <li>Unlocks all soil nutrients.</li>
+          <li>Guarantees nutrient uptake or yield.</li>
+          <li>Permanently changes availability.</li>
+        </ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 03 ═══════════ -->
+<section id="s3">
+  <div class="sec-hero">
+    <img src="assets/60d35a50d587.webp" alt="">
+    <div class="tri"><i></i><i></i><i></i></div>
+    <div class="wrap"><div class="cap">SP · Field + sell</div></div>
+  </div>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">SP · Field + sell <span class="pgno">· 03 of 11</span></p>
+      <h2>Where SP earns its place</h2>
+      <p class="lede">Fit · placement · handling · proof · objections.</p>
+    </div>
+
+    <h3 class="sub">Fit · route · proof</h3>
+    <div class="grid g2" style="align-items:start">
+      <div class="panel">
+        <h4 style="font-size:16px; text-transform:none; letter-spacing:.2px">Best-fit signals</h4>
+        <ul class="chev">
+          <li>High PBI, known fixation or aluminium-associated lock-up.</li>
+          <li>Strong P history but weak measured availability.</li>
+          <li>Poor early root-zone nutrient access.</li>
+          <li>A program seeking more value from existing reserves.</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h4 style="font-size:16px; text-transform:none; letter-spacing:.2px">Routes, rate + handling</h4>
+        <p class="stat" style="--a:var(--orange)">1–2 L/ha</p>
+        <p class="statsub" style="margin-bottom:12px">Broadacre draft · horticulture 5–10 L/ha</p>
+        <p><strong style="color:var(--teal)">In-furrow liquid</strong> — Lead route; final label approval</p>
+        <p><strong>Seed coating</strong> — 2 L/t on label; figure is ours</p>
+        <p><strong>Coated granule</strong> — Gerogery proof; not liquid proof</p>
+        <p><strong>Fertigation</strong> — Brochure route (hort + viti) · compatibility governs</p>
+        <p class="caption">Clean non-chlorinated water · 1:100 · 60–100 L/ha · 5–30 °C · apply promptly ·
+        compatibility governs.</p>
+      </div>
+    </div>
+
+    <div class="flag">
+      <span class="tag">Open with GSB · seed-coating rate</span>
+      <p>The SP brochure cover advertises a broadacre coating rate of <strong>2 L/t</strong>. That figure is not
+      on the SP label — the label gives 5–10 L, 1–2 L, 1:100 and 60–100 L/ha water, and nothing for seed. Our
+      standing rule is that the final label governs every rate, so this is a live contradiction in customer-facing
+      material.</p>
+      <p class="ask">Can 2 L/t seed coating go on the label? If not, we pull the figure from the brochure.</p>
+    </div>
+
+    <h3 class="sub">Field proof · Gerogery NSW</h3>
+    <div class="proof">
+      <img src="assets/60d35a50d587.webp" alt="Gerogery canola trial">
+      <div>
+        <h4 style="font-family:Oswald,sans-serif; font-weight:700; font-size:17px; margin:0 0 6px">Gerogery canola field proof</h4>
+        <p style="color:var(--teal); font-weight:600; margin:0 0 12px; font-size:13.5px">52.7 ha · granular · at sowing · 20 kg/ha · Nov 2025</p>
+        <p class="stat" style="--a:var(--ink); font-size:30px">3.40 → 3.98 t/ha</p>
+        <p style="font-family:Oswald,sans-serif; font-weight:700; font-size:19px; color:var(--orange); margin:0 0 12px">+17% · +0.58 t/ha</p>
+        <p style="color:var(--berry-d); font-weight:600; font-size:13px">Colwell P 42→57 · +35.7%&nbsp;&nbsp;&nbsp;&nbsp;NO₃ 26→38 · +46%</p>
+        <p style="color:var(--grey); font-size:13px">Also observed: NH₄-N 1→2 mg/kg; Colwell K 184→217 (+17.9%).
+        Applied at 20 kg/ha through the fertiliser box at sowing. Pre-harvest soil tests confirmed the biology was
+        working through movement in Colwell P. Granular field case — not liquid-rate proof or a guaranteed response.</p>
+        <img class="qr" src="assets/34bdd6122f76.webp" alt="Trial QR code" style="margin-top:12px">
+      </div>
+    </div>
+
+    <div class="flag">
+      <span class="tag">Open with GSB · nitrate figure</span>
+      <p>NO₃ 26 → 38 mg/kg appears on our Results page attributed to GSB case study 2195. We have not verified it
+      against the published study ourselves.</p>
+      <p class="ask">Can you confirm the nitrate movement as published, so we can either cite it or drop it?</p>
+    </div>
+
+    <h3 class="sub">Common questions</h3>
+    <div class="qa">
+      <div><p class="q">Why not apply more P?</p><p>More fertiliser does not resolve fixation. SP supports access to the existing nutrient bank.</p></div>
+      <div><p class="q">How long does it persist?</p><p>No supported persistence window. If it changes the decision, repeat qPCR against a baseline.</p></div>
+      <div><p class="q">Is liquid always better?</p><p>No. Judge form against placement: liquid carries metabolites and spores; powder may concentrate spores.</p></div>
+      <div><p class="q">Can it handle pressure?</p><p>No verified whole-product pressure limit. Follow approved equipment guidance and apply promptly.</p></div>
+      <div><p class="q">Mix with fungicide or seed treatment?</p><p>Only with documented compatibility. Fungicides, liquid zinc and seed chemistry can compromise biology.</p></div>
+      <div><p class="q">What should success look like?</p><p>Define it first: repeat soil P, then add DSA or matched-stage tissue data where useful.</p></div>
+    </div>
+
+    <div class="gate"><strong>Release gate</strong>
+      Final label governs rates, routes, compatibility, analysis, count basis, storage and shelf life. Keep
+      Gerogery granular; never imply fertiliser replacement.</div>
+  </div>
+</section>
+
+<!-- ═══════════ 04 ═══════════ -->
+<section id="s4">
+  <div class="sec-hero">
+    <img src="assets/60f6a5d172bd.webp" alt="">
+    <div class="tri"><i></i><i></i><i></i></div>
+    <div class="wrap"><div class="cap">Digester · Product play</div></div>
+  </div>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Digester · Product play <span class="pgno">· 04 of 11</span></p>
+      <h2>Mycro-Tec® Digester</h2>
+      <p class="lede">Turn residue into a managed biological process.</p>
+    </div>
+
+    <div class="panel">
+      <p class="eyebrow" style="font-size:11px; color:var(--orange)">The role</p>
+      <h4 style="font-family:Oswald,sans-serif; font-weight:700; font-size:18px; letter-spacing:.2px; margin:0 0 12px; text-transform:none">
+        Selected decomposer biology for post-harvest residue and stubble.</h4>
+      <p>A deliberate biological starting point for structural breakdown — distinct from nutrition inputs or
+      enzymes that may serve different jobs.</p>
+    </div>
+    <div class="strip orange">Label guarantee at production · T. harzianum &gt;2×10⁸ · A. niger &gt;2×10⁷ · S. lydicus &gt;2×10⁷ · P. radicum &gt;1×10⁷ · Three fungi, one actinomycete · Final label and SDS govern</div>
+
+    <h3 class="sub">What it acts on · the structural matrix</h3>
+    <div class="grid g4 rot4">
+      <div class="card"><p class="role" style="font-size:15px">CELLULOSE</p><p style="color:var(--grey)">Primary plant fibre</p></div>
+      <div class="card"><p class="role" style="font-size:15px">HEMICELLULOSE</p><p style="color:var(--grey)">Supporting fibre network</p></div>
+      <div class="card"><p class="role" style="font-size:15px">LIGNIN</p><p style="color:var(--grey)">Hard, resistant structure</p></div>
+      <div class="card" style="--a:var(--teal)"><p class="role" style="font-size:15px">PECTIN</p><p style="color:var(--grey)">Plant-cell binding material</p></div>
+    </div>
+
+    <h3 class="sub">How the process starts</h3>
+    <div class="grid g3 rot">
+      <div class="card">
+        <img src="assets/b72250b3849e.webp" alt="">
+        <p class="num">01</p><h4>Moisture base</h4>
+        <p>Biology establishes first at the moisture-holding residue–soil interface, then expands through moist stubble.</p>
+      </div>
+      <div class="card">
+        <img src="assets/3f739b0fa1c1.webp" alt="">
+        <p class="num">02</p><h4>Structure opens</h4>
+        <p>Organic acids and enzymes open cellulose, hemicellulose, lignin and pectin, making structural carbon accessible.</p>
+      </div>
+      <div class="card">
+        <img src="assets/e65a2232a27e.webp" alt="">
+        <p class="num">03</p><h4>Turnover builds</h4>
+        <p>Selected organisms and the wider community continue the process.</p>
+      </div>
+    </div>
+
+    <h3 class="sub">When Digester is worth it</h3>
+    <div class="grid g3 rot">
+      <div class="card"><h4 class="acc">Residue that holds</h4>
+        <p>Cereal, canola, legume, horticultural or orchard residue still intact into the next crop window.</p></div>
+      <div class="card"><h4 class="acc">High or lignified load</h4>
+        <p>Heavy residue loads, or lignified material that has stalled over summer.</p></div>
+      <div class="card"><h4 class="acc">Moisture window</h4>
+        <p>Applied reasonably early after harvest and close to forecast moisture — breakdown runs on residue moisture.</p></div>
+    </div>
+
+    <h3 class="sub">What blunts it</h3>
+    <div class="grid g3 rot">
+      <div class="card"><h4 class="acc">Prolonged heat and dryness</h4>
+        <p>Confidence falls through hot, dry spells. Align application with a viable moisture window.</p></div>
+      <div class="card"><h4 class="acc">Overnight in the tank</h4>
+        <p>In nutrient it grows more mycelia and blocks nozzles. Strain as you pour; keep nozzles and filters at
+        150 µm or larger.</p></div>
+      <div class="card"><h4 class="acc">Off-recipe mixes</h4>
+        <p>Alternative recipes are not final. Use only the approved recipe; do not raise the starter with stubble load.</p></div>
+    </div>
+
+    <p class="pull orange">“Start with the job. Digester adds selected live decomposers to begin working through
+    structural residue; nutrition and enzyme inputs operate through different mechanisms.”</p>
+
+    <div class="claim">
+      <div class="say"><h4>Say</h4>
+        <ul class="chev"><li>Supports biological residue breakdown.</li><li>Acts on structural residue components.</li></ul></div>
+      <div class="not"><h4>Do not say</h4>
+        <ul class="chev"><li>Removes all residue.</li><li>Controls disease or guarantees disappearance.</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 05 ═══════════ -->
+<section id="s5">
+  <div class="sec-hero">
+    <img src="assets/5e04ae01e755.webp" alt="">
+    <div class="tri"><i></i><i></i><i></i></div>
+    <div class="wrap"><div class="cap">Digester · Field + sell</div></div>
+  </div>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Digester · Field + sell <span class="pgno">· 05 of 11</span></p>
+      <h2>Where Digester earns its place</h2>
+      <p class="lede">Fit · timing · rate · structural signals · objections.</p>
+    </div>
+
+    <h3 class="sub">Fit · timing · application</h3>
+    <div class="grid g2" style="align-items:start">
+      <div class="panel">
+        <h4 style="font-size:16px; text-transform:none; letter-spacing:.2px">Best-fit signals</h4>
+        <ul class="chev orange">
+          <li>Cereal, canola, legume, horticultural or orchard residue.</li>
+          <li>High residue loads or lignified material.</li>
+          <li>Residue remaining intact into the next crop window.</li>
+          <li>A program seeking controlled turnover — not nutrition alone.</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h4 style="font-size:16px; text-transform:none; letter-spacing:.2px; color:var(--orange)">Timing</h4>
+        <p style="color:var(--orange); font-weight:600">Apply reasonably early after harvest and close to forecast moisture.</p>
+        <p>Confidence falls through prolonged heat and dryness. Align application with a viable moisture window.</p>
+      </div>
+    </div>
+
+    <div class="grid g4 rot4">
+      <div class="card"><p class="k">Standard</p><p class="stat">1–2 L/ha</p><p class="statsub">After harvest</p></div>
+      <div class="card"><p class="k">Heavy</p><p class="stat">3 L/ha max</p><p class="statsub">Heavy residue</p></div>
+      <div class="card"><p class="k">AMS starter</p><p class="stat">8 kg/ha</p><p class="statsub">Every pass · fixed</p></div>
+      <div class="card"><p class="k">Dilution</p><p class="stat">1:50</p><p class="statsub">or as advised</p></div>
+    </div>
+    <p class="caption">Label 1–2 L/ha in 100 L/ha water; TDS 1–1.5, up to 3 L/ha extra-heavy — open. Do not raise
+    the starter with stubble load · 5–40 °C · not on nut trees · final label governs.</p>
+
+    <h3 class="sub">Early structural signals</h3>
+    <div class="grid g4 rot4">
+      <div class="card"><h4 class="acc">Base weakening</h4><p>Activity begins at the damp residue base.</p></div>
+      <div class="card"><h4 class="acc">Easier pull-away</h4><p>Residue releases more readily from the soil surface.</p></div>
+      <div class="card"><h4 class="acc">Lower strength</h4><p>Structural fibres progressively soften and weaken.</p></div>
+      <div class="card"><h4 class="acc">Context · C:N</h4><p>Track change over time; not instant disappearance.</p></div>
+    </div>
+
+    <h3 class="sub">Common questions</h3>
+    <div class="qa">
+      <div><p class="q">Why not nitrogen alone?</p><p>Nitrogen feeds resident biology. Digester adds selected decomposers; the starter remains separate.</p></div>
+      <div><p class="q">Growth on top of the drum?</p><p>Mycelia — live fungi using the drum's air gap. Normal, and a sign the biology is active. Keep drums upright; the lids are vented.</p></div>
+      <div><p class="q">Can it wait in the tank overnight?</p><p>No — overnight in nutrient it grows more mycelia and blocks nozzles. Strain as you pour; keep nozzles and filters at 150 µm or larger.</p></div>
+      <div><p class="q">Fish, amino acids or urea?</p><p>Alternative recipes are not final. Use only the approved recipe.</p></div>
+      <div><p class="q">Does it reduce stubble disease?</p><p>No. Competition for residue resources is not a disease-control position.</p></div>
+      <div><p class="q">Why not an enzyme-only product?</p><p>Enzymes catalyse breakdown; Digester adds selected live decomposers. Compare mechanisms and evidence.</p></div>
+    </div>
+
+    <div class="flag">
+      <span class="tag">Open with GSB · internal evidence + release gate</span>
+      <p>Digestubble trial data arrived Jul 2026: nine treatments, stubble carbon and mass to 120 days, with
+      untreated and nitrogen-alone controls. <strong>Product identity against Digester is unconfirmed — nothing
+      quotable yet.</strong> Still open: name confirmation, count basis, rate ladder, storage, starter,
+      compatibility; align label, SDS, brochure and battlecard.</p>
+      <p>Mid-crop use was asked twice on 31 July and never answered; no in-crop use is endorsed.</p>
+      <p class="ask">Is Digestubble the same product as Digester? And can we have a position on mid-crop use?</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 06 ═══════════ -->
+<section id="s6">
+  <div class="sec-hero">
+    <img src="assets/dcf9d0e5b13b.webp" alt="">
+    <div class="tri"><i></i><i></i><i></i></div>
+    <div class="wrap"><div class="cap">Lockout · Product play</div></div>
+  </div>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Lockout · Product play <span class="pgno">· 06 of 11</span></p>
+      <h2>Mycro-Tec® Lockout</h2>
+      <p class="lede">Occupy · compete · balance.</p>
+    </div>
+
+    <div class="panel">
+      <p class="eyebrow" style="font-size:11px; color:var(--berry-d)">The role</p>
+      <h4 style="font-family:Oswald,sans-serif; font-weight:700; font-size:18px; letter-spacing:.2px; margin:0 0 12px; text-transform:none">
+        Proactive microbiome-management biology for the root zone and plant surface.</h4>
+      <p>Establish beneficial organisms ahead of a known risk window — before an adverse population dominates the
+      living zone.</p>
+    </div>
+    <div class="strip berry">Purpose-selected biology · No storage temperature exists · Final label / SDS govern</div>
+
+    <div class="flag">
+      <span class="tag">Open with GSB · certification, corrected on this draft</span>
+      <p>The Figma card carries “<strong>three cert schemes on record (ACO 14270, NASAA 3620M, NOP)</strong>”. A
+      page-wide trace found only one of the three is on Lockout's own label. <strong>NASAA Organic Certified
+      3620M</strong> is real — on the Lockout label and its brochure composition page. <strong>NOP</strong>
+      appears only as artwork on the brochure cover with no certificate number, and contradicts the NASAA mark on
+      the same product. <strong>ACO 14270</strong> appears nowhere on Lockout as live text — it is a live claim on
+      a different product (K-Max). None of the three SDSs mentions any certification scheme. The claim has been
+      reduced to the strip above for this draft.</p>
+      <p class="ask">Which scheme actually covers Lockout, whose certificate is it, and what is the exact approved
+      wording and scope? Please supply the current certificate.</p>
+    </div>
+
+    <h3 class="sub">The proposition · occupy · compete · balance</h3>
+    <div class="grid g3 rot">
+      <div class="card">
+        <img src="assets/f10171747793.webp" alt="">
+        <h4 class="acc" style="font-size:15px">Occupy</h4>
+        <p>Establish in the rhizosphere and on plant surfaces where approved.</p></div>
+      <div class="card">
+        <img src="assets/22b706e88a09.webp" alt="">
+        <h4 class="acc" style="font-size:15px">Compete</h4>
+        <p>Use food and ecological space before an adverse population dominates.</p></div>
+      <div class="card">
+        <img src="assets/8489991c9232.webp" alt="">
+        <h4 class="acc" style="font-size:15px">Balance</h4>
+        <p>Support a more stable, populated living zone over time.</p></div>
+    </div>
+
+    <h3 class="sub">When Lockout is worth it</h3>
+    <div class="grid g3 rot">
+      <div class="card"><h4 class="acc">Known risk window</h4>
+        <p>A repeatable pressure window you can plan around — in orchards, budswell through to pre-flowering.</p></div>
+      <div class="card"><h4 class="acc">Disrupted root zone</h4>
+        <p>Testing shows an adverse population, or a weak beneficial base in the rhizosphere.</p></div>
+      <div class="card"><h4 class="acc">Time to establish</h4>
+        <p>Applied ahead of pressure, with establishment time before the window opens.</p></div>
+    </div>
+
+    <h3 class="sub">How to set expectations</h3>
+    <div class="grid g2" style="align-items:start">
+      <div>
+        <ul class="chev berry">
+          <li>Best fit is proactive establishment ahead of a defined window.</li>
+          <li>Results depend on timing, conditions and successful establishment.</li>
+          <li>Use only approved rate, route and frequency guidance.</li>
+          <li>Define the baseline and review point before application.</li>
+          <li>Keep disease-control and rescue claims outside the claim lane.</li>
+        </ul>
+      </div>
+      <div class="card" style="--a:var(--orange)">
+        <h4 class="acc" style="font-size:15px">Certificate pending</h4>
+        <p class="k" style="color:var(--orange)">Manufacturer to supply</p>
+        <p>Use the manufacturer's current certificate and exact approved wording once supplied. Do not infer
+        scheme or scope from placeholder artwork.</p>
+      </div>
+    </div>
+
+    <h3 class="sub">What blunts it</h3>
+    <div class="grid g3 rot">
+      <div class="card"><h4 class="acc">Arriving late</h4>
+        <p>Once an adverse population dominates, the living zone is hard to win back. Not rescue chemistry.</p></div>
+      <div class="card"><h4 class="acc">Dose thinking</h4>
+        <p>A few million applied cells meet a billion residents per gram — multiplication, not dose, does the work.</p></div>
+      <div class="card"><h4 class="acc">Unapproved routes</h4>
+        <p>Foliar is not established in the draft label, and no standard food-source recommendation is approved.</p></div>
+    </div>
+
+    <p class="pull berry">“Build the beneficial population first so the living zone is harder for an adverse
+    population to dominate.”</p>
+  </div>
+</section>
+
+<!-- ═══════════ 07 ═══════════ -->
+<section id="s7">
+  <div class="sec-hero">
+    <img src="assets/6fb6e62fa539.webp" alt="">
+    <div class="tri"><i></i><i></i><i></i></div>
+    <div class="wrap"><div class="cap">Lockout · Field + sell</div></div>
+  </div>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Lockout · Field + sell <span class="pgno">· 07 of 11</span></p>
+      <h2>Where Lockout earns its place</h2>
+      <p class="lede">Fit · timing · placement · rate · objections.</p>
+    </div>
+
+    <h3 class="sub">Fit · timing · placement</h3>
+    <div class="grid g2" style="align-items:start">
+      <div class="panel">
+        <h4 style="font-size:16px; text-transform:none; letter-spacing:.2px">Best-fit signals</h4>
+        <ul class="chev berry">
+          <li>A known biological risk window is approaching.</li>
+          <li>The root-zone microbiome is disrupted or poorly balanced.</li>
+          <li>Intensive systems need proactive biological occupation.</li>
+          <li>A repeatable pressure window is worth planning around.</li>
+          <li>Testing shows an adverse population or weak beneficial base.</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h4 style="font-size:16px; text-transform:none; letter-spacing:.2px; color:var(--orange)">Timing</h4>
+        <p style="color:var(--berry-d); font-weight:600">Build the population before pressure increases. In
+        orchards, budswell through to pre-flowering.</p>
+        <p>Plan for predictable pre-risk windows, subject to crop and final label. Do not wait for severe symptoms
+        and expect a rescue.</p>
+      </div>
+    </div>
+
+    <div class="grid g2" style="align-items:start">
+      <div class="panel">
+        <h4 style="font-size:15px; text-transform:none">Placement</h4>
+        <p><strong style="color:var(--teal)">Soil</strong> — active root zone; final label governs.</p>
+        <p><strong style="color:var(--berry-d)">Foliar · hold</strong> — not established in the draft label. Do
+        not infer approval from another formulation.</p>
+      </div>
+      <div class="panel">
+        <h4 style="font-size:15px; text-transform:none">Draft rate ladder</h4>
+        <div class="grid g4 rot4" style="margin:8px 0 0; gap:8px">
+          <div class="card" style="padding:11px 10px"><p class="k">Preventative</p><p class="stat" style="font-size:19px">5 L/ha</p></div>
+          <div class="card" style="padding:11px 10px"><p class="k">Light</p><p class="stat" style="font-size:19px">10 L/ha</p></div>
+          <div class="card" style="padding:11px 10px"><p class="k">Heavy</p><p class="stat" style="font-size:19px">20 L/ha</p></div>
+          <div class="card" style="padding:11px 10px"><p class="k">Dilution</p><p class="stat" style="font-size:19px">1:20</p></div>
+        </div>
+        <p class="caption">Draft only · final terminology, route and conditions require Grant confirmation.</p>
+      </div>
+    </div>
+    <p class="caption">Qualify: known window · supporting test · establishment timing · water/chemistry · final
+    crop and route.</p>
+
+    <h3 class="sub">Common questions</h3>
+    <div class="qa">
+      <div><p class="q">Does it kill or control disease?</p><p>No. Lockout occupies, competes and supports balance; it is not a pesticide or disease-control claim.</p></div>
+      <div><p class="q">Can it rescue an infected crop?</p><p>No. Its strongest role is proactive establishment ahead of pressure.</p></div>
+      <div><p class="q">Is a food source required?</p><p>No standard food-source recommendation is approved. Use product-specific written guidance only — and never molasses or simple sugars; they can feed the population already dominating.</p></div>
+      <div><p class="q">Can it replace fungicide?</p><p>Do not make a blanket replacement recommendation. Build around diagnosis, risk and compatibility.</p></div>
+      <div><p class="q">Can it mix with fungicide?</p><p>Only when the exact product, rate and timing are documented as compatible.</p></div>
+      <div><p class="q">How many applications?</p><p>Use the final label and program. Define the establishment window; review response before repeating.</p></div>
+    </div>
+
+    <div class="grid g2" style="align-items:start">
+      <div class="panel">
+        <h4 style="font-size:15px; text-transform:none; color:var(--teal)">Evidence requested</h4>
+        <ul class="chev">
+          <li>Queensland soil work — treatment, comparator, baseline and endpoint.</li>
+          <li>Cotton work — crop stage, route, timing and repeated measures.</li>
+          <li>Orchard work — pressure window, establishment timing, baseline and review point.</li>
+        </ul>
+        <p class="caption" style="color:var(--berry-d); font-weight:600">Until approved, treat these as Grant
+        questions — not disease-efficacy proof.</p>
+      </div>
+      <div class="panel">
+        <h4 style="font-size:15px; text-transform:none; color:var(--berry-d)">Controlled product release gate</h4>
+        <p>Label: three genera, average 10⁹ CFU/mL at production. The SDS names three species with individual
+        counts — the two do not agree. No storage temperature exists for Lockout.</p>
+        <p>Confirm final rates/routes/compatibility; current organic certificate and wording; keep unpublished
+        disease work internal; align label, SDS, brochure and battlecard.</p>
+        <p class="caption" style="color:var(--orange); font-weight:600">Clean non-chlorinated water · apply
+        promptly · no fungicide/biocide mixing without documented compatibility.</p>
+      </div>
+    </div>
+
+    <div class="claim">
+      <div class="say"><h4>Say · occupy · compete · balance</h4>
+        <ul class="chev"><li>Occupies, competes and supports balance in the living zone.</li></ul></div>
+      <div class="not"><h4>Do not say · kill · control · suppress</h4>
+        <ul class="chev"><li>Any kill, control or suppression framing.</li></ul></div>
+    </div>
+
+    <div class="flag">
+      <span class="tag">Open with GSB · card contradicts the live brochure</span>
+      <p>This card puts foliar on hold as “not established in the draft label”, but the <strong>live Lockout
+      brochure publishes “application: foliar, fertigation, drench” to customers</strong>. Fertigation is absent
+      from this card for both SP and Lockout, yet the SP cover advertises fertigation 5–10 L/ha for horticulture
+      and viticulture, and every Lockout cover rate card reads “soil or fertigation”. The Lockout brochure also
+      contradicts itself: cover says soil or fertigation, page 2 says foliar, fertigation, drench and omits soil.</p>
+      <p class="ask">Which routes are approved, per product? All three SDSs read wider than the brochures.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 08 ═══════════ -->
+<section id="s8">
+  <div class="sec-hero">
+    <img src="assets/8489991c9232.webp" alt="">
+    <div class="tri"><i></i><i></i><i></i></div>
+    <div class="wrap"><div class="cap">Range · Sell &amp; defend</div></div>
+  </div>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Range · Sell &amp; defend <span class="pgno">· 08 of 11</span></p>
+      <h2>The competitive set</h2>
+      <p class="lede">What you are actually up against.</p>
+    </div>
+
+    <h3 class="sub">Three alternatives you will meet</h3>
+
+    <div class="grid g2" style="align-items:start">
+      <div class="card" style="--a:var(--teal)">
+        <h4 style="font-size:16px">Imported powder</h4>
+        <p class="k">What it is</p>
+        <p>A dry formulation that may suit storage, transport or soil placement. Performance depends on organism
+        identity, viable count at use-by, handling and route — not country of origin.</p>
+        <p class="k" style="color:var(--teal)">Useful question</p>
+        <p><em>“Can we compare the current COA, use-by guarantee, storage history and evidence for the route being
+        recommended?”</em></p>
+      </div>
+      <div class="panel tint">
+        <h4>What to verify</h4>
+        <p>Named organisms and strains · current label and COA · manufacture date · storage history · viable-count
+        guarantee · evidence for this crop, soil and application route.</p>
+      </div>
+
+      <div class="card" style="--a:var(--orange)">
+        <h4 style="font-size:16px">On-farm brew</h4>
+        <p class="k">What it is</p>
+        <p>A grower-managed biological process that may be valued for diversity, cost or an observed response.
+        Repeatability depends on inputs, water, temperature, time and process control.</p>
+        <p class="k" style="color:var(--orange)">Useful question</p>
+        <p><em>“What result are you seeing, and how consistent are the process and measurement from batch to
+        batch?”</em></p>
+      </div>
+      <div class="panel tint">
+        <h4>What to verify</h4>
+        <p>What is identified or tested in each batch · process controls · contamination safeguards · consistency
+        between batches · how the field response is measured.</p>
+      </div>
+
+      <div class="card" style="--a:var(--berry-d)">
+        <h4 style="font-size:16px">Enzyme or nutrition input</h4>
+        <p class="k">What it is</p>
+        <p>An enzyme catalyses a reaction; a nutrition input feeds biology already present. Neither is trying to do
+        the same job as a selected live consortium, and either may fit where that is the intended role.</p>
+        <p class="k" style="color:var(--berry-d)">Useful question</p>
+        <p><em>“What job is this product designed to do, and what evidence shows it is doing that job here?”</em></p>
+      </div>
+      <div class="panel tint">
+        <h4>What to verify</h4>
+        <p>Is it supplying organisms, catalysing a reaction or feeding the resident community? What outcome is
+        claimed, under what conditions, and how is it measured?</p>
+      </div>
+    </div>
+
+    <div class="gate"><strong>The comparison standard</strong>
+      Start with the job. Compare formulation, route, quality controls, evidence and value. Apply the same standard
+      to our products; a fair comparison is easier to defend and more useful to the grower.</div>
+  </div>
+</section>
+
+<!-- ═══════════ 09 ═══════════ -->
+<section id="s9">
+  <div class="sec-hero">
+    <img src="assets/b65e5baf7f2a.webp" alt="">
+    <div class="tri"><i></i><i></i><i></i></div>
+    <div class="wrap"><div class="cap">Evidence · Any biological</div></div>
+  </div>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Evidence · Any biological <span class="pgno">· 09 of 11</span></p>
+      <h2>Read any biological label</h2>
+      <p class="lede">Six checks for any drum — ours included.</p>
+    </div>
+
+    <h3 class="sub">Six checks on any biological</h3>
+    <div class="grid g3 rot">
+      <div class="card"><p class="num">01</p><h4 class="acc">Organisms named?</h4><p style="color:var(--grey)">Genus + species · stated job</p></div>
+      <div class="card"><p class="num">02</p><h4 class="acc">Count + who verified?</h4><p style="color:var(--grey)">Per organism · use-by basis · maker QA or independent</p></div>
+      <div class="card"><p class="num">03</p><h4 class="acc">Made + stored where?</h4><p style="color:var(--grey)">Manufacture · batch · storage</p></div>
+      <div class="card"><p class="num">04</p><h4 class="acc">Which form, and why?</h4><p style="color:var(--grey)">Formulation matched to route</p></div>
+      <div class="card"><p class="num">05</p><h4 class="acc">Can it survive the route?</h4><p style="color:var(--grey)">Water · chemistry · heat · pressure · hold time</p></div>
+      <div class="card"><p class="num">06</p><h4 class="acc">Is proof relevant?</h4><p style="color:var(--grey)">Crop · soil · form · comparator</p></div>
+    </div>
+    <p class="caption">The document trail behind those checks: product / formulation → organism + species → CFU per
+    mL or g and guarantee basis → batch / manufacture / storage → route / compatibility → evidence reference.</p>
+
+    <h3 class="sub">Minimum evidence pack · before you position</h3>
+    <div class="grid g3 rot">
+      <div class="card"><h4 class="acc" style="font-size:14px">Current documents</h4>
+        <p>Current label · COA · SDS · manufacturer and batch date · use-by basis · storage history.</p></div>
+      <div class="card"><h4 class="acc" style="font-size:14px">Approved use</h4>
+        <p>Formulation · route · rate · compatibility · hold time · certification scope.</p></div>
+      <div class="card"><h4 class="acc" style="font-size:14px">Relevant proof</h4>
+        <p>Crop · soil · formulation · comparator · baseline · repeated measure.</p></div>
+    </div>
+
+    <div class="panel tint">
+      <h4>The checks apply to us too</h4>
+      <p>These six checks follow GSB's own published guide to evaluating microbial products. Apply them to ours:
+      current label and COA, named organisms, count basis, formulation, route, certification scope and evidence.
+      Read counts on the log scale — 10¹⁰ is one hundred times 10⁸.</p>
+    </div>
+
+    <div class="flag">
+      <span class="tag">Open with GSB · three unresolved across the range</span>
+      <p><strong>Lockout composition</strong>, the <strong>range-wide CFU-at-use-by basis</strong> and
+      <strong>shelf life</strong> all remain unresolved — every document says 12 months, a shorter figure was given
+      verbally. None is quoted as settled anywhere in this draft.</p>
+      <p class="ask">Is the CFU guarantee at production or at use-by, per format? And what is the real shelf life —
+      12 months, or the shorter figure?</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 10 ═══════════ -->
+<section id="s10">
+  <div class="sec-hero">
+    <img src="assets/4081f13740a6.webp" alt="">
+    <div class="tri"><i></i><i></i><i></i></div>
+    <div class="wrap"><div class="cap">Program · Measured decisions</div></div>
+  </div>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Program · Measured decisions <span class="pgno">· 10 of 11</span></p>
+      <h2>From diagnosis to decision</h2>
+      <p class="lede">Baseline · apply · repeat · decide.</p>
+    </div>
+
+    <h3 class="sub">The call · five steps</h3>
+    <div class="grid g5 rot4">
+      <div class="card"><p class="num" style="font-size:18px">01</p><h4 class="acc">Diagnose</h4><p style="color:var(--grey)">Define the job before the product.</p></div>
+      <div class="card"><p class="num" style="font-size:18px">02</p><h4 class="acc">Baseline</h4><p style="color:var(--grey)">Choose a baseline matched to the job.</p></div>
+      <div class="card"><p class="num" style="font-size:18px">03</p><h4 class="acc">Interpret</h4><p style="color:var(--grey)">Read it with crop, soil and history.</p></div>
+      <div class="card"><p class="num" style="font-size:18px">04</p><h4 class="acc">Act</h4><p style="color:var(--grey)">Agree route, strip and success measure.</p></div>
+      <div class="card"><p class="num" style="font-size:18px">05</p><h4 class="acc">Repeat</h4><p style="color:var(--grey)">Repeat the same method; decide next.</p></div>
+    </div>
+    <div class="grid g2">
+      <div class="panel tint"><p style="font-family:Oswald,sans-serif; font-weight:500; letter-spacing:.6px; margin:0">One test is a snapshot · repeat the same method to see direction</p></div>
+      <div class="panel tint"><p style="margin:0"><strong style="color:var(--orange)">Concentration-to-area context — not availability or response</strong><br>
+        kg/ha = mg/kg × BD (g/cm³) × depth (cm) × 0.1</p></div>
+    </div>
+
+    <h3 class="sub">Match the measure to the job</h3>
+    <div class="grid g3 rot">
+      <div class="card"><h4 class="acc" style="font-size:14px">Metagenomic</h4>
+        <p style="color:var(--grey)">~$500–600 per sample · about six weeks · as quoted Jul 2026</p>
+        <p>Describes community composition. It does not prove viability, activity or product response. Use the
+        lab's crop-, soil- and method-specific reference. F:B balance: ~1:50 fine in high-N annuals · worse than
+        1:100 a problem · 1:20 the goal.</p></div>
+      <div class="card"><h4 class="acc" style="font-size:14px">Targeted qPCR</h4>
+        <p style="color:var(--grey)">~$100 per sample · about a fortnight · as quoted Jul 2026</p>
+        <p>Tracks a nominated organism only where the assay discriminates it and a baseline exists. DNA detection
+        alone does not prove viability.</p></div>
+      <div class="card"><h4 class="acc" style="font-size:14px">Repeated DSA</h4>
+        <p style="color:var(--grey)">Young + old leaves · matched stage · timing · method</p>
+        <p>Tracks crop nutrient direction when sampled consistently. Pair with soil, tissue and field measures; it
+        cannot prove residue turnover or Lockout establishment.</p></div>
+    </div>
+
+    <h3 class="sub">Execution · protect viability</h3>
+    <div class="grid g4 rot4">
+      <div class="card"><h4 class="acc">Water</h4><p>Identify chlorine or chloramine. Use validated treatment or non-chlorinated water.</p></div>
+      <div class="card"><h4 class="acc">Mix</h4><p>Pending the product-specific protocol, follow the approved order and apply promptly. Do not assume hold time or compatibility.</p></div>
+      <div class="card"><h4 class="acc">Compatibility</h4><p>Active ingredient, dose, route and interval all matter. Do not assume a tank partner.</p></div>
+      <div class="card"><h4 class="acc">Physical</h4><p>Heat, pressure, filtration and hold-time limits still need manufacturer support.</p></div>
+    </div>
+    <p class="caption" style="font-family:Oswald,sans-serif; letter-spacing:1.2px; text-transform:uppercase; color:var(--teal); font-weight:600">Identify · mix · apply</p>
+
+    <div class="flag">
+      <span class="tag">Open with GSB · mix order already published</span>
+      <p>This card says the protocol is pending and reps should not assume an order — but the
+      <strong>live Digester composition page already publishes one</strong>: ammonium sulphate first, then
+      Digester, into 100 L/ha cool non-chlorinated water.</p>
+      <p class="ask">Is the published order correct and approved? If so the card should adopt it; if not, the
+      brochure needs to change.</p>
+    </div>
+
+    <h3 class="sub">Feeding · release gate</h3>
+    <div class="panel">
+      <h4 style="color:var(--teal)">Formulation-specific only</h4>
+      <p>Use only formulation-specific directions on the final approved label. Do not publish soil-carbon,
+      humic/fulvic, sugar, fish or seaweed feeding rules until GSB supplies written support.</p>
+    </div>
+
+    <h3 class="sub">Measure the job you selected</h3>
+    <div class="grid g3 rot">
+      <div class="card"><h4 class="acc" style="font-size:14px">SP · nutrient access</h4>
+        <p>Repeat soil P at matched depth and method; add DSA or tissue at defined stages where uptake direction
+        changes the decision.</p></div>
+      <div class="card"><h4 class="acc" style="font-size:14px">Digester · residue</h4>
+        <p>Repeat photographs, residue condition and pull strength against untreated; use C:N as context, not a
+        sole endpoint. Soil carbon is a five-to-ten-year play — a strong first-year response after tillage is a
+        warning, not a win.</p></div>
+      <div class="card"><h4 class="acc" style="font-size:14px">Lockout · establishment</h4>
+        <p>Define baseline, pressure window and review timing before treatment; keep observations internal until
+        an endpoint is validated.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 11 ═══════════ -->
+<section id="s11">
+  <div class="sec-hero">
+    <img src="assets/cda79c5d5012.webp" alt="">
+    <div class="tri"><i></i><i></i><i></i></div>
+    <div class="wrap"><div class="cap">Testing · Soil sampling</div></div>
+  </div>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Testing · Soil sampling <span class="pgno">· 11 of 11</span></p>
+      <h2>Take a sample worth testing</h2>
+      <p class="lede">Composite method · where to dig · records · return.</p>
+      <p class="intro">Composite sampling reduces statistical variation — the tube you send stands for the area,
+      not for one shovel hole. Take it the same way every time, and the repeat measure in section 10 means
+      something.</p>
+    </div>
+
+    <h3 class="sub">The method · six steps in the field</h3>
+    <div class="grid g3 rot">
+      <div class="card"><p class="num">01</p><h4>Gloves on</h4><p style="color:var(--grey)">Use the black rubber gloves supplied in the sampling kit before touching anything.</p></div>
+      <div class="card"><p class="num">02</p><h4>Scrape back</h4><p style="color:var(--grey)">Clear the top 1–3 cm of surface material at every spot before you dig.</p></div>
+      <div class="card"><p class="num">03</p><h4>Collect 5–8</h4><p style="color:var(--grey)">Sub-samples of 50–100 g around and including the site, from the 2–15 cm zone.</p></div>
+      <div class="card"><p class="num">04</p><h4>Mix one sample</h4><p style="color:var(--grey)">Combine everything in a clean bucket and mix hard until it is one homogeneous sample.</p></div>
+      <div class="card"><p class="num">05</p><h4>Fill the tubes</h4><p style="color:var(--grey)">Brown-lidded tube about half full — 5–8 scoops sandy loam, 3–5 clay. Lid on; invert to mix the buffer through.</p></div>
+      <div class="card"><p class="num">06</p><h4>Grey tubes next</h4><p style="color:var(--grey)">Fill the grey-capped tubes the same way with the same spoon, then dispose of the spoon.</p></div>
+    </div>
+
+    <h3 class="sub">Where to dig</h3>
+    <div class="grid g2">
+      <div class="card" style="--a:var(--teal)"><h4 class="acc" style="font-size:14px">Broadacre · the paddock</h4>
+        <p style="color:var(--grey)">Sample along the seeder furrows, focused on the plant rhizosphere.</p></div>
+      <div class="card" style="--a:var(--orange)"><h4 class="acc" style="font-size:14px">Horticulture · the block</h4>
+        <p style="color:var(--grey)">The rhizosphere along the dripline under irrigation; under the tree or plant
+        canopy where dry-grown. Know where the dripline is before you dig — sampling tools damage it.</p></div>
+    </div>
+    <div class="panel tint">
+      <h4 style="color:var(--teal)">Repeat at a minimum of two sites per paddock or block</h4>
+      <p>The one step the protocol itself bolds. A single site cannot show variation across the area.</p>
+    </div>
+
+    <h3 class="sub">Record as you sample</h3>
+    <div class="grid g4 rot4">
+      <div class="card"><h4 class="acc">GPS</h4><p style="color:var(--grey)">Latitude and longitude of each site — the phone compass gives both.</p></div>
+      <div class="card"><h4 class="acc">Crop</h4><p style="color:var(--grey)">Crop composition on and around the site.</p></div>
+      <div class="card"><h4 class="acc">Fertiliser</h4><p style="color:var(--grey)">Fertiliser history for the area.</p></div>
+      <div class="card"><h4 class="acc">Disease</h4><p style="color:var(--grey)">Disease experience, this season and past.</p></div>
+    </div>
+    <p class="caption">Fill the sequencing submission form as you take the samples, not back at the ute.</p>
+
+    <h3 class="sub">Send it back</h3>
+    <div class="grid g2">
+      <div class="card" style="--a:var(--teal)"><h4 class="acc" style="font-size:14px">Return</h4>
+        <p style="color:var(--grey)">Scan or photograph the submission form and email it ahead to the GSB contact
+        on the form. Samples travel back in the box they arrived in, re-addressed with the label supplied.</p></div>
+      <div class="card" style="--a:var(--orange)"><h4 class="acc" style="font-size:14px">The biology sample — not the nutrient audit</h4>
+        <p style="color:var(--grey)">This protocol feeds the metagenomic community read in section 10. Soil
+        chemistry and kg/ha requirements are a different test and a different conversation.</p></div>
+    </div>
+
+    <div class="gate" style="border-color:var(--orange)"><strong style="color:var(--orange)">What the result can say</strong>
+      It describes community composition. It does not prove viability, activity or product response — pair it with
+      the baseline-and-repeat discipline in section 10.</div>
+  </div>
+</section>
+
+<!-- ═══════════ OPEN WITH GSB ═══════════ -->
+<section id="open">
+  <div class="wrap">
+    <div class="sec-head" style="border-top:1px solid var(--stroke); padding-top:44px">
+      <p class="eyebrow" style="color:var(--berry-d)">Open with GSB · register</p>
+      <h2>What we need from Grant</h2>
+      <p class="lede">Every unresolved item this card carries, in one list. Each is already flagged in place.</p>
+      <p class="intro">These are drawn from the card itself plus two audits: a pre-export pack audit against all
+      three labels, SDSs and fifteen live brochure pages, and a card-versus-live-brochure diff. Nothing in this
+      pack goes to a grower until the label and SDS items are closed.</p>
+    </div>
+
+    <div class="reg">
+      <div class="item"><div class="n">01</div><div>
+        <h4>Which CFU set governs Lockout?</h4>
+        <p class="ctx">The Lockout label names three genera with one average of 10⁹ CFU/mL at production. The SDS
+        names three species with individual counts — B. amyloliquefaciens &gt;1×10⁹, T. endophyticum &gt;2×10⁸,
+        S. lydicus &gt;2×10⁷. The two do not agree.</p>
+        <p class="ask">Which set is correct, and which document do we align to?</p>
+        <p class="src"><a href="#s7">Section 07</a></p></div></div>
+
+      <div class="item"><div class="n">02</div><div>
+        <h4>Is the CFU guarantee at production or at use-by?</h4>
+        <p class="ctx">The range-wide guarantee basis is unresolved. It changes what a rep can say when a grower
+        compares our drum against an imported powder.</p>
+        <p class="ask">Confirm the guarantee basis per format, and who verifies the count — maker QA or independent.</p>
+        <p class="src"><a href="#s9">Section 09</a></p></div></div>
+
+      <div class="item"><div class="n">03</div><div>
+        <h4>What is the real shelf life?</h4>
+        <p class="ctx">Every document says 12 months. A shorter figure was given verbally.</p>
+        <p class="ask">Confirm shelf life by format so label, SDS, brochure and battlecard can be aligned.</p>
+        <p class="src"><a href="#s9">Section 09</a></p></div></div>
+
+      <div class="item"><div class="n">04</div><div>
+        <h4>Whose certificate covers Lockout, and what may we say?</h4>
+        <p class="ctx">NASAA 3620M is on the label. NOP appears only as cover artwork with no number and
+        contradicts NASAA on the same product. ACO 14270 appears nowhere on Lockout as live text — it is a live
+        claim on K-Max. None of the three SDSs mentions any scheme.</p>
+        <p class="ask">Supply the current certificate, the exact approved wording and the scope. Organic
+        certification is the highest-risk claim class we carry.</p>
+        <p class="src"><a href="#s6">Section 06</a></p></div></div>
+
+      <div class="item"><div class="n">05</div><div>
+        <h4>What is the approved storage temperature for Lockout?</h4>
+        <p class="ctx">SP is 5–30 °C and Digester is 5–40 °C. Lockout has no storage temperature anywhere — not on
+        the label, not in the SDS, not in the brochure.</p>
+        <p class="ask">Give us the storage range so it can go on the label.</p>
+        <p class="src"><a href="#s6">Section 06</a></p></div></div>
+
+      <div class="item"><div class="n">06</div><div>
+        <h4>Approve application routes, by product</h4>
+        <p class="ctx">All three SDSs read wider than the brochures. The card holds foliar for Lockout while the
+        live Lockout brochure publishes “foliar, fertigation, drench”. Fertigation is missing from the card for
+        SP and Lockout but advertised on both covers. The Lockout brochure also contradicts itself between cover
+        and page 2.</p>
+        <p class="ask">Confirm the approved route set per product so the card and the brochures can be reconciled.</p>
+        <p class="src"><a href="#s7">Section 07</a></p></div></div>
+
+      <div class="item"><div class="n">07</div><div>
+        <h4>Can 2 L/t seed coating go on the SP label?</h4>
+        <p class="ctx">The SP brochure cover advertises a broadacre coating rate of 2 L/t. The label gives 5–10 L,
+        1–2 L, 1:100 and 60–100 L/ha water, and nothing for seed. Final label governs every rate, so this is a
+        live contradiction in customer-facing material.</p>
+        <p class="ask">Put it on the label, or we pull the figure from the brochure.</p>
+        <p class="src"><a href="#s3">Section 03</a></p></div></div>
+
+      <div class="item"><div class="n">08</div><div>
+        <h4>Is the published Digester mix order approved?</h4>
+        <p class="ctx">The card says the protocol is pending and reps must not assume an order. The live Digester
+        composition page already publishes one: ammonium sulphate first, then Digester, into 100 L/ha cool
+        non-chlorinated water.</p>
+        <p class="ask">Confirm the order, or tell us the brochure is wrong.</p>
+        <p class="src"><a href="#s10">Section 10</a></p></div></div>
+
+      <div class="item"><div class="n">09</div><div>
+        <h4>Is Digestubble the same product as Digester?</h4>
+        <p class="ctx">Digestubble trial data arrived Jul 2026 — nine treatments, stubble carbon and mass to
+        120 days, with untreated and nitrogen-alone controls. Product identity against Digester is unconfirmed, so
+        none of it is quotable.</p>
+        <p class="ask">Confirm the product name against the trial so we know whether this evidence is ours to use.</p>
+        <p class="src"><a href="#s5">Section 05</a></p></div></div>
+
+      <div class="item"><div class="n">10</div><div>
+        <h4>What is the position on mid-crop Digester use?</h4>
+        <p class="ctx">Asked twice on 31 July, never answered. The current default on the card is post-harvest
+        residue only — no in-crop use endorsed.</p>
+        <p class="ask">Confirm or correct the post-harvest-only default.</p>
+        <p class="src"><a href="#s5">Section 05</a></p></div></div>
+
+      <div class="item"><div class="n">11</div><div>
+        <h4>Does the SP bacterium stall below 15 °C?</h4>
+        <p class="ctx">The cold-furrow guidance on the card is our inference, not a GSB figure. It tells reps the
+        pass runs mostly on the three fungi in cold soil.</p>
+        <p class="ask">Confirm, correct or remove the 15 °C threshold.</p>
+        <p class="src"><a href="#s2">Section 02</a></p></div></div>
+
+      <div class="item"><div class="n">12</div><div>
+        <h4>Confirm the Lockout draft rate ladder</h4>
+        <p class="ctx">Preventative 5 L/ha, Light 10 L/ha, Heavy 20 L/ha, dilution 1:20 — carried as draft only.</p>
+        <p class="ask">Confirm final terminology, route and conditions.</p>
+        <p class="src"><a href="#s7">Section 07</a></p></div></div>
+
+      <div class="item"><div class="n">13</div><div>
+        <h4>Can we cite the Gerogery nitrate movement?</h4>
+        <p class="ctx">NO₃ 26 → 38 mg/kg is on our Results page attributed to GSB case study 2195. We have not
+        verified it against the published study ourselves.</p>
+        <p class="ask">Confirm the figure as published, or tell us to drop it.</p>
+        <p class="src"><a href="#s3">Section 03</a></p></div></div>
+
+      <div class="item"><div class="n">14</div><div>
+        <h4>Release the three Lockout evidence sets</h4>
+        <p class="ctx">Queensland soil work, cotton work and orchard work are all referenced but unreleased. Until
+        they arrive, none of it is disease-efficacy proof and all of it stays internal.</p>
+        <p class="ask">Send treatment, comparator, baseline, endpoint and timing for each.</p>
+        <p class="src"><a href="#s7">Section 07</a></p></div></div>
+
+      <div class="item"><div class="n">15</div><div>
+        <h4>Two SDS defects to correct</h4>
+        <p class="ctx">The Digester SDS declares diatomaceous earth 1% w/w with CAS “Not allocated” — diatomaceous
+        earth has real CAS numbers. Section 9 is identical across all three SDSs (SG 1.01, pH 6–7, viscosity
+        1.0 cSt, boiling 100 °C), which cannot hold when one product contains a mineral.</p>
+        <p class="ask">Correct the CAS entry and give us product-specific Section 9 data.</p>
+        <p class="src">Pack audit · 2026-08-04</p></div></div>
+
+      <div class="item"><div class="n">16</div><div>
+        <h4>Written support for any feeding rule</h4>
+        <p class="ctx">No standard food-source recommendation is approved for Lockout, and the card blocks
+        publishing soil-carbon, humic/fulvic, sugar, fish or seaweed feeding rules.</p>
+        <p class="ask">Supply written, formulation-specific feeding guidance, or confirm there is none.</p>
+        <p class="src"><a href="#s10">Section 10</a></p></div></div>
+    </div>
+
+    <div class="panel tint">
+      <h4>What we have already settled our end</h4>
+      <p>Organism sets agree across label, SDS and brochure for SP and Digester. Water CAS 7732-18-5 is on all
+      three SDSs. Emergency numbers are consistent. GSB is named as manufacturer on all three SDSs, and GSB's own
+      product names appear nowhere. No kill, suppress or control language appears anywhere customer-facing. All
+      SDS pages remain marked DRAFT — that is the release gate, and it is deliberate.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="foot-rule"></div>
+  <div class="wrap">
+    <div class="stamp">
+      <div><p class="c c1">Precision Nutrition</p><p>Physical · Mineral · Biological</p></div>
+      <div><p class="c c2">Optimising Inputs</p><p>Addressed · Optimised · Enabled</p></div>
+      <div><p class="c c3">Maximising Outcomes</p><p>Measured · Proven · Delivered</p></div>
+    </div>
+    <div class="colophon">
+      <p><strong>Confidential — GSB / Hybrid Ag review draft.</strong> Mycro-Tec® Biology Battlecard, August 2026.
+      Rendered from the 11-page master for review. Not for grower distribution. Final label and SDS govern every
+      rate, route, count, storage condition and claim.</p>
+      <p>Hybrid-Ag Pty Ltd · (03) 5722 7555 · support@hybridag.com.au · Manufactured by Great Southern Biology.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var links = Array.prototype.slice.call(document.querySelectorAll('#nav a'));
+  var secs  = links.map(function(a){ return document.querySelector(a.getAttribute('href')); });
+  var nav   = document.getElementById('nav');
+  function sync(){
+    var y = window.scrollY + 150, best = 0;
+    for (var i = 0; i < secs.length; i++){ if (secs[i] && secs[i].offsetTop <= y) best = i; }
+    links.forEach(function(a,i){ a.classList.toggle('on', i === best); });
+    var el = links[best];
+    if (el){
+      var l = el.offsetLeft, r = l + el.offsetWidth;
+      if (l < nav.scrollLeft + 20) nav.scrollTo({left:l - 20, behavior:'smooth'});
+      else if (r > nav.scrollLeft + nav.clientWidth - 20) nav.scrollTo({left:r - nav.clientWidth + 20, behavior:'smooth'});
+    }
+  }
+  var t = false;
+  window.addEventListener('scroll', function(){ if(!t){ t = true; requestAnimationFrame(function(){ sync(); t = false; }); } }, {passive:true});
+  sync();
+})();
+</script>
+
+</body>
+</html>
