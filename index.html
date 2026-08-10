@@ -50,12 +50,11 @@ a{color:var(--teal)}
 .tri i:nth-child(1){background:var(--teal)}
 .tri i:nth-child(2){background:var(--orange)}
 .tri i:nth-child(3){background:var(--berry)}
-.tri-top{position:fixed; top:0; left:0; right:0; z-index:80; height:5px}
 .wrap{max-width:var(--measure); margin:0 auto; padding:0 26px}
 
 /* ── masthead ─────────────────────────────────────────────── */
 .mast{position:relative; background:var(--cream); border-bottom:1px solid var(--stroke);
-  padding:22px 0 20px; margin-top:5px; overflow:hidden}
+  padding:22px 0 20px; overflow:hidden}
 /* cover watermark — faded hard so the copy stays the thing you read */
 .mast::before{content:""; position:absolute; inset:0;
   background:url(assets/cover-field.webp) center 88% / cover no-repeat;
@@ -72,8 +71,6 @@ a{color:var(--teal)}
 .mast h1{font-family:var(--display); font-weight:500; font-size:clamp(23px,3vw,31px);
   line-height:1.1; margin:14px 0 5px; letter-spacing:-.2px}
 .mast .sub{font-size:14.5px; color:var(--grey); margin:0; max-width:70ch}
-.mast .govern{font-size:12px; color:var(--grey); margin:9px 0 0; max-width:80ch;
-  padding-left:11px; border-left:2px solid var(--stroke)}
 details.brief{margin:14px 0 0; max-width:88ch}
 details.brief summary{font-size:13px; color:var(--berry-d); cursor:pointer; font-weight:500;
   list-style:none; display:inline-flex; align-items:center; gap:6px}
@@ -84,7 +81,7 @@ details.brief p{font-size:13.5px; color:var(--ink); margin:10px 0 0; padding-lef
   border-left:2px solid var(--berry)}
 
 /* ── tab bar ──────────────────────────────────────────────── */
-.tabbar{position:sticky; top:5px; z-index:70; background:rgba(244,241,234,.96);
+.tabbar{position:sticky; top:0; z-index:70; background:rgba(244,241,234,.96);
   backdrop-filter:saturate(1.5) blur(10px); border-bottom:1px solid var(--stroke)}
 .tabs{display:flex; gap:2px; overflow-x:auto; scrollbar-width:none}
 .tabs::-webkit-scrollbar{display:none}
@@ -192,6 +189,7 @@ h3.sub::after{content:""; flex:1; height:1px; background:var(--stroke)}
 .rot4 > .card:nth-child(4n+4),.rot5 > .card:nth-child(5n+4){--a:var(--grey)}
 .rot5 > .card:nth-child(5n+5){--a:var(--teal)}
 /* full-bleed to the tile edges, butted straight under the 4px accent cap */
+.card img.figcrop{height:auto; aspect-ratio:220/94; object-fit:fill}
 .card img{margin:-10px -15px 12px; width:calc(100% + 30px); max-width:none;
   height:104px; object-fit:cover; border-radius:0}
 .card h4{font-family:var(--oswald); font-weight:700; font-size:11.5px; letter-spacing:1.1px;
@@ -358,7 +356,7 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
 .specbar .v, ul.chev li{overflow-wrap:break-word}
 
 @media print{
-  .tabbar,.jump,.tri-top{display:none}
+  .tabbar,.jump{display:none}
   [role="tabpanel"]{display:block!important; break-before:page}
   .faq details{open:true}
   .faq .ans{display:block!important}
@@ -368,8 +366,6 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
 </style>
 </head>
 <body>
-
-<div class="tri tri-top"><i></i><i></i><i></i></div>
 
 <header class="mast">
   <div class="wrap">
@@ -383,8 +379,6 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
     <span class="banner" style="margin-top:14px">Confidential — GSB / Hybrid Ag review draft</span>
     <h1>Mycro-Tec® Biology Battlecard</h1>
     <p class="sub">Three products, three distinct jobs, one diagnosed sequence — with the claim boundary drawn on every tab.</p>
-    <p class="govern">Rendered from the 11-page master for review · not for grower distribution ·
-    final label and SDS govern every rate, route, count, storage condition and claim.</p>
     <details class="brief">
       <summary>Grant — read this first</summary>
       <p><strong>This is a review draft, not a released document.</strong> It is our internal sales battlecard,
@@ -397,6 +391,7 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
 
 <div class="tabbar">
   <div class="wrap">
+    <div class="tri"><i></i><i></i><i></i></div>
     <div class="tabs" role="tablist" aria-label="Battlecard sections">
       <button role="tab" id="t-overview"  aria-controls="p-overview"  aria-selected="true"  style="--tc:var(--teal)"><span class="dot"></span>Overview</button>
       <button role="tab" id="t-sp"        aria-controls="p-sp"        aria-selected="false" style="--tc:var(--teal)"><span class="dot"></span>SP</button>
@@ -420,7 +415,6 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
       <h2>One range. Three distinct jobs.</h2>
       <p class="lede">Three targeted tools. One diagnosed sequence.</p>
     </div></div>
-    <div class="tri"><i></i><i></i><i></i></div>
   </div>
   <div class="wrap">
     <div class="blk" style="padding-top:20px">
@@ -500,7 +494,6 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
       <h2>A mineral-access layer</h2>
       <p class="lede">Support access to the mineral bank already in the soil — phosphorus first.</p>
     </div></div>
-    <div class="tri"><i></i><i></i><i></i></div>
   </div>
   <div class="wrap">
     <div class="specbar">
@@ -530,11 +523,11 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
     <div class="blk" id="sp-mech">
       <h3 class="sub">How it works · from fixation to biological access</h3>
       <div class="grid g3 rot">
-        <div class="card"><img src="assets/064fc8b18753.webp" alt=""><p class="n">01</p><h4>Fixed</h4>
+        <div class="card"><img class="figcrop" src="assets/sp-step-01.webp" alt=""><p class="n">01</p><h4>Fixed</h4>
           <p>Only 20–30% of applied P is taken up. The rest fixes — with calcium in higher-pH soils; with iron and aluminium in lower-pH.</p></div>
-        <div class="card"><img src="assets/6eeec21bb9d8.webp" alt=""><p class="n">02</p><h4>Organic acids</h4>
+        <div class="card"><img class="figcrop" src="assets/sp-step-02.webp" alt=""><p class="n">02</p><h4>Organic acids</h4>
           <p>SP organisms produce organic acids — gluconic, oxalic and citric — around the root zone.</p></div>
-        <div class="card"><img src="assets/1d6d992777b0.webp" alt=""><p class="n">03</p><h4>Separate</h4>
+        <div class="card"><img class="figcrop" src="assets/sp-step-03.webp" alt=""><p class="n">03</p><h4>Separate</h4>
           <p>Those acids help separate phosphorus from the bonds. Activity continues only while viable biology establishes and remains active.</p></div>
       </div>
     </div>
@@ -662,7 +655,6 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
       <h2>Residue as a managed process</h2>
       <p class="lede">Selected decomposer biology for post-harvest residue and stubble.</p>
     </div></div>
-    <div class="tri"><i></i><i></i><i></i></div>
   </div>
   <div class="wrap">
     <div class="specbar">
@@ -782,7 +774,6 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
       <h2>Occupy · compete · balance</h2>
       <p class="lede">Proactive microbiome-management biology for the root zone and plant surface.</p>
     </div></div>
-    <div class="tri"><i></i><i></i><i></i></div>
   </div>
   <div class="wrap">
     <div class="specbar">
@@ -807,16 +798,11 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
       </div>
       <div class="strip">Purpose-selected biology · No storage temperature exists · Final label / SDS govern</div>
       <div class="flag">
-        <span class="tag">Open with GSB · certification, corrected on this draft</span>
-        <p>The Figma card carries “<strong>three cert schemes on record (ACO 14270, NASAA 3620M, NOP)</strong>”. A
-        page-wide trace found only one of the three is on Lockout's own label. <strong>NASAA Organic Certified
-        3620M</strong> is real — on the Lockout label and its brochure composition page. <strong>NOP</strong>
-        appears only as artwork on the brochure cover with no certificate number, and contradicts the NASAA mark
-        on the same product. <strong>ACO 14270</strong> appears nowhere on Lockout as live text — it is a live
-        claim on a different product (K-Max). None of the three SDSs mentions any certification scheme. The claim
-        has been reduced to the strip above for this draft.</p>
-        <p class="ask">Which scheme actually covers Lockout, whose certificate is it, and what is the exact
-        approved wording and scope? Please supply the current certificate.</p>
+        <span class="tag">Open with GSB · organic certification</span>
+        <p>The organic mark on the Lockout label is a <strong>placeholder</strong>. We understand the product is
+        likely NOP organic, but it does not fall under any certification we currently hold, and none of the three
+        SDSs references a scheme.</p>
+        <p class="ask">Can you supply the current certificate for Lockout, with the exact approved wording and scope?</p>
       </div>
     </div>
 
@@ -959,7 +945,6 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
       <h2>Compare &amp; verify</h2>
       <p class="lede">What you are actually up against — and the six checks that apply to any drum, ours included.</p>
     </div></div>
-    <div class="tri"><i></i><i></i><i></i></div>
   </div>
   <div class="wrap">
     <div class="jump">
@@ -1061,7 +1046,6 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
       <h2>Measure &amp; sample</h2>
       <p class="lede">Baseline · apply · repeat · decide — and how to take a sample worth testing.</p>
     </div></div>
-    <div class="tri"><i></i><i></i><i></i></div>
   </div>
   <div class="wrap">
     <div class="jump">
@@ -1198,7 +1182,6 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
       <h2>Labels, brochures &amp; SDSs</h2>
       <p class="lede">The full pack for the three Mycro-Tec products — everything behind the battlecard, in one place.</p>
     </div></div>
-    <div class="tri"><i></i><i></i><i></i></div>
   </div>
   <div class="wrap">
     <div class="blk" style="padding-top:20px">
@@ -1213,7 +1196,7 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
       <div class="grid g3">
         <a class="doc" href="docs/sp-label.pdf" target="_blank" rel="noopener">
           <span class="ic"></span>
-          <span><span class="t">Label</span><span class="m">1 page · 1000 L artwork</span></span>
+          <span><span class="t">Label</span><span class="m">1 page · all pack sizes</span></span>
           <span class="pill ">Draft</span>
         </a>
         <a class="doc" href="docs/sp-brochure.pdf" target="_blank" rel="noopener">
@@ -1235,7 +1218,7 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
       <div class="grid g3">
         <a class="doc" href="docs/digester-label.pdf" target="_blank" rel="noopener">
           <span class="ic"></span>
-          <span><span class="t">Label</span><span class="m">1 page · 1000 L artwork</span></span>
+          <span><span class="t">Label</span><span class="m">1 page · all pack sizes</span></span>
           <span class="pill ">Draft</span>
         </a>
         <a class="doc" href="docs/digester-brochure.pdf" target="_blank" rel="noopener">
@@ -1257,7 +1240,7 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
       <div class="grid g3">
         <a class="doc" href="docs/lockout-label.pdf" target="_blank" rel="noopener">
           <span class="ic"></span>
-          <span><span class="t">Label</span><span class="m">1 page · 1000 L artwork</span></span>
+          <span><span class="t">Label</span><span class="m">1 page · all pack sizes</span></span>
           <span class="pill ">Draft</span>
         </a>
         <a class="doc" href="docs/lockout-brochure.pdf" target="_blank" rel="noopener">
@@ -1292,7 +1275,6 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
       <h2>What we need from Grant</h2>
       <p class="lede">Every unresolved item this card carries, in one list. Each is also flagged in place.</p>
     </div></div>
-    <div class="tri"><i></i><i></i><i></i></div>
   </div>
   <div class="wrap">
     <div class="blk" style="padding-top:20px">
@@ -1324,12 +1306,11 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
           <p class="src"><button data-go="compare">Compare &amp; verify tab</button></p></div></div>
 
         <div class="item"><div class="n">04</div><div>
-          <h4>Whose certificate covers Lockout, and what may we say?</h4>
-          <p class="ctx">NASAA 3620M is on the label. NOP appears only as cover artwork with no number and
-          contradicts NASAA on the same product. ACO 14270 appears nowhere on Lockout as live text — it is a live
-          claim on K-Max. None of the three SDSs mentions any scheme.</p>
-          <p class="ask">Supply the current certificate, the exact approved wording and the scope. Organic
-          certification is the highest-risk claim class we carry.</p>
+          <h4>Whose organic certification covers Lockout?</h4>
+          <p class="ctx">The mark on the label is a placeholder. We understand the product is likely NOP organic,
+          but it does not fall under any certification we currently hold, and none of the three SDSs references a
+          scheme.</p>
+          <p class="ask">Supply the current certificate, with the exact approved wording and scope.</p>
           <p class="src"><button data-go="lockout">Lockout tab</button></p></div></div>
 
         <div class="item"><div class="n">05</div><div>
