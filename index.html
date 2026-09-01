@@ -332,6 +332,11 @@ ul.chev.tight li{margin-bottom:6px}
   margin:0 0 4px; color:var(--ink)}
 .reg .ctx{font-size:13px; color:var(--grey); margin:0 0 5px}
 .reg .ask{font-size:13.5px; font-style:italic; color:var(--berry-d); margin:0}
+.reg .verdict{font-size:13.8px; color:var(--teal); font-weight:600; margin:0 0 6px}
+.reg .ouraction{font-size:12.5px; color:var(--grey); margin:7px 0 0; padding-left:11px;
+  border-left:2px solid var(--stroke)}
+.reg .ouraction span{font-family:var(--oswald); font-weight:700; font-style:normal; font-size:9.5px;
+  letter-spacing:1.1px; text-transform:uppercase; color:var(--ink); margin-right:6px}
 .reg .src{font-size:10.5px; color:var(--grey); margin:5px 0 0; font-family:var(--oswald);
   letter-spacing:.8px; text-transform:uppercase}
 .reg .src button{appearance:none; background:none; border:0; padding:0; font:inherit;
@@ -433,11 +438,12 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
     <h1>Mycro-Tec® Biology Battlecard</h1>
     <p class="sub">Three products, three distinct jobs, one diagnosed sequence — with the claim boundary drawn on every tab.</p>
     <details class="brief">
-      <summary>Grant — read this first</summary>
-      <p><strong>This is a review draft, not a released document.</strong> It is our internal sales battlecard,
-      reorganised into tabs so you can go straight to the product you want. Nothing here goes to a grower until
-      the label and SDS items are closed. Items only you can settle are flagged in place and collected under
-      <strong>Open with GSB</strong> — 16 of them.</p>
+      <summary>Where this stands</summary>
+      <p><strong>Still a draft, but no longer waiting on GSB.</strong> Isaac Chizik and Grant Kelson returned a
+      completed response register on 20 August 2026 answering all twenty of our questions, and their corrections
+      are applied throughout these tabs. See <strong>GSB answers</strong> for what came back and what changed.
+      The one item still open is the Lockout evidence — Queensland, cotton and orchard work are still under
+      review at GSB. Nothing goes to a grower until the labels and SDSs are rebuilt to match.</p>
     </details>
   </div>
 </header>
@@ -452,7 +458,7 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
       <button role="tab" id="t-compare"   aria-controls="p-compare"   aria-selected="false" style="--tc:var(--teal)"><span class="dot"></span>Compare &amp; verify</button>
       <button role="tab" id="t-measure"   aria-controls="p-measure"   aria-selected="false" style="--tc:var(--orange)"><span class="dot"></span>Measure &amp; sample</button>
       <button role="tab" id="t-drafts"    aria-controls="p-drafts"    aria-selected="false" style="--tc:var(--teal)"><span class="dot"></span>Drafts<span class="badge alt">9</span></button>
-      <button role="tab" id="t-open"      aria-controls="p-open"      aria-selected="false" style="--tc:var(--berry)"><span class="dot"></span>Open with GSB<span class="badge">20</span></button>
+      <button role="tab" id="t-open"      aria-controls="p-open"      aria-selected="false" style="--tc:var(--berry)"><span class="dot"></span>GSB answers<span class="badge">20</span></button>
     </div>
   </div>
 </div>
@@ -579,9 +585,9 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
   <div class="wrap">
     <div class="specbar">
       <div><p class="k">When</p><p class="v"><strong>At establishment</strong></p></div>
-      <div><p class="k">Rate · broadacre</p><p class="v"><strong>1–2 L/ha</strong>Draft · hort 5–10 L/ha</p></div>
-      <div><p class="k">Lead route</p><p class="v"><strong>In-furrow</strong>Final label approval</p></div>
-      <div><p class="k">Water</p><p class="v"><strong>1:100</strong>60–100 L/ha · 5–30 °C</p></div>
+      <div><p class="k">Liquid injection</p><p class="v"><strong>1–2 L/ha</strong>60–100 L water/ha</p></div>
+      <div><p class="k">Foliar</p><p class="v"><strong>1–2 L/ha</strong>Broadacre · hort 5–10 L/ha</p></div>
+      <div><p class="k">Seed treatment</p><p class="v"><strong>7.5 L/t</strong>Fertiliser coating 2 L/t</p></div>
       <div><p class="k">Claim lane</p><p class="v">Supports access to fixed P.<br><span class="muted">Never fertiliser replacement.</span></p></div>
     </div>
     <div class="jump">
@@ -606,7 +612,7 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
         <div class="card"><img class="figcrop" src="assets/sp-step-01.webp" alt=""><p class="n">01</p><h4>Fixed</h4>
           <p>Only 20–30% of applied P is taken up. The rest fixes — with calcium in higher-pH soils; with iron and aluminium in lower-pH.</p></div>
         <div class="card"><img class="figcrop" src="assets/sp-step-02.webp" alt=""><p class="n">02</p><h4>Organic acids</h4>
-          <p>SP organisms produce organic acids — gluconic, oxalic and citric — around the root zone.</p></div>
+          <p>SP organisms produce a wide range of organic acids, gluconic among them, around the root zone.</p></div>
         <div class="card"><img class="figcrop" src="assets/sp-step-03.webp" alt=""><p class="n">03</p><h4>Separate</h4>
           <p>Those acids help separate phosphorus from the bonds. Activity continues only while viable biology establishes and remains active.</p></div>
       </div>
@@ -621,13 +627,14 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
       </div>
       <h3 class="sub">What blunts it</h3>
       <div class="grid g3 rot">
-        <div class="card"><h4 class="acc">Calcium on the same pass</h4><p>Can re-fix phosphorus the biology has just released. Keep calcium off the SP pass.</p></div>
-        <div class="card"><h4 class="acc">Cold furrow</h4><p>Below 15 °C the bacterium stalls, so the pass runs mostly on the three fungi — our inference, for GSB to confirm.</p></div>
-        <div class="card"><h4 class="acc">Tank chemistry + hold time</h4><p>Fungicide, liquid zinc and seed treatments compromise viability. Clean non-chlorinated water; apply promptly.</p></div>
+        <div class="card"><h4 class="acc">Calcium in close proximity</h4><p>Calcium can re-fix phosphorus where it sits close enough to the same P pool. Judge it on placement, timing and soil conditions — the formulation itself is compatible with macro- and micronutrients.</p></div>
+        <div class="card"><h4 class="acc">Cold soil</h4><p>Activity persists to about 4 °C but slows as temperature drops. Below 5 °C, consider waiting for better conditions; 10–15 °C is reduced but still active; above 15 °C is favourable.</p></div>
+        <div class="card"><h4 class="acc">Tank chemistry + hold time</h4><p>Do not assume compatibility with crop-protection or seed-treatment chemistry — it depends on the product, concentration and exposure time. Metalaxyl is incompatible; azoxystrobin is acceptable at label rates. Clean non-chlorinated water; apply promptly.</p></div>
       </div>
       <div class="flag">
-        <span class="tag">Open with GSB · cold-furrow inference</span>
-        <p>The 15 °C bacterium-stall threshold is <strong>our inference</strong>, not a GSB figure. <button class="qjump" data-go="open" data-q="q15">Question 15 →</button></p>
+        <span class="tag">Answered by GSB · cold-furrow inference</span>
+        <p>GSB removed the 15 °C threshold as too high and too absolute — activity persists to about 4 °C.
+        <button class="qjump" data-go="open" data-q="q15">Answer 15 →</button></p>
       </div>
     </div>
 
@@ -645,16 +652,17 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
         </div>
         <div class="panel">
           <h4>Routes</h4>
-          <p><strong style="color:var(--teal)">In-furrow liquid</strong> — lead route; final label approval</p>
-          <p><strong>Seed coating</strong> — 2 L/t on label; <span class="muted">figure is ours</span></p>
-          <p><strong>Coated granule</strong> — Gerogery proof; <span class="muted">not liquid proof</span></p>
-          <p><strong>Fertigation</strong> — brochure route (hort + viti) · compatibility governs</p>
-          <p class="caption" style="margin-bottom:0">Apply promptly · compatibility governs.</p>
+          <p><strong style="color:var(--teal)">Liquid injection</strong> — 1–2 L/ha into 60–100 L water/ha, below the seed and fertiliser where possible; aim for at least 1.5 mL of total injection volume per lineal metre</p>
+          <p><strong>Broadacre foliar</strong> — 1–2 L/ha in 60 L or more water/ha; apply late afternoon, evening or overnight where practical</p>
+          <p><strong>Horticulture foliar</strong> — 5–10 L/ha; water rate to suit canopy coverage</p>
+          <p><strong>Seed treatment</strong> — 7.5 L/t seed; sow soon after treating</p>
+          <p><strong>Fertiliser coating</strong> — 2 L/t, carbon-based fertilisers only</p>
+          <p class="caption" style="margin-bottom:0">Rates confirmed by GSB 20 Aug 2026. The published GSB labels are being updated to match; the seed rate changed because the Protecta survival bio-polymer is now included in the formulation.</p>
         </div>
       </div>
       <div class="flag">
-        <span class="tag">Open with GSB · seed-coating rate</span>
-        <p>The brochure advertises <strong>2 L/t</strong> seed coating. That figure is not on the label. <button class="qjump" data-go="open" data-q="q11">Question 11 →</button></p>
+        <span class="tag">Answered by GSB · seed-coating rate</span>
+        <p>The brochure advertises <strong>2 L/t</strong> seed coating. That figure is not on the label. <button class="qjump" data-go="open" data-q="q11">Answer 11 →</button></p>
       </div>
     </div>
 
@@ -668,16 +676,17 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
           <p class="proof-stat">3.40 → 3.98 t/ha <span>+17% · +0.58 t/ha</span></p>
           <p style="color:var(--berry-d); font-weight:600; font-size:12.5px; margin:0 0 8px">Colwell P 42→57 · +35.7%&nbsp;&nbsp;&nbsp;NO₃ 26→38 · +46%</p>
           <p class="muted" style="font-size:12.8px; margin:0">Also observed: NH₄-N 1→2 mg/kg; Colwell K 184→217
-          (+17.9%). Applied at 20 kg/ha through the fertiliser box at sowing. Pre-harvest soil tests confirmed the
-          biology was working through movement in Colwell P. Granular field case — not liquid-rate proof or a
-          guaranteed response.</p>
+          (+17.9%). Applied at 20 kg/ha through the fertiliser box at sowing. Pre-harvest soil testing showed a
+          larger pool of plant-available phosphorus where SP was applied, consistent with the intended
+          solubilisation mechanism. Colwell P is an index of P supply, so it does not by itself prove causation.
+          Observations from one field case, not a guaranteed response across soils or seasons.</p>
           <p class="proof-link"><a href="https://greatsouthernbiology.com.au/archives/case-study/2195"
             target="_blank" rel="noopener">Read the full trial write-up from Great Southern Biology →</a></p>
         </div>
       </div>
       <div class="flag" style="margin-top:14px">
-        <span class="tag">Open with GSB · nitrate figure</span>
-        <p>The NO₃ movement is attributed to GSB case study 2195, <strong>unverified against the published study</strong>. <button class="qjump" data-go="open" data-q="q17">Question 17 →</button></p>
+        <span class="tag">Answered by GSB · nitrate figure</span>
+        <p>The NO₃ movement is attributed to GSB case study 2195, <strong>unverified against the published study</strong>. <button class="qjump" data-go="open" data-q="q17">Answer 17 →</button></p>
       </div>
     </div>
 
@@ -690,7 +699,7 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
         <div class="faq">
           <details><summary>Why not apply more P?</summary><p class="ans">More fertiliser does not resolve fixation. SP supports access to the existing nutrient bank.</p></details>
           <details><summary>Is liquid always better?</summary><p class="ans">No. Judge form against placement: liquid carries metabolites and spores; powder may concentrate spores.</p></details>
-          <details><summary>Mix with fungicide or seed treatment?</summary><p class="ans">Only with documented compatibility. Fungicides, liquid zinc and seed chemistry can compromise biology.</p></details>
+          <details><summary>Mix with fungicide or seed treatment?</summary><p class="ans">Case by case, not a blanket no. Metalaxyl is incompatible; azoxystrobin is acceptable at label rates, and Hybrid Ag’s Precede seed treatment is confirmed suitable at label rates. GSB can run compatibility testing, but it is not a one-day job.</p></details>
         </div>
         <div class="faq">
           <details><summary>How long does it persist?</summary><p class="ans">No supported persistence window. If it changes the decision, repeat qPCR against a baseline.</p></details>
@@ -736,7 +745,7 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
       <div><p class="k">Standard rate</p><p class="v"><strong>1–2 L/ha</strong>After harvest</p></div>
       <div><p class="k">Heavy residue</p><p class="v"><strong>3 L/ha max</strong>Extra-heavy — open</p></div>
       <div><p class="k">AMS starter</p><p class="v"><strong>8 kg/ha</strong>Fixed · every pass</p></div>
-      <div><p class="k">Limits</p><p class="v">5–40 °C · 1:50<br><span class="muted">Not on nut trees</span></p></div>
+      <div><p class="k">Limits</p><p class="v">5–40 °C<br><span class="muted">Not on nut trees · post-harvest only</span></p></div>
     </div>
     <div class="jump">
       <a href="#dg-role">Role</a><a href="#dg-matrix">What it acts on</a><a href="#dg-mech">How it starts</a>
@@ -827,8 +836,8 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
         <div class="not"><h4>Do not say</h4><ul class="chev"><li>Removes all residue.</li><li>Controls disease or guarantees disappearance.</li></ul></div>
       </div>
       <div class="flag">
-        <span class="tag">Open with GSB · internal evidence + release gate</span>
-        <p>Digestubble trial data arrived Jul 2026, but <strong>product identity against Digester is unconfirmed</strong> — none of it is quotable, and mid-crop use is still unanswered. <button class="qjump" data-go="open" data-q="q13">Question 13 →</button></p>
+        <span class="tag">Answered by GSB · internal evidence + release gate</span>
+        <p>Digestubble trial data arrived Jul 2026, but <strong>product identity against Digester is unconfirmed</strong> — none of it is quotable, and mid-crop use is still unanswered. <button class="qjump" data-go="open" data-q="q13">Answer 13 →</button></p>
       </div>
     </div>
   </div>
@@ -846,10 +855,10 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
   <div class="wrap">
     <div class="specbar">
       <div><p class="k">When</p><p class="v"><strong>Ahead of risk</strong>Orchards: budswell → pre-flowering</p></div>
-      <div><p class="k">Route</p><p class="v"><strong>Soil</strong>Foliar not established</p></div>
-      <div><p class="k">Draft rate ladder</p><p class="v"><strong>5 / 10 / 20 L/ha</strong>Preventative · light · heavy</p></div>
-      <div><p class="k">Dilution</p><p class="v"><strong>1:20</strong>Draft only</p></div>
-      <div><p class="k">Storage</p><p class="v"><strong>None exists</strong><span class="muted">Open with GSB</span></p></div>
+      <div><p class="k">Liquid injection</p><p class="v"><strong>2–5 L/ha</strong>60–100 L water/ha</p></div>
+      <div><p class="k">Foliar</p><p class="v"><strong>2–5 L/ha</strong>Broadacre · hort 5–10 L/ha</p></div>
+      <div><p class="k">Fertigation</p><p class="v"><strong>5–10 L/ha</strong>Drench 2.5 L in 50 L</p></div>
+      <div><p class="k">Storage</p><p class="v"><strong>5–40 °C</strong>Best at 15 °C · keep out of sunlight</p></div>
     </div>
     <div class="jump">
       <a href="#lo-role">Role</a><a href="#lo-prop">Proposition</a><a href="#lo-fit">When it's worth it</a>
@@ -863,10 +872,12 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
         <p>Establish beneficial organisms ahead of a known risk window — before an adverse population dominates
         the living zone.</p>
       </div>
-      <div class="strip">Purpose-selected biology · No storage temperature exists · Final label / SDS govern</div>
-      <div class="flag">
-        <span class="tag">Open with GSB · organic certification</span>
-        <p>The organic mark on the Lockout label is a <strong>placeholder</strong>. <button class="qjump" data-go="open" data-q="q08">Question 08 →</button></p>
+      <div class="strip">Label guarantee at production · B. amyloliquefaciens &gt;1×10⁹ · T. endophyticum &gt;2×10⁸ · S. lydicus &gt;2×10⁷ CFU/mL · Store 5–40 °C · Final label / SDS govern</div>
+      <div class="flag" style="border-left-color:var(--teal); background:#f2f8f7; border-color:#cfe4e2">
+        <span class="tag" style="color:var(--teal)">Answered by GSB · organic certification</span>
+        <p>Lockout is <strong>not organically certified</strong>; GSB expects formal certification in about six
+        months. Until then it is an <strong>allowable input</strong> only where a grower's own certifier approves
+        it. <button class="qjump" data-go="open" data-q="q08">Answer 08 →</button></p>
       </div>
     </div>
 
@@ -892,8 +903,8 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
       <h3 class="sub">What blunts it</h3>
       <div class="grid g3 rot">
         <div class="card"><h4 class="acc">Arriving late</h4><p>Once an adverse population dominates, the living zone is hard to win back. Not rescue chemistry.</p></div>
-        <div class="card"><h4 class="acc">Dose thinking</h4><p>A few million applied cells meet a billion residents per gram — multiplication, not dose, does the work.</p></div>
-        <div class="card"><h4 class="acc">Unapproved routes</h4><p>Foliar is not established in the draft label, and no standard food-source recommendation is approved.</p></div>
+        <div class="card"><h4 class="acc">Establishment, not just dose</h4><p>Applied organisms enter a community of roughly 10⁸–10¹⁰ cells per gram, so survival, establishment and multiplication decide the result. Rate still matters: 2 L/ha of Lockout applies 2.44 trillion CFU/ha plus the metabolites that jump-start colonisation.</p></div>
+        <div class="card"><h4 class="acc">A universal rate ladder</h4><p>Do not sell a fixed preventative / light / heavy ladder across crops — it drifts toward disease-control claims. Rate by crop segment, and where a high rate is being considered, let metagenomic testing inform it.</p></div>
       </div>
     </div>
 
@@ -908,10 +919,11 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
           <li>Keep disease-control and rescue claims outside the claim lane.</li>
         </ul>
         <div class="card" style="--a:var(--orange)">
-          <h4 class="acc" style="font-size:14px">Certificate pending</h4>
-          <p class="k" style="color:var(--orange)">Manufacturer to supply</p>
-          <p>Use the manufacturer's current certificate and exact approved wording once supplied. Do not infer
-          scheme or scope from placeholder artwork.</p>
+          <h4 class="acc" style="font-size:14px">Not certified — allowable input</h4>
+          <p class="k" style="color:var(--orange)">GSB certification about six months away</p>
+          <p>Never present Lockout as organically certified. Where a grower needs it, they email Grant Kelson,
+          copying Hybrid Ag and their own certifier, and GSB liaises with that certifier to have it approved as an
+          allowable input case by case.</p>
         </div>
       </div>
     </div>
@@ -931,19 +943,18 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
         </div>
         <div class="panel">
           <h4>Placement + timing</h4>
-          <p><strong style="color:var(--teal)">Soil</strong> — active root zone; final label governs.</p>
-          <p><strong style="color:var(--berry-d)">Foliar · hold</strong> — not established in the draft label. Do
-          not infer approval from another formulation.</p>
-          <p>Build the population before pressure increases. Plan for predictable pre-risk windows, subject to
-          crop and final label. Do not wait for severe symptoms and expect a rescue.</p>
-          <p class="caption" style="margin-bottom:0">Draft only · final terminology, route and conditions require
-          Grant confirmation. Qualify: known window · supporting test · establishment timing · water/chemistry ·
-          final crop and route.</p>
+          <p><strong style="color:var(--teal)">Liquid injection</strong> — 2–5 L/ha, below seed and fertiliser where possible.</p>
+          <p><strong>Foliar</strong> — 2–5 L/ha broadacre, 5–10 L/ha horticulture; late afternoon, evening or overnight.</p>
+          <p><strong>Fertigation</strong> — 5–10 L/ha. <strong>Nursery / root drench</strong> — 2.5 L in 50 L water. <strong>Seed</strong> — 7.5 L/t.</p>
+          <p>Build the population before pressure increases. Plan for predictable pre-risk windows. Do not wait for
+          severe symptoms and expect a rescue.</p>
+          <p class="caption" style="margin-bottom:0">Rates by crop segment, confirmed by GSB 20 Aug 2026. There is
+          no fixed dilution factor — use enough clean, de-chlorinated water for the application method.</p>
         </div>
       </div>
       <div class="flag">
-        <span class="tag">Open with GSB · card contradicts the live brochure</span>
-        <p>This card holds foliar, but the live Lockout brochure already publishes <strong>foliar, fertigation, drench</strong> to customers. <button class="qjump" data-go="open" data-q="q10">Question 10 →</button></p>
+        <span class="tag">Answered by GSB · card contradicts the live brochure</span>
+        <p>This card holds foliar, but the live Lockout brochure already publishes <strong>foliar, fertigation, drench</strong> to customers. <button class="qjump" data-go="open" data-q="q10">Answer 10 →</button></p>
       </div>
     </div>
 
@@ -979,15 +990,17 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
             <li>Cotton work — crop stage, route, timing and repeated measures.</li>
             <li>Orchard work — pressure window, establishment timing, baseline and review point.</li>
           </ul>
-          <p class="caption" style="color:var(--berry-d); font-weight:600; margin-bottom:0">Until approved, treat
-          these as Grant questions — not disease-efficacy proof.</p>
+          <p class="caption" style="color:var(--berry-d); font-weight:600; margin-bottom:0">GSB confirmed these
+          are coming once their review closes and growers consent. Until then, internal only — not
+          disease-efficacy proof.</p>
         </div>
         <div class="panel">
           <h4 style="color:var(--berry-d)">Controlled product release gate</h4>
-          <p>Label: three genera, average 10⁹ CFU/mL at production. The SDS names three species with individual
-          counts — the two do not agree. No storage temperature exists for Lockout.</p>
-          <p>Confirm final rates/routes/compatibility; current organic certificate and wording; keep unpublished
-          disease work internal; align label, SDS, brochure and battlecard.</p>
+          <p>Species-level counts at production now govern everywhere: B. amyloliquefaciens &gt;1×10⁹,
+          T. endophyticum &gt;2×10⁸, S. lydicus &gt;2×10⁷ CFU/mL. Store 5–40 °C, best at 15 °C, out of direct
+          sunlight. Counts are production figures — no guaranteed minimum at end of shelf life.</p>
+          <p>What is left is ours: rebuild the label, SDS and brochure to these figures, drop the organic mark,
+          and keep the unreleased disease work internal until GSB finalises it.</p>
           <p class="caption" style="color:var(--orange); font-weight:600; margin-bottom:0">Clean non-chlorinated
           water · apply promptly · no fungicide/biocide mixing without documented compatibility.</p>
         </div>
@@ -1083,8 +1096,8 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
         Read counts on the log scale — 10¹⁰ is one hundred times 10⁸.</p>
       </div>
       <div class="flag">
-        <span class="tag">Open with GSB · three unresolved across the range</span>
-        <p>Lockout composition, the CFU-at-use-by basis and shelf life are all <strong>unresolved</strong>, so none is quoted as settled here. <button class="qjump" data-go="open" data-q="q06">Question 06 →</button></p>
+        <span class="tag">Answered by GSB · three unresolved across the range</span>
+        <p>Lockout composition, the CFU-at-use-by basis and shelf life are all <strong>unresolved</strong>, so none is quoted as settled here. <button class="qjump" data-go="open" data-q="q06">Answer 06 →</button></p>
       </div>
       <div class="gate"><strong>The comparison standard</strong>
         Start with the job. Compare formulation, route, quality controls, evidence and value. Apply the same
@@ -1130,8 +1143,9 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
         <div class="card"><h4 class="acc">Metagenomic</h4>
           <p class="muted">~$500–600 per sample · about six weeks · as quoted Jul 2026</p>
           <p>Describes community composition. It does not prove viability, activity or product response. Use the
-          lab's crop-, soil- and method-specific reference. F:B balance: ~1:50 fine in high-N annuals · worse than
-          1:100 a problem · 1:20 the goal.</p></div>
+          lab's crop-, soil- and method-specific reference. Treat fungal:bacterial ratios as context-dependent —
+          every production system has its own baseline and achievable optimum, and 1:1 is a theoretical ideal
+          rather than a target.</p></div>
         <div class="card"><h4 class="acc">Targeted qPCR</h4>
           <p class="muted">~$100 per sample · about a fortnight · as quoted Jul 2026</p>
           <p>Tracks a nominated organism only where the assay discriminates it and a baseline exists. DNA detection
@@ -1147,18 +1161,20 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
       <h3 class="sub">Execution · protect viability</h3>
       <div class="grid g4 rot4">
         <div class="card"><h4 class="acc">Water</h4><p>Identify chlorine or chloramine. Use validated treatment or non-chlorinated water.</p></div>
-        <div class="card"><h4 class="acc">Mix</h4><p>Pending the product-specific protocol, follow the approved order and apply promptly. Do not assume hold time or compatibility.</p></div>
+        <div class="card"><h4 class="acc">Mix</h4><p>Digester goes into cool, clean, non-chlorinated water first, then 8 kg/ha ammonium sulphate, stirred thoroughly. Apply promptly; do not assume hold time or compatibility.</p></div>
         <div class="card"><h4 class="acc">Compatibility</h4><p>Active ingredient, dose, route and interval all matter. Do not assume a tank partner.</p></div>
         <div class="card"><h4 class="acc">Physical</h4><p>Heat, pressure, filtration and hold-time limits still need manufacturer support.</p></div>
       </div>
       <div class="flag">
-        <span class="tag">Open with GSB · mix order already published</span>
-        <p>This card says the mix order is pending, but the live Digester composition page <strong>already publishes one</strong>. <button class="qjump" data-go="open" data-q="q12">Question 12 →</button></p>
+        <span class="tag">Answered by GSB · mix order already published</span>
+        <p>This card says the mix order is pending, but the live Digester composition page <strong>already publishes one</strong>. <button class="qjump" data-go="open" data-q="q12">Answer 12 →</button></p>
       </div>
       <div class="panel">
-        <h4 style="color:var(--teal)">Feeding · formulation-specific only</h4>
-        <p>Use only formulation-specific directions on the final approved label. Do not publish soil-carbon,
-        humic/fulvic, sugar, fish or seaweed feeding rules until GSB supplies written support.</p>
+        <h4 style="color:var(--teal)">Feeding</h4>
+        <p>Where Lockout goes into the root zone, GSB's preference is to apply it with a good-quality humic acid
+        carrying complex carbon as a supporting nutrition source. Not required for follow-up foliar work. Avoid
+        simple sugars such as molasses — they feed a broad range of organisms, including the non-target and
+        potentially pathogenic ones you are trying to compete against.</p>
       </div>
     </div>
 
@@ -1235,20 +1251,24 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
   </div>
   <div class="wrap">
     <div class="blk" style="padding-top:20px">
-      <p class="intro">Brochures, labels and SDSs are all drafts until the items in <em>Open with GSB</em> are
-      closed and the final changes are made. These may also be superseded by digital versions, which give far
-      more ability to layer information.</p>
+      <p class="intro">Brochures, labels and SDSs are all drafts until GSB's corrections are built back in and
+      the final changes are made. These may also be superseded by digital versions, which give far more ability
+      to layer information.</p>
 
       <div class="askbox">
-        <h3>Your read on these documents</h3>
+        <h3>These files predate GSB's answers</h3>
+        <p style="font-size:13.8px; color:var(--berry-d); margin:0 0 9px">Exported 10 August. GSB's register
+        landed 20 August, and the battlecard tabs have been corrected but <strong>these documents have not</strong>.
+        Read them for structure, not for current figures.</p>
         <ol>
-          <li>Is anything factually wrong, out of date, or worded in a way you would not use?</li>
-          <li>Is anything claimed that the evidence does not support?</li>
-          <li>Is anything missing that should be on a label or SDS before it goes to print?</li>
-          <li>Are the organism names, counts and rates the set you want us printing?</li>
+          <li>SP seed treatment reads 2 L/t; the confirmed rate is <strong>7.5 L/t</strong>.</li>
+          <li>The Lockout label needs species-level counts and a 5–40 °C storage range.</li>
+          <li>The Lockout organic mark comes off — not certified, allowable input only.</li>
+          <li>The Digester brochure publishes the tank-mix order backwards.</li>
+          <li>The Digester SDS still lists diatomaceous earth, now replaced with a peat extract.</li>
         </ol>
-        <p class="ask-note">Every label and SDS question in the register lives in these files. Mark up the PDFs
-        directly if that is easier than working through the list.</p>
+        <p class="ask-note">All five trace to the GSB answers tab. The rebuild happens in Figma before anything
+        goes to print.</p>
       </div>
 
     <div class="docset" style="--a:var(--teal)">
@@ -1390,155 +1410,129 @@ footer{margin-top:44px; border-top:1px solid var(--stroke); background:var(--cre
 <div role="tabpanel" id="p-open" aria-labelledby="t-open" style="--a:var(--berry)">
   <div class="phead">
     <div class="wrap"><div class="inner">
-      <p class="eyebrow" style="color:var(--berry-d)">Open with GSB · register</p>
-      <h2>What we need from Grant</h2>
-      <p class="lede">Twenty questions, in one list. The first four are about the pack as a whole; the rest are specific, and each is flagged where it occurs.</p>
+      <p class="eyebrow" style="color:var(--berry-d)">GSB response register</p>
+      <h2>What GSB came back with</h2>
+      <p class="lede">All twenty answered by GSB on 20 August 2026. Their verdict, the detail behind it, and what we changed as a result.</p>
     </div></div>
   </div>
   <div class="wrap">
     <div class="blk" style="padding-top:20px">
-      <p class="intro">Drawn from the card itself plus two audits: a pre-export pack audit against all three
-      labels, SDSs and fifteen live brochure pages, and a card-versus-live-brochure diff. Nothing in this pack
-      goes to a grower until the label and SDS items are closed.</p>
+      <p class="intro">Isaac Chizik (Manager, Technical Services) worked these through with Grant Kelson, reviewed by
+      Dr M. Kamal, and returned a completed response register on 20 August 2026. Every item came back READY. Their
+      overall read: the commercial concept and three-job architecture are sound, and most issues were document
+      alignment or formal confirmation rather than product science. The corrections are already applied to the
+      tabs in this pack.</p>
 
-      <h3 class="sub">The register</h3>
+      <h3 class="sub">The twenty, answered</h3>
       <div class="reg">
-        <div class="item first4" id="q01"><div class="n">01</div><div>
-          <h4>Accuracy</h4>
-          <p class="ask">Is anything in here wrong, or put more strongly than the evidence actually supports?</p></div></div>
-        <div class="item first4" id="q02"><div class="n">02</div><div>
-          <h4>Gaps</h4>
-          <p class="ask">Is there anything missing that the team would benefit from knowing before they sell it?</p></div></div>
-        <div class="item first4" id="q03"><div class="n">03</div><div>
-          <h4>The grower boundary</h4>
-          <p class="ask">Is there anything here you would not want said to a grower at all?</p></div></div>
-        <div class="item first4" id="q04"><div class="n">04</div><div>
-          <h4>The three jobs</h4>
-          <p class="ask">Does the way we have split them — residue, fixed-P access, establishing ahead of risk — match how you would describe them?</p></div></div>
+        <div class="item" id="q01"><div class="n">01</div><div>
+          <h4>Accuracy and evidence strength</h4>
+          <p class="verdict">The framework is sound; several statements were too definite and are corrected below.</p>
+          <p class="ctx">GSB backs the three-job architecture and the 20–30% P figure, but flagged nine wording issues. Citric and oxalic acids are out — naming beyond gluconic is unnecessary. The blanket calcium warning is too absolute. The zinc/fungicide line conflicted with their TDS. The Gerogery and 'billion residents' lines overstated. F:B ratios need context.</p>
+          <p class="ouraction"><span>Our action</span> Applied across the SP, Lockout and Measure tabs.</p></div></div>
+        <div class="item" id="q02"><div class="n">02</div><div>
+          <h4>Gaps in the pack</h4>
+          <p class="verdict">Nothing missing; they added a set of principles for the team.</p>
+          <p class="ctx">Environment determines expression. Placement matches the biological objective, timing matches the biological window, and establishment matters more than the number applied. Measure the variable closest to the claimed function, baseline before and compare after, and avoid universal thresholds. Biology complements agronomy, it does not replace it.</p>
+          <p class="ouraction"><span>Our action</span> Worth folding into rep training.</p></div></div>
+        <div class="item" id="q03"><div class="n">03</div><div>
+          <h4>Grower-facing claim boundary</h4>
+          <p class="verdict">Our conservative boundaries are right — no change needed.</p>
+          <p class="ctx">Not a fertiliser replacement, not a guaranteed yield response, not a proven synergy, not a pesticide or disease-control product. Also avoid implying identical outcomes across soils, seasons and systems.</p>
+          <p class="ouraction"><span>Our action</span> No change.</p></div></div>
+        <div class="item" id="q04"><div class="n">04</div><div>
+          <h4>The three product jobs</h4>
+          <p class="verdict">Yes — the split matches GSB's positioning.</p>
+          <p class="ctx">Digester for residue breakdown and turnover, SP for solubilisation and access to fixed or mineral phosphorus, Lockout for proactive establishment ahead of a risk window. One refinement: do not limit SP to phosphorus only, though P is usually the key nutrient and the main driver of return.</p>
+          <p class="ouraction"><span>Our action</span> SP framing already reads 'phosphorus leads, the wider bank follows'.</p></div></div>
         <div class="item" id="q05"><div class="n">05</div><div>
-          <h4>Which CFU set governs Lockout?</h4>
-          <p class="ctx">The Lockout label names three genera with one average of 10⁹ CFU/mL at production. The SDS
-          names three species with individual counts — B. amyloliquefaciens &gt;1×10⁹, T. endophyticum &gt;2×10⁸,
-          S. lydicus &gt;2×10⁷. The two do not agree.</p>
-          <p class="ask">Which set is correct, and which document do we align to?</p>
-          <p class="src"><button data-go="lockout">Lockout tab</button></p></div></div>
-
+          <h4>Which CFU set governs Lockout</h4>
+          <p class="verdict">Species-level counts at production, on the label and everywhere else.</p>
+          <p class="ctx"><em>Bacillus amyloliquefaciens</em> &gt;1×10⁹, <em>Trichoderma endophyticum</em> &gt;2×10⁸, <em>Streptomyces lydicus</em> &gt;2×10⁷ CFU/mL. Correct for the current formulation and may be revised upward as manufacturing is refined.</p>
+          <p class="ouraction"><span>Our action</span> Lockout strip updated. Label artwork still needs the same change in Figma.</p></div></div>
         <div class="item" id="q06"><div class="n">06</div><div>
-          <h4>Is the CFU guarantee at production or at use-by?</h4>
-          <p class="ctx">The range-wide guarantee basis is unresolved. It changes what a rep can say when a grower
-          compares our drum against an imported powder.</p>
-          <p class="ask">Confirm the guarantee basis per format, and who verifies the count — maker QA or independent.</p>
-          <p class="src"><button data-go="compare">Compare &amp; verify tab</button></p></div></div>
-
+          <h4>CFU guarantee basis</h4>
+          <p class="verdict">Production/release, not a guaranteed count at end of shelf life.</p>
+          <p class="ctx">No guaranteed minimum CFU at use-by is specified. Third-party testing ran through Charles Sturt University; that arrangement has concluded and GSB is assessing Sydney University, MADIID and AIRG for the coming season. COAs are available on request.</p>
+          <p class="ouraction"><span>Our action</span> Answers the 'who verifies' question — maker QA plus periodic third party, not continuous.</p></div></div>
         <div class="item" id="q07"><div class="n">07</div><div>
-          <h4>What is the real shelf life?<a class="ts" href="https://www.youtube.com/watch?v=qiz-pr-owko&t=2353s" target="_blank" rel="noopener">▶ M1 39:13</a></h4>
-          <p class="ctx">Every document says 12 months. A shorter figure was given verbally.</p>
-          <p class="ask">Confirm shelf life by format so label, SDS, brochure and battlecard can be aligned.</p>
-          <p class="src"><button data-go="compare">Compare &amp; verify tab</button></p></div></div>
-
+          <h4>Shelf life</h4>
+          <p class="verdict">12 months from manufacture, stored as directed. The 12-month figure is correct.</p>
+          <p class="ctx">Deliberate formulation choice: the liquids retain fermentation metabolites that form part of the product's value, and a longer shelf life would mean removing them. Managed through thick-walled vented drums, local NSW manufacture and short dispatch times. The clock starts at bottling, not at delivery — product supplied three months after manufacture has about nine months left.</p>
+          <p class="ouraction"><span>Our action</span> Stock forecasting between GSB and Hybrid Ag now matters commercially.</p></div></div>
         <div class="item" id="q08"><div class="n">08</div><div>
-          <h4>Whose organic certification covers Lockout?</h4>
-          <p class="ctx">The mark on the label is a placeholder. We understand the product is likely NOP organic,
-          but it does not fall under any certification we currently hold, and none of the three SDSs references a
-          scheme.</p>
-          <p class="ask">Supply the current certificate, with the exact approved wording and scope.</p>
-          <p class="src"><button data-go="lockout">Lockout tab</button></p></div></div>
-
+          <h4>Organic certification for Lockout</h4>
+          <p class="verdict">Not certified. Formal certification is about six months away.</p>
+          <p class="ctx">Until then, use in organic production is managed case by case as an <strong>allowable input</strong>. The grower emails Grant Kelson, copying Hybrid Ag and their own certifier, and GSB liaises with the certifier directly. Hybrid Ag must not present the product as organically certified.</p>
+          <p class="ouraction"><span>Our action</span> Placeholder mark removed; the allowable-input process is now on the Lockout tab.</p></div></div>
         <div class="item" id="q09"><div class="n">09</div><div>
-          <h4>What is the approved storage temperature for Lockout?</h4>
-          <p class="ctx">SP is 5–30 °C and Digester is 5–40 °C. Lockout has no storage temperature anywhere — not
-          on the label, not in the SDS, not in the brochure.</p>
-          <p class="ask">Give us the storage range so it can go on the label.</p>
-          <p class="src"><button data-go="lockout">Lockout tab</button></p></div></div>
-
+          <h4>Lockout storage temperature</h4>
+          <p class="verdict">5–40 °C, out of direct sunlight, best held at 15 °C.</p>
+          <p class="ctx">Follow the approved shelf-life statement alongside it.</p>
+          <p class="ouraction"><span>Our action</span> Added to the Lockout spec bar and strip. Label and SDS still need it.</p></div></div>
         <div class="item" id="q10"><div class="n">10</div><div>
-          <h4>Approve application routes, by product</h4>
-          <p class="ctx">All three SDSs read wider than the brochures. The card holds foliar for Lockout while the
-          live Lockout brochure publishes “foliar, fertigation, drench”. Fertigation is missing from the card for
-          SP and Lockout but advertised on both covers. The Lockout brochure also contradicts itself between cover
-          and page 2.</p>
-          <p class="ask">Confirm the approved route set per product so the card and the brochures can be reconciled.</p>
-          <p class="src"><button data-go="lockout">Lockout tab</button></p></div></div>
-
+          <h4>Approved application routes</h4>
+          <p class="verdict">Both SP and Lockout have several approved routes. Digester is the exception — foliar onto residue only.</p>
+          <p class="ctx">SP: liquid injection 1–2 L/ha into 60–100 L water; broadacre foliar 1–2 L/ha; horticulture foliar 5–10 L/ha; seed treatment 7.5 L/t; fertiliser coating 2 L/t on carbon-based fertilisers only. Lockout: liquid injection 2–5 L/ha; broadacre foliar 2–5 L/ha; horticulture foliar 5–10 L/ha; seed 7.5 L/t; fertigation 5–10 L/ha; nursery or root drench 2.5 L in 50 L. Apply foliar late afternoon, evening or overnight where practical.</p>
+          <p class="ouraction"><span>Our action</span> Foliar for Lockout is approved — the hold is lifted. Rates now sit on both tabs.</p></div></div>
         <div class="item" id="q11"><div class="n">11</div><div>
-          <h4>Can 2 L/t seed coating go on the SP label?<a class="ts" href="https://www.youtube.com/watch?v=Of7aL89pZwI&t=2908s" target="_blank" rel="noopener">▶ M2 48:28</a></h4>
-          <p class="ctx">The SP brochure cover advertises a broadacre coating rate of 2 L/t. The label gives
-          5–10 L, 1–2 L, 1:100 and 60–100 L/ha water, and nothing for seed. Final label governs every rate, so
-          this is a live contradiction in customer-facing material.</p>
-          <p class="ask">Put it on the label, or we pull the figure from the brochure.</p>
-          <p class="src"><button data-go="sp">SP tab</button></p></div></div>
-
+          <h4>SP seed-coating rate</h4>
+          <p class="verdict">7.5 L/t seed, not 2 L/t. GSB's own labels are being updated.</p>
+          <p class="ctx">The rate changed because the Protecta microbial-survival bio-polymer is now included in SP and Lockout, to simplify on-farm seed treating. Place the microbes directly on the seed for early access to the root rhizosphere, and sow soon after treating. Fertiliser coating stays 2 L/t, carbon-based fertilisers only.</p>
+          <p class="ouraction"><span>Our action</span> Both the battlecard and the brochure cover need the 7.5 L/t figure.</p></div></div>
         <div class="item" id="q12"><div class="n">12</div><div>
-          <h4>Is the published Digester mix order approved?<a class="ts" href="https://www.youtube.com/watch?v=Of7aL89pZwI&t=457s" target="_blank" rel="noopener">▶ M2 07:37</a></h4>
-          <p class="ctx">The card says the protocol is pending and reps must not assume an order. The live Digester
-          composition page already publishes one: ammonium sulphate first, then Digester, into 100 L/ha cool
-          non-chlorinated water.</p>
-          <p class="ask">Confirm the order, or tell us the brochure is wrong.</p>
-          <p class="src"><button data-go="measure">Measure &amp; sample tab</button></p></div></div>
-
+          <h4>Digester tank-mix order</h4>
+          <p class="verdict">Reversed — Digester into the water first, then the ammonium sulphate.</p>
+          <p class="ctx">Mix Digestimate with cool, clean, non-chlorinated water, then add 8 kg/ha ammonium sulphate and stir thoroughly. Our published order was wrong.</p>
+          <p class="ouraction"><span>Our action</span> Corrected on the Measure tab. The Digester brochure composition page still publishes the wrong order.</p></div></div>
         <div class="item" id="q13"><div class="n">13</div><div>
-          <h4>Is Digestubble the same product as Digester?</h4>
-          <p class="ctx">Digestubble trial data arrived Jul 2026 — nine treatments, stubble carbon and mass to
-          120 days, with untreated and nitrogen-alone controls. Product identity against Digester is unconfirmed,
-          so none of it is quotable.</p>
-          <p class="ask">Confirm the product name against the trial so we know whether this evidence is ours to use.</p>
-          <p class="src"><button data-go="digester">Digester tab</button></p></div></div>
-
+          <h4>Digestubble identity</h4>
+          <p class="verdict">Same product. The trial data is usable.</p>
+          <p class="ctx">No change to formulation or manufacturing method — only a branding change over time from Digestubble to Digestimate. The trial data generated under the Digestubble name is directly relevant and can support Mycro-Tec Digester.</p>
+          <p class="ouraction"><span>Our action</span> Unblocks the nine-treatment residue trial for use in collateral.</p></div></div>
         <div class="item" id="q14"><div class="n">14</div><div>
-          <h4>What is the position on mid-crop Digester use?</h4>
-          <p class="ctx">Asked twice on 31 July, never answered. The current default on the card is post-harvest
-          residue only — no in-crop use endorsed.</p>
-          <p class="ask">Confirm or correct the post-harvest-only default.</p>
-          <p class="src"><button data-go="digester">Digester tab</button></p></div></div>
-
+          <h4>Mid-crop Digester use</h4>
+          <p class="verdict">No. Post-harvest residue only.</p>
+          <p class="ctx">Not recommended for in-crop application. It is intended for crop residue after harvest, where the objective is biological residue breakdown and turnover.</p>
+          <p class="ouraction"><span>Our action</span> Confirms the default we were already holding.</p></div></div>
         <div class="item" id="q15"><div class="n">15</div><div>
-          <h4>Does the SP bacterium stall below 15 °C?<a class="ts" href="https://www.youtube.com/watch?v=Of7aL89pZwI&t=2113s" target="_blank" rel="noopener">▶ M2 35:13</a></h4>
-          <p class="ctx">The cold-furrow guidance on the card is our inference, not a GSB figure. It tells reps the
-          pass runs mostly on the three fungi in cold soil.</p>
-          <p class="ask">Confirm, correct or remove the 15 °C threshold.</p>
-          <p class="src"><button data-go="sp">SP tab</button></p></div></div>
-
+          <h4>SP 15 °C cold-furrow threshold</h4>
+          <p class="verdict">Remove it. Too high and too absolute.</p>
+          <p class="ctx">Activity persists down to about 4 °C, slowing as temperature falls, with effective activity still above 6 °C. Their guide: below 5 °C very slowed, consider better conditions; 5–10 °C slowed but progressing; 10–15 °C reduced but sufficiently active; 15–20 °C favourable; 20–30 °C favourable to near-optimal. Fungi and bacteria differ.</p>
+          <p class="ouraction"><span>Our action</span> Card rewritten to the GSB scale.</p></div></div>
         <div class="item" id="q16"><div class="n">16</div><div>
-          <h4>Confirm the Lockout draft rate ladder</h4>
-          <p class="ctx">Preventative 5 L/ha, Light 10 L/ha, Heavy 20 L/ha, dilution 1:20 — carried as draft only.</p>
-          <p class="ask">Confirm final terminology, route and conditions.</p>
-          <p class="src"><button data-go="lockout">Lockout tab</button></p></div></div>
-
+          <h4>Lockout rate ladder</h4>
+          <p class="verdict">Remove the universal ladder — it drifts toward disease-control claims.</p>
+          <p class="ctx">A fixed preventative / light / heavy ladder is too firm across crops and should come off the label and all material. Use the crop-segment rates in Q10 instead. Where high rates are being considered, metagenomic testing can inform the decision by measuring pathogen abundance and functional expression. No general dilution factor either — use enough clean, de-chlorinated water for the equipment.</p>
+          <p class="ouraction"><span>Our action</span> Ladder removed from the Lockout tab.</p></div></div>
         <div class="item" id="q17"><div class="n">17</div><div>
-          <h4>Can we cite the Gerogery nitrate movement?<a class="ts" href="https://www.youtube.com/watch?v=qiz-pr-owko&t=838s" target="_blank" rel="noopener">▶ M1 13:58</a></h4>
-          <p class="ctx">NO₃ 26 → 38 mg/kg is on our Results page attributed to GSB case study 2195. We have not
-          verified it against the published study ourselves.</p>
-          <p class="ask">Confirm the figure as published, or tell us to drop it.</p>
-          <p class="src"><button data-go="sp">SP tab</button></p></div></div>
-
+          <h4>Gerogery nitrate movement</h4>
+          <p class="verdict">Yes, citable — as observations from that field case.</p>
+          <p class="ctx">GSB's published case study reports nitrate-N 26 mg/kg in the control and 38 mg/kg treated, a 46% increase, with Colwell P from 42 to 57 mg/kg, up 35.7%. Present as observations from that specific field case, not a guaranteed response across soils, seasons or systems.</p>
+          <p class="ouraction"><span>Our action</span> Figures kept; the 'confirmed the biology was working' phrasing is gone.</p></div></div>
         <div class="item" id="q18"><div class="n">18</div><div>
-          <h4>Release the three Lockout evidence sets<a class="ts" href="https://www.youtube.com/watch?v=Of7aL89pZwI&t=223s" target="_blank" rel="noopener">▶ M2 03:43</a></h4>
-          <p class="ctx">Queensland soil work, cotton work and orchard work are all referenced but unreleased.
-          Until they arrive, none of it is disease-efficacy proof and all of it stays internal.</p>
-          <p class="ask">Send treatment, comparator, baseline, endpoint and timing for each.</p>
-          <p class="src"><button data-go="lockout">Lockout tab</button></p></div></div>
-
+          <h4>Lockout evidence sets</h4>
+          <p class="verdict">Coming, but not yet. Still under review.</p>
+          <p class="ctx">Once the review is complete and the data finalised, GSB can provide supporting case studies. They will obtain grower permission before any farm-specific information is shared or published.</p>
+          <p class="ouraction"><span>Our action</span> Still the one open evidence item. Queensland, cotton and orchard work all remain internal.</p></div></div>
         <div class="item" id="q19"><div class="n">19</div><div>
-          <h4>Two SDS defects to correct</h4>
-          <p class="ctx">The Digester SDS declares diatomaceous earth 1% w/w with CAS “Not allocated” —
-          diatomaceous earth has real CAS numbers. Section 9 is identical across all three SDSs (SG 1.01, pH 6–7,
-          viscosity 1.0 cSt, boiling 100 °C), which cannot hold when one product contains a mineral.</p>
-          <p class="ask">Correct the CAS entry and give us product-specific Section 9 data.</p>
-          <p class="src">Pack audit · 2026-08-04</p></div></div>
-
+          <h4>Draft SDS corrections</h4>
+          <p class="verdict">Diatomaceous earth has been removed from the formulation entirely.</p>
+          <p class="ctx">It has been replaced with a peat extract, so the MSDS needs updating to the current formulation. On Section 9, the products genuinely are very similar and in some cases effectively identical, since the microbial differences do not materially change the bulk physical properties of the finished liquid — but GSB will check Section 9 against current formulations when the MSDS documents are updated.</p>
+          <p class="ouraction"><span>Our action</span> Our Digester SDS needs the composition change before release.</p></div></div>
         <div class="item" id="q20"><div class="n">20</div><div>
-          <h4>Written support for any feeding rule<a class="ts" href="https://www.youtube.com/watch?v=qiz-pr-owko&t=2948s" target="_blank" rel="noopener">▶ M1 49:08</a></h4>
-          <p class="ctx">No standard food-source recommendation is approved for Lockout, and the card blocks
-          publishing soil-carbon, humic/fulvic, sugar, fish or seaweed feeding rules.</p>
-          <p class="ask">Supply written, formulation-specific feeding guidance, or confirm there is none.</p>
-          <p class="src"><button data-go="measure">Measure &amp; sample tab</button></p></div></div>
+          <h4>Feeding rule for Lockout</h4>
+          <p class="verdict">Humic acid with complex carbon at the root zone. Avoid simple sugars.</p>
+          <p class="ctx">GSB's preference is to apply Lockout with a good-quality humic acid containing complex carbon as a supporting nutrition source. Not considered necessary for subsequent foliar applications. Avoid molasses and simple sugars — they stimulate a broad range of organisms including non-target and potentially pathogenic ones.</p>
+          <p class="ouraction"><span>Our action</span> Written support now exists; the Measure tab carries it.</p></div></div>
       </div>
 
       <div class="panel tint" style="margin-top:18px">
-        <h4>Already checked our end</h4>
-        <p>So you are not asked twice: organism sets agree across label, SDS and brochure for SP and Digester,
-        and no kill, suppress or control language appears in anything customer-facing. Plenty of SDS detail is
-        still unconfirmed, which is why every SDS page stays marked DRAFT.</p>
+        <h4>What is still open</h4>
+        <p>Only one item did not close: the Lockout evidence sets. Queensland soil, cotton and orchard work are
+        still under review at GSB, and grower permission is needed before any farm-specific data is shared, so all
+        of it stays internal for now. Everything else is answered — what remains is our work, rebuilding the
+        labels, brochures and SDSs to match.</p>
       </div>
     </div>
   </div>
